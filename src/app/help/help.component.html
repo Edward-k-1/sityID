@@ -1,0 +1,56 @@
+<div>
+
+  <h4>Найчастіше запитують:</h4>
+  <ol>
+    <li>На скільки поїздок вистачає QR коду?</li>
+    <li>Які саме картки можна використовувати для оплати?</li>
+    <li>Де можна поповнити баланс?</li>
+  </ol>
+
+
+  <p><b>Введіть ваш Email:</b><input [(ngModel)]="addData.email" id="email" type="email" name="email" ></p>
+    <div><b>Введіть ваше запитання:</b><br>
+      <div>
+        <div class="text" >
+          <textarea [(ngModel)]="addData.text" class="tex"></textarea>
+        </div>
+      </div>
+      <br>
+
+      <div class="send">
+        <span class="button" type="button"  (click)="addHelp()">Надіслати</span>
+      </div>
+    </div>
+
+</div>
+<!--<div class="cards">
+  <div class="cards-wrapper" *ngIf="!isHelpLoading">
+    <p class="title">Прив'язані картки</p>
+    <ul class="title">
+      <li>Назва</li>
+      <li>Номер</li>
+      <li>Обмеження</li>
+      <li>Пін</li>
+      <li>Статус</li>
+    </ul>
+    <ul class="rows" *ngFor="let item of userHelp">
+      <li>{{item.email}}</li>
+      <li>{{item.text}}</li>
+      <li>необмежено</li>
+      <li>****</li>
+      <li> активна </li>
+    </ul>
+  </div>
+
+  <div class="loading" *ngIf="isHelpLoading">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading"></span>
+    </div>
+  </div>
+</div>-->

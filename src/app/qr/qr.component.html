@@ -1,0 +1,71 @@
+
+<div>
+  <div class="add-qr">
+    <a href="#zatemnenie1"><span class="button" >Придбати QR</span></a>
+  </div>
+
+  <div id="zatemnenie1" class="index">
+    <div id="okno1">
+      <a href="#" class="close">X</a>
+      <h3>Придбати QR</h3>
+      <div><span>Ваш баланс:</span>
+        <span class="fonds">{{currentUser.wallet}}</span>
+        <span class="nominal">грн.</span>
+
+       <br></div>
+      <div>
+
+      Кількість поїздок:<input (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka"><br>
+      <p *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked>{{t.name}}</span></p>
+      <span>Сума до сплати:</span>
+        <span [(ngModel)]="addData.tsina_qr.wallet" >{{amount}} грн</span></div>
+      <br>
+      <p><input type="submit" value="Придбати QR" (click)="addQR()"></p>
+    </div>
+    </div>
+  </div>
+
+  <div >
+<br>
+      <p class="title">Придбані QR</p>
+
+
+        <ul class="title">
+        <li>Назва</li>
+        <li>Обмеження</li>
+        <li>Статус</li>
+        <li>Ціна QR</li>
+        <li>Відкрити QR</li>
+        </ul>
+
+
+    <ul class="rows" *ngFor="let item of userQR">
+      <li>QR</li>
+      <li>{{item.poizdka}} поїздки(а)</li>
+      <li>Активний</li>
+      <li>{{item.tsina_qr}} грн</li>
+        <li> <a href="#" id="main">
+          <div id="zatemnenie">
+          <div id="okno">
+            <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20"  ></qrcode>
+          </div>
+          </div>
+          </a>
+          <a href="#main">Показати QR</a>
+          </li>
+        </ul>
+
+  </div>
+
+
+<div class="loading" *ngIf="isQRLoading">
+<div class="cube-wrapper">
+  <div class="cube-folding">
+    <span class="leaf1"></span>
+    <span class="leaf2"></span>
+    <span class="leaf3"></span>
+    <span class="leaf4"></span>
+  </div>
+  <span class="loading" data-name="Loading">Завантаження</span>
+</div>
+</div>

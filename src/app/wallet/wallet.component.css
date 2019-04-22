@@ -1,0 +1,455 @@
+.main-block {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    background: #ffffffd6;
+    float: left;
+    padding: 15px;
+    box-shadow: 0px 0px 1px black;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.main-block .wallet {
+    width: 10em;
+    float: left;
+    height: 150px;
+}
+.main-block .wallet p {}
+.main-block .wallet div {
+    width: 150px;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+.main-block .wallet div span.fonds {
+    line-height: 100px;
+    display: block;
+    font-size: 60px;
+    width: 100px;
+    float: left;
+    color: #80807b;
+    text-align: center;
+}
+.main-block .wallet div span.nominal {
+    line-height: 25px;
+    display: block;
+    font-size: 25px;
+    float: left;
+    color: #000000;
+    padding: 50px 0 25px 0;
+}
+
+.actions {
+    width: 15em;
+    float: left;
+    height: 150px;
+}
+.actions ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.actions ul li {
+    margin: 5px;
+    width: 100%;
+    height: 25px;
+    background: grey;
+    padding: 0 5px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.actions ul li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding: 0 5px;
+    background: transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.actions ul li.active {
+    height: 50px;
+    padding: 0;
+    transition: .5s;
+    background: white;
+}
+
+.actions ul li .action {
+    position: absolute;
+    top: 25px;
+    transition: .5s;
+}
+
+.actions ul li.active .action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    transition: .5s;
+}
+
+.actions ul li.active span {
+    display: block;
+    width: 33px;
+    height: 32px;
+    z-index: 9999;
+    position: absolute;
+    background: #ff4949;
+    color: #ff4949;
+    overflow: hidden;
+    transition: .5s;
+    top: 7px;
+    left: 200px;
+}
+
+.actions ul li.active span::after {
+    content: 'X';
+    position: absolute;
+    top: 0;
+    left: 9px;
+    color: white;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 21px;
+    transition: .5s;
+}
+
+.actions ul li .action button {
+    background: #3b3b3b;
+    border: none;
+    color: white;
+    padding: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.actions ul li .action button:hover {
+    transition: .5s;
+    background: #2b64e3;
+}
+
+.actions ul li .action input {
+    width: 60px;
+    margin: 7px;
+}
+
+.actions ul li .action p {
+    display: inline-block;
+    width: 40px;
+    color: black;
+}
+
+.actions ul li span:hover {
+    transition: .5s;
+    background: #ff4949;
+}
+
+.actions ul li.active span:hover {
+
+}
+
+.actions ul li .action p.blocked {
+    width: 170px;
+    font-size: 12px;
+    padding: 15px 10px;
+}
+
+.card-info {
+    /*width: 31.5vw;*/
+}
+.card-info p.title {}
+.card-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.card-info ul li {
+    background: #acacac;
+    margin: 5px 0;
+    padding: 4px 5px;
+    width: 400px;
+}
+.card-info ul li span {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    font-size: 13px;
+}
+.card-info ul li span:nth-child(1) {
+    width: 30%;
+}
+.card-info ul li span:nth-child(2) {
+    width: 25%;
+}
+.card-info ul li span:nth-child(3) {
+    width: 100px;
+}
+.card-info ul li span:nth-child(4) {
+    width: 15%;
+}
+
+
+div.loading {
+    position: relative;
+    width: 25em;
+    height: 10em;
+}
+
+.cube-folding {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 0;
+}
+.cube-folding span {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    display: inline-block;
+}
+.cube-folding span::before {
+    content: '';
+    /*background-color: white;*/
+    background-color: #fa5b5b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 25px;
+    height: 25px;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    -moz-animation: folding 2.5s infinite linear both;
+    -webkit-animation: folding 2.5s infinite linear both;
+    animation: folding 2.5s infinite linear both;
+}
+.cube-folding .leaf2 {
+    -moz-transform: rotateZ(90deg) scale(1.1);
+    -ms-transform: rotateZ(90deg) scale(1.1);
+    -webkit-transform: rotateZ(90deg) scale(1.1);
+    transform: rotateZ(90deg) scale(1.1);
+}
+.cube-folding .leaf2::before {
+    -moz-animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    background-color: #ff8080;
+    /*background-color: #f2f2f2;*/
+}
+.cube-folding .leaf3 {
+    -moz-transform: rotateZ(270deg) scale(1.1);
+    -ms-transform: rotateZ(270deg) scale(1.1);
+    -webkit-transform: rotateZ(270deg) scale(1.1);
+    transform: rotateZ(270deg) scale(1.1);
+}
+.cube-folding .leaf3::before {
+    -moz-animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    background-color: #f6b3b3;
+    /*background-color: #f2f2f2;*/
+}
+.cube-folding .leaf4 {
+    -moz-transform: rotateZ(180deg) scale(1.1);
+    -ms-transform: rotateZ(180deg) scale(1.1);
+    -webkit-transform: rotateZ(180deg) scale(1.1);
+    transform: rotateZ(180deg) scale(1.1);
+}
+.cube-folding .leaf4::before {
+    -moz-animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    /*background-color: #e6e6e6;*/
+    background-color: #f69c9c;
+}
+
+@-moz-keyframes folding {
+    0%, 10% {
+        -moz-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        -moz-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        -moz-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes folding {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+@keyframes folding {
+    0%, 10% {
+        -moz-transform: perspective(140px) rotateX(-180deg);
+        -ms-transform: perspective(140px) rotateX(-180deg);
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        -moz-transform: perspective(140px) rotateX(0deg);
+        -ms-transform: perspective(140px) rotateX(0deg);
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        -moz-transform: perspective(140px) rotateY(180deg);
+        -ms-transform: perspective(140px) rotateY(180deg);
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+.cube-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+.cube-wrapper:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    width: 90px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+    -moz-animation: shadow 0.5s ease infinite alternate;
+    -webkit-animation: shadow 0.5s ease infinite alternate;
+    animation: shadow 0.5s ease infinite alternate;
+}
+.cube-wrapper .loading {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    display: block;
+    color: red;
+    position: relative;
+    top: 25px;
+    z-index: 2;
+    -moz-animation: text 0.5s ease infinite alternate;
+    -webkit-animation: text 0.5s ease infinite alternate;
+    animation: text 0.5s ease infinite alternate;
+}
+
+@-moz-keyframes text {
+    100% {
+        top: 35px;
+    }
+}
+@-webkit-keyframes text {
+    100% {
+        top: 35px;
+    }
+}
+@keyframes text {
+    100% {
+        top: 35px;
+    }
+}
+@-moz-keyframes shadow {
+    100% {
+        bottom: -18px;
+        width: 100px;
+    }
+}
+@-webkit-keyframes shadow {
+    100% {
+        bottom: -18px;
+        width: 100px;
+    }
+}
+@keyframes shadow {
+    100% {
+        bottom: -18px;
+        width: 100px;
+    }
+}
+
+.history-wrapper ul.title {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid red;
+}
+.history-wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 65vw;
+}
+
+.history-wrapper ul li {
+    position: relative;
+    display: inline-block;
+    width: 13vw;
+    text-align: center;
+}
+.history-wrapper ul li:nth-child(1) {
+    width: 8vw;
+}
+.history-wrapper ul li:nth-child(2) {
+    width: 17vw;
+}
+.history-wrapper ul li:nth-child(3) {
+    width: 10vw;
+}
+.history-wrapper ul li:nth-child(4) {
+    width: 10vw;
+}
+.history-wrapper ul li:nth-child(5) {
+    width: 17vw;
+}
+
+.history-block div.loading {
+    width: 65vw;
+}

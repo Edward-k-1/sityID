@@ -1,0 +1,73 @@
+<div class="main-block">
+  <div class="wallet" *ngIf="!isWalletLoading">
+    <p>У Вас на рахунку:</p>
+    <div>
+      <span class="fonds">{{currentUser.wallet}}</span>
+      <span class="nominal">грн.</span>
+    </div>
+  </div>
+  <div class="actions" *ngIf="!isWalletLoading">
+    <ul>
+      <li class="add"><span (click)="payInit()">Поповнити</span><div class="action"><input [(ngModel)]="paymentAmount" type="number"><p>грн.</p><button (click)="pay()">Поповнити</button></div></li>
+      <li class="transaction"><span (click)="transactionInit()">Передати</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>
+      <li class="restriction"><span (click)="restrictionSetup()">Обмеження</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>
+    </ul>
+  </div>
+  <div class="loading" *ngIf="isWalletLoading">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading">Завантаження</span>
+    </div>
+  </div>
+  <div id="pay-block" style="display: none"></div>
+</div>
+
+
+
+<div class="main-block">
+  <div class="card-info">
+    <p class="title">Статистика</p>
+    <ul>
+      <li><span class="name">картка 1</span> <span>8 грн.</span> <span>07.02.2019 14:22</span> <span>2</span></li>
+      <li><span class="name">картка 2</span> <span>0</span> <span>-</span> <span>-</span></li>
+      <li><span class="name">QR</span> <span>0</span> <span>-</span> <span>-</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="history-block main-block">
+  <div class="history-wrapper" *ngIf="!isHistoryLoading">
+    <p class="title">Останні поповнення рахунку</p>
+    <ul class="title">
+      <li>Сумма</li>
+      <li>Дата створення</li>
+      <li>Спосіб</li>
+      <li>Статус</li>
+      <li>Дата зарахування</li>
+    </ul>
+    <ul class="rows" *ngFor="let item of historyData">
+      <li>{{item.amount}}</li>
+      <li>{{item.date}}</li>
+      <li>LiqPay</li>
+      <li>{{item.is_confirmed}}</li>
+      <li> - </li>
+    </ul>
+  </div>
+
+  <div class="loading" *ngIf="isHistoryLoading">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading">Завантаження</span>
+    </div>
+  </div>
+</div>

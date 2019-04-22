@@ -1,0 +1,45 @@
+<div class="add-card">
+  <span class="button" (click)="addInit()">Додати картку</span>
+  <div class="card-add-form">
+
+    <p class="card-name"><input [(ngModel)]="addData.name" type="text"><span>Назва</span></p>
+    <p class="card-data"><input [(ngModel)]="addData.card_uid" class="card-uid" type="text"><span>Номер</span><input [(ngModel)]="addData.pin" class="card-pin" type="text"><span>pin</span></p>
+
+
+
+
+    <span class="add-btn" (click)="addCard()">Додати</span>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="cards-wrapper" *ngIf="!isCardsLoading">
+    <p class="title">Прив'язані картки</p>
+    <ul class="title">
+      <li>Назва</li>
+      <li>Номер</li>
+      <li>Обмеження</li>
+      <li>Пін</li>
+      <li>Статус</li>
+    </ul>
+    <ul class="rows" *ngFor="let item of userCards">
+      <li>{{item.name}}</li>
+      <li>{{item.card_uid}}</li>
+      <li>необмежено</li>
+      <li>****</li>
+      <li> активна </li>
+    </ul>
+  </div>
+
+  <div class="loading" *ngIf="isCardsLoading">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading">Завантаження</span>
+    </div>
+  </div>
+</div>
