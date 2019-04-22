@@ -1,0 +1,137 @@
+<div ng-controller="ScreenGridController" class="screen-grid-controller grid-page">
+    <div class="grid-wraper">
+        <div class="grid-header">
+            <div class="title">
+                Інформаційний екран
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <!--<li class="icon-li"> >> </li>-->
+                    <!--<li class="select"><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown><span class="effect"></span></li>-->
+                    <li class="button"><md-button ng-click="showScreenSettings()">Налаштування<span class="effect"></span></md-button></li>
+                </ul>
+            </div>
+        </div>
+        <div  id="screen-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"></div>
+
+        <div id="screen-smart-panel">
+            <div class="panel-slider">
+                <div class="ml-panel-button">
+                    <div id="smart-screen-expander" ng-click="toggleSmartScreen()" class="button-panel"  role="button" tabindex="0">
+
+                    </div>
+                </div>
+            </div>
+            <div id="weather">
+
+                <div id="SinoptikInformer" class="SinoptikInformer type5c1"><div class="siHeader"><div class="siLh"><div class="siMh"><a onmousedown="siClickCount();" class="siLogo" href="https://ua.sinoptik.ua/" target="_blank" rel="nofollow" title="Погода"> </a>Погода <span id="siHeader"></span></div></div></div><div class="siBody"><a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-київ" title="Погода у Києві" target="_blank" rel="nofollow"><div class="siCity"><div class="siCityName">Погода у <span>Києві</span></div><div id="siCont0" class="siBodyContent"><div class="siLeft"><div class="siTerm"></div><div class="siT" id="siT0"></div><div id="weatherIco0"></div></div><div class="siInf"><p>вологість: <span id="vl0"></span></p><p>тиск: <span id="dav0"></span></p><p>вітер: <span id="wind0"></span></p></div></div></div></a><div class="siLinks">Погода на <a href="https://ua.sinoptik.ua/погода-львів/10-днів/" title="Погода у Львові на 10 днів" target="_blank" rel="nofollow" onmousedown="siClickCount();">sinoptik.ua</a>  у Львові</div></div><div class="siFooter"><div class="siLf"><div class="siMf"></div></div></div></div><script type="text/javascript" charset="UTF-8" src="//sinoptik.ua/informers_js.php?title=4&amp;wind=2&amp;cities=303010783&amp;lang=ua"></script>
+
+            </div>
+            <div id="information">
+                <ul id="alerts">
+                    <li ng-repeat="alert in alerts">
+                        <h4>{{alert.title}}</h4>
+                        <p class="body" ng-bind-html="alert.body"></p>
+                    </li>
+                    <!--<li><h4>Повідомлення 1</h4><p class="body">В маршруті № 72 - додано новий графік - 10</p><p class="date">12.12.2016</p></li>-->
+                    <!--<li><h4>Повідомлення 2</h4><p class="body">72 маршрут графік 4 - вихідний</p><p class="date">12.12.2016</p></li>-->
+                    <!--<li><h4>Повідомлення 3</h4><p class="body">Іванова Олександра Ігоровича просимо підійти у відділ кадрів для завірення документів</p><p class="date">12.12.2016</p></li>-->
+                </ul>
+            </div>
+            <div id="clock">
+                <span class="clock"></span>
+
+                <script>
+                    var Clock = (function(){
+
+                        var exports = function(element) {
+                            this._element = element;
+                            var html = '';
+                            for (var i=0;i<6;i++) {
+                                html += '<span>&nbsp;</span>';
+                            }
+                            this._element.innerHTML = html;
+                            this._slots = this._element.getElementsByTagName('span');
+                            this._tick();
+                        };
+
+                        exports.prototype = {
+
+                            _tick:function() {
+                                var time = new Date();
+                                this._update(this._pad(time.getHours()) + this._pad(time.getMinutes()) + this._pad(time.getSeconds()));
+                                var self = this;
+                                setTimeout(function(){
+                                    self._tick();
+                                },1000);
+                            },
+
+                            _pad:function(value) {
+                                return ('0' + value).slice(-2);
+                            },
+
+                            _update:function(timeString) {
+
+                                var i=0,l=this._slots.length,value,slot,now;
+                                for (;i<l;i++) {
+
+                                    value = timeString.charAt(i);
+                                    slot = this._slots[i];
+                                    now = slot.dataset.now;
+
+                                    if (!now) {
+                                        slot.dataset.now = value;
+                                        slot.dataset.old = value;
+                                        continue;
+                                    }
+
+                                    if (now !== value) {
+                                        slot.classList.remove('flip');
+                                        this._flip(slot,value);
+                                    }
+                                }
+                            },
+
+                            _flip:function(slot,value) {
+
+                                // setup new state
+                                slot.classList.remove('flip');
+                                slot.dataset.old = slot.dataset.now;
+                                slot.dataset.now = value;
+
+                                // force dom reflow
+                                slot.offsetLeft;
+
+                                // start flippin
+                                slot.classList.add('flip');
+
+                            }
+
+                        };
+
+                        return exports;
+                    }());
+
+                    var i=0,clocks = document.querySelectorAll('.clock'),l=clocks.length;
+                    for (;i<l;i++) {
+                        new Clock(clocks[i]);
+                    }
+
+                </script>
+            </div>
+        </div>
+        <div id="chekpoints-loading-wraper" style="display:none;">
+            <div class="loader">
+                <ul class="hexagon-container">
+                    <li class="hexagon hex_1"></li>
+                    <li class="hexagon hex_2"></li>
+                    <li class="hexagon hex_3"></li>
+                    <li class="hexagon hex_4"></li>
+                    <li class="hexagon hex_5"></li>
+                    <li class="hexagon hex_6"></li>
+                    <li class="hexagon hex_7"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

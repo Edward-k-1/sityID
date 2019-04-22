@@ -1,0 +1,36 @@
+.select-countdown {
+  width: 150px;
+  md-select {
+    md-select-value.md-select-placeholder {
+      span {
+        visibility: visible;
+      }
+    }
+    md-select-value {
+      span.md-select-icon {
+        visibility: visible;
+      }
+      span {
+        visibility: collapse;
+        -moz-transition: width 100000s ease;
+        -webkit-transition: width 10000s ease;
+        -o-transition: width 10000s ease;
+        transition: width 10000s ease;
+
+        div.md-text {
+          visibility: visible;
+        }
+        div.md-text ~ div.md-text {
+          display: none;
+        }
+        div.md-text ~ div.md-text:before {
+          display: none;
+        }
+        div.md-text + * {
+          display: none;
+        }
+      }
+
+    }
+  }
+}

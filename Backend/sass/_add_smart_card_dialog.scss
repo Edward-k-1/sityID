@@ -1,0 +1,106 @@
+.dialog-add-smartcards
+{
+  md-dialog-content
+  {
+   height: 100%;
+  }
+  width: 600px;
+  height: 350px;
+  .md-toolbar-tools
+  {
+    button.cancel
+    {
+      margin-left: auto;
+    }
+  }
+  .dialog-content-add-smartcards
+  {
+    height: calc(100% - 30px);
+    .empty-smartcard-dialog
+    {
+      height:100%;
+      margin: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 229px;
+      text-align: center;
+    }
+
+    .info-smartcard-dialog
+    {
+      height:100%;
+      margin: 15px;
+      .label-card-number
+      {
+        display: inline-block;
+        width: 200px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .value-card-number
+      {
+        display: inline-block;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .info-smartcards.new
+      {
+          .label-status
+          {
+            display: inline-block;
+            width: 200px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+        .value-status
+        {
+          display: inline-block;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        .button-wrapper
+        {
+          margin-top: 140px;
+        }
+      }
+      .info-smartcards.exist
+      {
+        .wrapper-worker-info {
+          .label-worker-name,
+          .label-worker-number,
+          .label-workers-views,
+          .label-status {
+            width: 200px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .value-worker-name,
+          .value-worker-number,
+          .value-workers-views,
+          .value-status
+          {
+            display: inline-block;
+            width: calc(100% - 210px);
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+        }
+
+        .button-wrapper
+        {
+          margin-top: 30px;
+        }
+
+      }
+    }
+    .empty-smartcard-dialog
+    {
+      margin: 15px;
+    }
+
+  }
+}

@@ -1,0 +1,62 @@
+<div class="order-table-row-expanded">
+   <div class="order-table-row-expanded-wrapper" ng-init="lang=row.entity.subGridOptions.lang">
+       <div ng-repeat="item in row.entity.subGridOptions.data" style="display: block;width: auto;  min-width: 400px;">
+         <table class="orders-workshift-table">
+            <tbody>
+            <tr class="table-header-row">
+               <td colspan="5">{{lang.words['Workshift']}} №{{$index+1}}</td>
+            </tr>
+            <tr class="table-header-row">
+               <td colspan="5">{{lang.words['Vehicle']}}</td>
+            </tr>
+            <tr class="table-header-row">
+               <td width="110">{{lang.words['board number']}}</td>
+               <td width="100">{{lang.words['state number']}}</td>
+               <td width="200">{{lang.words['vehicle models']}}</td>
+               <td width="100">{{lang.words['Time from']}}</td>
+               <td width="130">{{lang.words['Time to']}}</td>
+            </tr>
+            <tr ng-repeat="vh_item in item.dep.vehicles_workshifts">
+               <td>{{vh_item.vh_board_number}}</td>
+               <td>{{vh_item.vh_state_number}}</td>
+               <td>{{vh_item.vh_models}} </td>
+               <td>{{vh_item.time_from*1000|date:'HH:MM'}}  </td>
+               <td>{{vh_item.time_to*1000|date:'HH:MM'}} </td>
+            </tr>
+            <tr class="table-header-row">
+               <td>{{lang.words['Driver']}} №</td>
+               <td colspan="2">{{lang.words['Driver worker name']}}</td>
+               <td>{{lang.words['Time from']}}</td>
+               <td>{{lang.words['Time to']}}</td>
+            </tr>
+            <tr class="table-row-worker">
+               <td colspan="5">
+                  <div ng-repeat="work_item in item.dep.drivers_workshift" class="driver-wrapper">
+                     <span class="driver-number">{{work_item.basic_number}}</span>
+                     <span class="driver-name"> {{work_item.name}}</span>
+                     <span class="driver-time-from"> {{work_item.time_from*1000|date:'HH:MM'}}</span>
+                     <span class="driver-time-to"> {{work_item.time_to*1000|date:'HH:MM'}}</span>
+                  </div>
+               </td>
+            </tr>
+            <tr class="table-header-row">
+               <td>{{lang.words['Conductor number']}}</td>
+               <td colspan="2">{{lang.words['Conductors name']}}</td>
+               <td>{{lang.words['Time from']}}</td>
+               <td>{{lang.words['Time to']}}</td>
+            </tr>
+            <tr class="table-row-worker">
+               <td colspan="5">
+                  <div ng-repeat="work_item in item.dep.conductors_workshift">
+                     <span class="conductor-number"> {{work_item.basic_number}}</span>
+                     <span class="conductor-name"> {{work_item.name}}</span>
+                     <span class="conductor-time-from"> {{work_item.time_from*1000|date:'HH:MM'}}</span>
+                     <span class="conductor-time-to"> {{work_item.time_to*1000|date:'HH:MM'}}</span>
+                  </div>
+               </td>
+            </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

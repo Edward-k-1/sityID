@@ -1,0 +1,39 @@
+<md-dialog aria-label="addGraph">
+    <form ng-cloak name="formAddGraph">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Додати графік</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container>
+                    <label>Маршрут</label>
+                    <md-select ng-change="loadMyGraphs(data.selectedRoute)" required ng-model="data.selectedRoute">
+                        <md-option ng-repeat="route in data.routes" value="{{ route.id }}">{{ route.name }}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                </div>
+            <div id="self-added-manege">
+                <ul class="my-graphs">
+                    <li ng-repeat="myg in data.myGraphs">
+                        <p>{{myg.name}}</p><p class="delete-myg" ng-click="deleteGraph(myg.id, $event)">Видилити</p>
+                    </li>
+                </ul>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-disabled="formAddGraph.$invalid" ng-click="confirmAdd()" aria-label="Confirm">
+                Зберегти
+            </md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

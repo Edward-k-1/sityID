@@ -1,0 +1,13 @@
+<div ng-controller="DictionaryGridController" class="dictionary-main">
+    {{_tpi}}
+
+    <div ng-if="_tpi.nodeId=='technical_performance_indicator'">
+        <ng-include src="'app/templates/grid/tpi/routes_technical_performance_indicator.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="_tpi.nodeId=='technical_performance_indicator_workshift'">
+        <ng-include src="'app/templates/grid/tpi/technical_performance_indicator_workshift.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="_tpi.nodeId=='routes_technical_performance_indicator'">
+        <ng-include src="'app/templates/grid/tpi/routes_technical_performance_indicator.tpl.html'"></ng-include>
+    </div>
+</div>

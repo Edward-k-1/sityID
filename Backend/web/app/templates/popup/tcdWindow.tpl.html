@@ -1,0 +1,53 @@
+<md-dialog aria-label="tcdWindow" class="tcd-dialog">
+    <form ng-cloak name="formTcdWindow">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{lang.words["Card id"]}}: {{worker_data.card_key}}</h2>
+                <span flex></span>
+
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ng-if="error == undefined">
+            <div class="md-dialog-content mcChekpointSingle">
+                <div class="left">
+                    <img ng-src="/image/worker_photo/photo_{{worker_data.worker_id}}.png"  alt="Зображення не знайдено">
+                </div>
+                <div class="right">
+                    <h3>{{worker_data.info.name}}</h3>
+                    <p class="worker-job"><lable><b>{{lang.words["Work"]}}: </b></lable>{{worker_data.info.worker_job}}</p>
+                    <p class="worker-bn"><lable><b>{{lang.words["Number"]}}: </b></lable>{{worker_data.info.basic_number}}</p>
+                    <p  class="worker-cn"><lable><b>{{lang.words["Enterprise number"]}}: </b></lable>{{worker_data.info.company_number}}</p>
+                    <p  class="worker-date"><lable><b>{{lang.words["Recruitment date"]}}: </b></lable>{{worker_data.info.date_added}}</p>
+                    <p  class="vehicle-name"><lable><b>{{lang.words["Vehicle"]}}: </b></lable><b>{{vehicle_data.name}}</b></p>
+                    <p  class="vehicle-number"><lable><b>{{lang.words["state number"]}}: </b></lable><b>{{vehicle_data.state_number}}</b></p>
+                    <div></div>
+                    <span class="not-exist-workshift" ng-if="notExistWorkshift ==true">{{lang.words["No Workshifts for worker"]}}</span>
+
+                </div>
+            </div>
+            <div>
+                <md-button ng-model="collapsed" ng-click="collapsed=!collapsed">{{lang.words["Toggle history"]}}</md-button>
+            </div>
+            <div ng-show="collapsed">
+                <div  id="last-mc-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-content ng-if="error !== undefined">
+            <h2 class="error-message">{{error}}</h2>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="AllClear()" aria-label="Confirm" ng-if="error == undefined" ng-disabled="notExistWorkshift ==true">                {{lang.words["Departure allowed"]}}
+            </md-button>
+            <md-button ng-click="AllBad()" aria-label="unConfirm" ng-if="error == undefined" ng-disabled="notExistWorkshift ==true">
+                {{lang.words["Departure prohibited"]}}
+            </md-button>
+            <md-button ng-click="CancelWorker()" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

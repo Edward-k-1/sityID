@@ -1,0 +1,439 @@
+<!--<md-dialog aria-label="AddOrder" id="add-order-dialog">-->
+<md-dialog aria-label="AddOrder" id="add-order-dialog">
+    <form ng-cloak name="formAddOrder">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <p class="header-mp"><span>Тип випуску:</span>
+                    <b ng-if="data.orderType == 0">Однозмінний</b>
+                    <b ng-if="data.orderType == 1">Двозмінний</b>
+                    <b ng-if="data.orderType > 1">Розривний</b>
+                </p>
+                <p class="header-mp"><span>Маршрут: <b>{{row.route}}</b></span>   <span>Графік: <b>{{row.graph}}</b></span></p>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div ng-if="error !== 0" class="add-order-error">
+                <h4>{{error}}</h4>
+            </div>
+            <div ng-if="error == 0" class="md-dialog-content">
+
+                <!------------------------------------------------------------------------------------------------------------------------->
+                <div id="ao-step-2" class="ao-step"  ng-if="order.type == 0">
+                    <div class="left step-inner-block">
+                        <div class="in-step">
+                            <!--<p>{{lang.words['order_w_time']}}</p>-->
+                            <div class="last-inner">
+                                <span class="auto-lable">Початок зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                        <!--&lt;!&ndash;<label>{{lang.words['order_w_start']}}</label>&ndash;&gt;-->
+                                        <!--<input ng-model="order.workshift_1.time.from" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_1.time.from | sliceTime}}</span>
+                                </div>
+                            </div>
+                            <div class="last-inner">
+                                <span class="auto-lable">Кінець зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                        <!--&lt;!&ndash;<label>{{lang.words['order_w_end']}}</label>&ndash;&gt;-->
+                                        <!--<input ng-model="order.workshift_1.time.to" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_1.time.to | sliceTime}}</span>
+                                </div>
+                            </div>
+                            <div><p>Тривалість зміни: {{order.workshift_1.time.work_time.hour}} год. {{order.workshift_1.time.work_time.minutes}} хв.</p></div>
+                        </div>
+
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Vehicle']}}:</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="veh-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedVItem1"
+                                                 md-search-text="searchVText1"
+                                                 md-items="item in queryVehicleSearch(searchVText1)"
+                                                 md-item-text="'(' + item.board_number + ') ' + item.state_number"
+                                                 md-selected-item-change="selectedVehicleChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Бортовий/державний номер"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                              <span class="item-title">
+                                <span><strong>({{item.board_number}})</strong> {{item.state_number}} </span>
+                              </span>
+                                        <span class="item-metadata">
+                                <span class="item-metastat">
+                                  <strong>{{item.name}}</strong>
+                                </span>
+                              </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Driver']}}:</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="drv-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedDItem1"
+                                                 md-search-text="searchDText1"
+                                                 md-items="item in queryDriverSearch(searchDText1)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedDriverChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                              <span class="item-title">
+                                <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                              </span>
+                                        <span class="item-metadata">
+                                <span class="item-metastat">
+                                  <strong>{{item.tname}}</strong>
+                                </span>
+                              </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+
+                        </div>
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Conductor']}}:</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="con-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedCItem1"
+                                                 md-search-text="searchCText1"
+                                                 md-items="item in queryConductorSearch(searchCText1)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedConductorChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                              <span class="item-title">
+                                <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                              </span>
+                                        <span class="item-metadata">
+                                <span class="item-metastat">
+                                  <strong>{{item.tname}}</strong>
+                                </span>
+                              </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="right step-inner-block"></div>
+                </div>
+
+            <!------------------------------------------------------------------------------------------------------------------------->
+                <div id="ao-step-2" class="ao-step"  ng-if="order.type > 0">
+                    <div class="step-inner-block-full">
+
+                    </div>
+
+                    <div class="left step-inner-block">
+                        <div class="in-step"><p>{{lang.words['Workshift']}} 1</p></div>
+
+                        <div class="in-step">
+                            <div class="last-inner">
+                                <span class="auto-lable">Початок зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                    <!--<input aria-label="w1Time1" ng-model="order.workshift_1.time.from" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_1.time.from | sliceTime}}</span>
+                                </div>
+                            </div>
+                            <div class="last-inner">
+                                <span class="auto-lable">Кінець зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                    <!--<input aria-label="w1Time2" ng-model="order.workshift_1.time.to" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_1.time.to | sliceTime}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="in-step implode">
+                            <p>Обід 1: {{order.workshift_1.time.dinner[1].from | sliceTimeO}} / {{order.workshift_1.time.dinner[1].duration}} хв.</p>
+                            <p>Обід 2: {{order.workshift_1.time.dinner[2].from | sliceTimeO}} / {{order.workshift_1.time.dinner[2].duration}} хв.</p>
+                            <p>Марка ТЗ: {{order.workshift_1.use.veh}}</p>
+                            <p>Робота на лінії: <b>{{order.workshift_1.time.work_time.hour}}:{{order.workshift_1.time.work_time.minutes}}</b></p>
+                            <p>ПЗЧ: <b>25 хв</b></p>
+                        </div>
+
+
+
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Vehicle']}}:</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="veh-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedVItem1"
+                                                 md-search-text="searchVText1"
+                                                 md-items="item in queryVehicleSearch(searchVText1)"
+                                                 md-item-text="'(' + item.board_number + ') ' + item.state_number"
+                                                 md-selected-item-change="selectedVehicleChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Бортовий/державний номер"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                            <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.board_number}})</strong> {{item.state_number}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.name}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Driver']}}</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="drv-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedDItem1"
+                                                 md-search-text="searchDText1"
+                                                 md-items="item in queryDriverSearch(searchDText1)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedDriverChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                        <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.tname}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+
+                        </div>
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Conductor']}}</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="con-auto va1"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedCItem1"
+                                                 md-search-text="searchCText1"
+                                                 md-items="item in queryConductorSearch(searchCText1)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedConductorChange(item, 1)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                        <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.tname}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+
+                        <div class="in-step divider"></div>
+                        <div class="in-step">
+                            <p>Зміна 2</p>
+                            <ul class="sub-wsft">
+                                <li style="width: 100px;">
+                                    <div>м-т/вип</div>
+                                    <div>
+                                        <md-input-container class="md-block">
+                                            <input required md-no-asterisk name="changeRoute" ng-model="order.workshift_1.change_data.route">
+                                        </md-input-container>
+                                        <span>/</span>
+                                        <md-input-container class="md-block">
+                                            <input ng-change="loadSubGraph()" required md-no-asterisk name="changeGraph" ng-model="order.workshift_1.change_data.graph">
+                                        </md-input-container>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>Початок</div>
+                                    <div>{{order.workshift_1.change_data.time.from | sliceTime}}</div>
+                                </li>
+                                <li>
+                                    <div>Кінець</div>
+                                    <div>{{order.workshift_1.change_data.time.to | sliceTime}}</div>
+                                </li>
+                                <li>
+                                    <div>Тривалість</div>
+                                    <div>{{order.workshift_1.change_data.time.work_time.hour}}:{{order.workshift_1.change_data.time.work_time.minutes}}</div>
+                                </li>
+                            </ul>
+
+                            <p>Загальна тривалість : {{order.workshift_1.change_data.time.work_time.all}}</p>
+                        </div>
+                        <div class="in-step"></div>
+                        <div class="in-step"></div>
+
+                    </div>
+
+                    <div class="right step-inner-block">
+                        <div class="in-step"><p>{{lang.words['Workshift']}} 2</p></div>
+
+                        <div class="in-step">
+                            <div class="last-inner">
+                                <span class="auto-lable">Початок зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                    <!--<input aria-label="w2Time1" ng-model="order.workshift_2.time.from" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_2.time.from | sliceTime}}</span>
+                                </div>
+                            </div>
+                            <div class="last-inner">
+                                <span class="auto-lable">Кінець зміни:</span>
+                                <div class="time-input">
+                                    <!--<md-input-container class="md-block">-->
+                                    <!--<input aria-label="w2Time2" ng-model="order.workshift_2.time.to" type="time">-->
+                                    <!--</md-input-container>-->
+                                    <span>{{order.workshift_2.time.to | sliceTime}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="in-step implode">
+                            <p>Обід 1: {{order.workshift_2.time.dinner[1].from | sliceTimeO}} / {{order.workshift_2.time.dinner[1].duration}} хв.</p>
+                            <p>Обід 2: {{order.workshift_2.time.dinner[2].from | sliceTimeO}} / {{order.workshift_2.time.dinner[2].duration}} хв.</p>
+                            <p>Марка ТЗ: {{order.workshift_2.use.veh}}</p>
+                            <p>Робота на лінії: <b>{{order.workshift_2.time.work_time.hour}}:{{order.workshift_2.time.work_time.minutes}}</b></p>
+                            <p>ПЗЧ:
+                                <md-input-container class="md-block ar-time">
+                                    <input required md-no-asterisk name="arTime" ng-model="order.workshift_2.time.art">
+                                </md-input-container>
+                                хв
+                            </p>
+                        </div>
+
+
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Vehicle']}}:</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="veh-auto va2"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedVItem2"
+                                                 md-search-text="searchVText2"
+                                                 md-items="item in queryVehicleSearch(searchVText2)"
+                                                 md-item-text="'(' + item.board_number + ') ' + item.state_number"
+                                                 md-selected-item-change="selectedVehicleChange(item, 2)"
+                                                 md-min-length="0"
+                                                 placeholder="Бортовий/державний номер"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                            <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.board_number}})</strong> {{item.state_number}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.name}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Driver']}}</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="drv-auto va2"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedDItem2"
+                                                 md-search-text="searchDText2"
+                                                 md-items="item in queryDriverSearch(searchDText2)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedDriverChange(item, 2)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                    <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.tname}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+
+                        </div>
+                        <div class="in-step">
+                            <span class="auto-lable">{{lang.words['Conductor']}}</span>
+                            <div class="auto-input">
+                                <md-autocomplete class="con-auto va2"
+                                                 md-no-cache="noCache"
+                                                 md-selected-item="selectedCItem2"
+                                                 md-search-text="searchCText2"
+                                                 md-items="item in queryConductorSearch(searchCText2)"
+                                                 md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                                 md-selected-item-change="selectedConductorChange(item, 2)"
+                                                 md-min-length="0"
+                                                 placeholder="Прізвище/Т.№"
+                                                 md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                    <span class="item-title">
+                    <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                        <span><strong>({{item.basic_number}})</strong> {{item.name}} </span>
+                                    </span>
+                                        <span class="item-metadata">
+                                        <span class="item-metastat">
+                                            <strong>{{item.tname}}</strong>
+                                        </span>
+                                    </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" class="dialog-bottom">
+            <!--<div class="bottom-graph-info">-->
+                <!--<span>{{row.route}} / {{row.graph}}</span>-->
+            <!--</div>-->
+            <!--<div  ng-if="error == 0" class="in-step">-->
+                <!--<span>{{lang.words['date_of_order']}}</span>-->
+                <!--<md-datepicker ng-change="setOrderDate()" ng-model="data.OrderDate" md-placeholder="{{lang.words['date_of_order']}}"></md-datepicker>-->
+            <!--</div>-->
+            <span flex></span>
+            <!--{{inputError}}-->
+            <md-button ng-if="error == 0 && inputError == 0" ng-click="saveOrder()" aria-label="Confirm">
+                {{lang.words['Save']}}
+            </md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,3510 @@
+/* line 3, ../../sass/_loginform.scss */
+.login-form .dialog-main-login {
+  width: 400px !important;
+  max-width: 400px;
+}
+/* line 7, ../../sass/_loginform.scss */
+.login-form .dialog-main-login input {
+  width: 100%;
+}
+/* line 11, ../../sass/_loginform.scss */
+.login-form .dialog-main-login .container-user,
+.login-form .dialog-main-login .container-pass,
+.login-form .dialog-main-login .container-lang {
+  width: 100%;
+}
+
+/* line 5, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left {
+  transition: none;
+  width: 100%;
+  display: flex;
+  border: solid 1px;
+  height: calc(100% - 75px);
+  border: none;
+}
+/* line 12, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-content-left {
+  flex: 1;
+  overflow: auto;
+}
+/* line 16, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left {
+  display: flex;
+  border: none;
+  min-width: 0;
+}
+/* line 21, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider {
+  min-width: 14px;
+  border: solid 1px;
+  border: none;
+  position: relative;
+  background-color: rgba(130, 146, 160, 0.24);
+  /* background-color: #1e5799; // Old browsers
+   @include filter-gradient(#1e5799, #7db9e8, horizontal); // IE6-9
+   @include background-image(linear-gradient(left,  #1e5799 0%,#2989d8 50%,#1e5799 100%));
+  */
+}
+/* line 32, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider .ml-panel-button:hover {
+  background-color: rgba(23, 22, 22, 0.8);
+}
+/* line 36, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider .ml-panel-button {
+  z-index: 40;
+  min-width: 14px;
+  width: 14px;
+  border: none;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  overflow: hidden;
+  background-color: rgba(23, 22, 22, 0.5);
+  border-radius: 3px 0px 0px 3px;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+/* line 52, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider .ml-panel-button .button-panel {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-image: url("img/arrow_left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 62, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider .ml-panel-button .button-panel:focus {
+  outline: 0;
+}
+/* line 67, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider.panel-collapsed {
+  -moz-transition: all 0.9s linear 0.4s;
+  -webkit-transition: all 0.9s linear 0.4s;
+  -o-transition: all 0.9s linear 0.4s;
+  transition: all 0.9s linear 0.4s;
+  width: 0px;
+  min-width: 0px;
+}
+/* line 74, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider.panel-collapsed .ml-panel-button:hover {
+  background-color: rgba(23, 22, 22, 0.8);
+}
+/* line 77, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider.panel-collapsed .ml-panel-button {
+  border-radius: 0px 3px 3px 0px;
+  background-color: rgba(23, 22, 22, 0.5);
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+/* line 84, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider.panel-collapsed .ml-panel-button .button-panel {
+  background-image: url("img/arrow_right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 90, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-slider.panel-collapsed .ml-panel-button .button-panel:focus {
+  outline: 0;
+}
+/* line 93, ../../sass/_ml_sidebar_left.scss */
+.ml-sidebar-left .ml-panel-left .panel-content {
+  overflow: hidden;
+  flex: 1;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* line 7, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom {
+  width: 100%;
+  display: flex;
+  border: none;
+  flex-direction: column-reverse;
+  height: 100%;
+}
+/* line 13, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-content-bottom {
+  flex: 1;
+  overflow-y: hidden;
+}
+/* line 17, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  border: none;
+  min-height: 14px;
+  overflow: hidden;
+}
+/* line 24, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider {
+  min-height: 14px;
+  position: relative;
+  background-color: rgba(130, 146, 160, 0.24);
+  overflow: visible;
+  background-color: rgba(130, 146, 160, 0.24);
+}
+/* line 31, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider .ml-panel-button:hover {
+  background-color: rgba(23, 22, 22, 0.8);
+}
+/* line 34, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider .ml-panel-button {
+  overflow: hidden;
+  min-width: 70px;
+  width: 70px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  border-radius: 0px 0px 3px 3px;
+  background-color: rgba(23, 22, 22, 0.5);
+}
+/* line 45, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider .ml-panel-button .button-panel {
+  width: 70px;
+  height: 14px;
+  border: none;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-image: url("img/arrow_down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 57, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider .ml-panel-button .button-panel:focus {
+  outline: 0;
+}
+/* line 61, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider.panel-collapsed {
+  -moz-transition: all 0.9s ease 0.4s;
+  -webkit-transition: all 0.9s ease 0.4s;
+  -o-transition: all 0.9s ease 0.4s;
+  transition: all 0.9s ease 0.4s;
+  background-color: rgba(18, 19, 21, 0.71);
+}
+/* line 68, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider.panel-collapsed .ml-panel-button:hover {
+  background-color: rgba(23, 22, 22, 0.8);
+}
+/* line 71, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider.panel-collapsed .ml-panel-button {
+  background-color: rgba(23, 22, 22, 0.5);
+  border-radius: 3px 3px 0px 0px;
+}
+/* line 74, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider.panel-collapsed .ml-panel-button .button-panel {
+  background-image: url("img/arrow_up.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 79, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-slider.panel-collapsed .ml-panel-button .button-panel:focus {
+  outline: 0;
+}
+/* line 82, ../../sass/_ml_sidebar_bottom.scss */
+.ml-sidebar-bottom .ml-panel-bottom .panel-content {
+  overflow: auto;
+  flex: 1;
+}
+
+/* line 2, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  border: solid 1px;
+}
+/* line 8, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-content-right {
+  flex: 1;
+}
+/* line 11, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right {
+  display: flex;
+  flex-direction: row-reverse;
+  border: none;
+  min-width: 30px;
+  overflow: hidden;
+}
+/* line 17, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider {
+  min-width: 30px;
+  border: solid 1px;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  background-color: #1e5799;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF1E5799', endColorstr='#FF7DB9E8');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMjk4OWQ4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWU1Nzk5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #1e5799), color-stop(50%, #2989d8), color-stop(100%, #1e5799));
+  background-image: -moz-linear-gradient(left, #1e5799 0%, #2989d8 50%, #1e5799 100%);
+  background-image: -webkit-linear-gradient(left, #1e5799 0%, #2989d8 50%, #1e5799 100%);
+  background-image: linear-gradient(to right, #1e5799 0%, #2989d8 50%, #1e5799 100%);
+}
+/* line 26, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider .ml-panel-button {
+  min-width: 30px;
+  width: 30px;
+  border: none;
+  height: 70px;
+  background: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+}
+/* line 35, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider .ml-panel-button button {
+  border-radius: 00px 30px 30px 00px;
+  width: 95%;
+  height: 100%;
+  border: none;
+  -moz-transition: all 0.3s ease 0.4s;
+  -webkit-transition: all 0.3s ease 0.4s;
+  -o-transition: all 0.3s ease 0.4s;
+  transition: all 0.3s ease 0.4s;
+  background-image: url("img/arrow_right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 48, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider .ml-panel-button button:focus {
+  outline: 0;
+}
+/* line 53, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider.panel-collapsed {
+  -moz-transition: all 0.9s ease 0.4s;
+  -webkit-transition: all 0.9s ease 0.4s;
+  -o-transition: all 0.9s ease 0.4s;
+  transition: all 0.9s ease 0.4s;
+}
+/* line 59, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider.panel-collapsed .ml-panel-button button {
+  border-radius: 30px 0px 0px 30px;
+  background-image: url("img/arrow_left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 65, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-slider.panel-collapsed .ml-panel-button button:focus {
+  outline: 0;
+}
+/* line 68, ../../sass/_ml_sidebar_right.scss */
+.ml-sidebar-right .ml-panel-right .panel-content {
+  overflow: hidden;
+  flex: 1;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* line 1, ../../sass/_select-countdown.scss */
+.select-countdown {
+  width: 150px;
+}
+/* line 5, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value.md-select-placeholder span {
+  visibility: visible;
+}
+/* line 10, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span.md-select-icon {
+  visibility: visible;
+}
+/* line 13, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span {
+  visibility: collapse;
+  -moz-transition: width 100000s ease;
+  -webkit-transition: width 10000s ease;
+  -o-transition: width 10000s ease;
+  transition: width 10000s ease;
+}
+/* line 20, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span div.md-text {
+  visibility: visible;
+}
+/* line 23, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span div.md-text ~ div.md-text {
+  display: none;
+}
+/* line 26, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span div.md-text ~ div.md-text:before {
+  display: none;
+}
+/* line 29, ../../sass/_select-countdown.scss */
+.select-countdown md-select md-select-value span div.md-text + * {
+  display: none;
+}
+
+/* line 1, ../../sass/_mainpage-header.scss */
+.mainpage-header {
+  background-color: #106cc8;
+  color: rgba(255, 255, 255, 0.9);
+  height: 50px;
+  display: flex;
+}
+/* line 5, ../../sass/_mainpage-header.scss */
+.mainpage-header .header-logo-wrapper {
+  width: 260px;
+}
+/* line 9, ../../sass/_mainpage-header.scss */
+.mainpage-header .header-text {
+  font-weight: bold;
+  line-height: 50px;
+  font-size: 23px;
+  letter-spacing: 5px;
+}
+/* line 18, ../../sass/_mainpage-header.scss */
+.mainpage-header .toolbar-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+/* line 22, ../../sass/_mainpage-header.scss */
+.mainpage-header .toolbar-wrapper .button-header-menu {
+  margin-top: 5px;
+}
+/* line 26, ../../sass/_mainpage-header.scss */
+.mainpage-header .toolbar-wrapper .user-info-wraper {
+  margin-right: 10px;
+  line-height: 50px;
+}
+/* line 29, ../../sass/_mainpage-header.scss */
+.mainpage-header .toolbar-wrapper .user-info-wraper img.header-logo-user {
+  height: 25px;
+  margin-top: -3px;
+  display: inline-block;
+}
+/* line 34, ../../sass/_mainpage-header.scss */
+.mainpage-header .toolbar-wrapper .user-info-wraper .header-user-name {
+  display: inline-block;
+  line-height: 50px;
+}
+
+/* line 43, ../../sass/_mainpage-header.scss */
+.select-lang-image {
+  margin-right: 15px;
+}
+
+/* line 47, ../../sass/_mainpage-header.scss */
+.button-logout-header-menu {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* line 1, ../../sass/_mainpage-footer.scss */
+.mainpage-footer {
+  height: 25px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #106cc8;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 25px;
+}
+/* line 8, ../../sass/_mainpage-footer.scss */
+.mainpage-footer a, .mainpage-footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 8, ../../sass/_FullPopupLoader.scss */
+.popup-loader {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+}
+/* line 20, ../../sass/_FullPopupLoader.scss */
+.popup-loader .content-popup-loader {
+  height: 100%;
+  vertical-align: middle;
+  position: relative;
+}
+/* line 25, ../../sass/_FullPopupLoader.scss */
+.popup-loader .content-popup-loader md-progress-circular.ng-isolate-scope.md-mode-indeterminate {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+}
+
+/* line 2, ../../sass/_grid-wraper.scss */
+.grid-wraper {
+  height: 100%;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* line 9, ../../sass/_grid-wraper.scss */
+.grid-wraper .grid-hover-button {
+  position: absolute;
+  display: block;
+  right: 20px;
+  bottom: 120px;
+}
+/* line 17, ../../sass/_grid-wraper.scss */
+.grid-wraper #main-grid-wraper {
+  height: calc(100% - 50px);
+  width: calc(100% - 5px);
+}
+/* line 25, ../../sass/_grid-wraper.scss */
+.grid-wraper #main-grid {
+  max-width: 100%;
+  height: 100% !important;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 35, ../../sass/_grid-wraper.scss */
+.grid-wraper #main-grid .ng-scope [name="inputForm"] input[type="text"], .grid-wraper #main-grid .ng-scope [name="inputForm"] select, .grid-wraper #main-grid .ng-scope [name="inputForm"] input[type="number"] {
+  text-align: center;
+  height: 30px;
+  -webkit-box-shadow: inset 0px 0px 14px -1px lime;
+  -moz-box-shadow: inset 0px 0px 14px -1px lime;
+  box-shadow: inset 0px 0px 14px -1px lime;
+}
+
+/* line 48, ../../sass/_grid-wraper.scss */
+.grid-edit {
+  background-color: rgba(130, 146, 160, 0.24);
+  height: 50px;
+}
+
+/* line 52, ../../sass/_grid-wraper.scss */
+.ui-grid-cell {
+  text-align: center;
+  -webkit-box-shadow: inset 0px 0px 14px -1px white;
+  -moz-box-shadow: inset 0px 0px 14px -1px rgba(10, 251, 77, 0.1);
+  box-shadow: inset 0px 0px 14px -1px rgba(10, 251, 77, 0.1);
+}
+
+/* line 63, ../../sass/_grid-wraper.scss */
+.grid-row-edited .ui-grid-cell {
+  -webkit-box-shadow: inset 0px 0px 14px -1px #0f22fa;
+  -moz-box-shadow: inset 0px 0px 14px -1px #0f22fa;
+  box-shadow: inset 0px 0px 14px -1px #0f22fa;
+}
+/* line 69, ../../sass/_grid-wraper.scss */
+.grid-row-edited .ui-grid-cell.grid-cell-edited {
+  -webkit-box-shadow: inset 0px 0px 14px -1px #fa0d0d;
+  -moz-box-shadow: inset 0px 0px 14px -1px #fa0d0d;
+  box-shadow: inset 0px 0px 14px -1px #fa0d0d;
+}
+
+/* line 80, ../../sass/_grid-wraper.scss */
+.grid-row-new .ui-grid-cell {
+  -webkit-box-shadow: inset 0px 0px 14px -1px black;
+  -moz-box-shadow: inset 0px 0px 14px -1px black;
+  box-shadow: inset 0px 0px 14px -1px black;
+}
+
+/* line 1, ../../sass/_grids.scss */
+.page-content-controller {
+  height: calc(100% - 2px);
+}
+
+/* line 6, ../../sass/_grids.scss */
+.page-content-controller > div {
+  height: 100%;
+}
+
+/* line 14, ../../sass/_grids.scss */
+.vehicles-grid-controller {
+  height: 100%;
+}
+/* line 18, ../../sass/_grids.scss */
+.vehicles-grid-controller #vehicles-grid-wraper {
+  height: 100%;
+}
+/* line 22, ../../sass/_grids.scss */
+.vehicles-grid-controller #vehicles-grid-wraper #vehicles-grid {
+  height: 100%;
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+}
+
+/* line 30, ../../sass/_grids.scss */
+.carriers-grid-controller {
+  height: 100%;
+}
+/* line 34, ../../sass/_grids.scss */
+.carriers-grid-controller #carriers-grid-wraper {
+  height: 100%;
+}
+/* line 38, ../../sass/_grids.scss */
+.carriers-grid-controller #carriers-grid-wraper #carriers-grid {
+  height: 100%;
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+}
+
+/* line 46, ../../sass/_grids.scss */
+.parks-grid-controller {
+  height: 100%;
+}
+/* line 50, ../../sass/_grids.scss */
+.parks-grid-controller #parks-grid-wraper {
+  height: 100%;
+}
+/* line 54, ../../sass/_grids.scss */
+.parks-grid-controller #parks-grid-wraper #parks-grid {
+  height: 100%;
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+}
+
+/* line 63, ../../sass/_grids.scss */
+.workers-grid-controller {
+  height: 100%;
+}
+/* line 67, ../../sass/_grids.scss */
+.workers-grid-controller #workers-grid-wraper {
+  height: 100%;
+}
+/* line 71, ../../sass/_grids.scss */
+.workers-grid-controller #workers-grid-wraper #workers-grid {
+  height: 100%;
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+}
+
+/* line 79, ../../sass/_grids.scss */
+.workers-grid-export-controller {
+  height: 100%;
+}
+/* line 83, ../../sass/_grids.scss */
+.workers-grid-export-controller .worker-export-select-wrapper .select-worker-export {
+  width: calc(50% - 60px);
+}
+/* line 86, ../../sass/_grids.scss */
+.workers-grid-export-controller .worker-export-select-wrapper button {
+  display: inline-block;
+}
+/* line 91, ../../sass/_grids.scss */
+.workers-grid-export-controller #workers-grid-export {
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+  height: calc(100% - 70px) !important;
+}
+
+/* line 106, ../../sass/_grids.scss */
+.select-worker-export .select-worker-export-header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  padding-left: 10.667px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+/* line 117, ../../sass/_grids.scss */
+.select-worker-export .select-worker-export-header .select-header-searchbox {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+/* line 128, ../../sass/_grids.scss */
+.ssupper-div {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 134, ../../sass/_grids.scss */
+.cell-green {
+  color: green;
+}
+
+/* line 139, ../../sass/_grids.scss */
+.cell-red {
+  color: red;
+}
+
+/* line 145, ../../sass/_grids.scss */
+.monitoring-company-grid-controller {
+  height: 100%;
+}
+/* line 148, ../../sass/_grids.scss */
+.monitoring-company-grid-controller #monitoring-company-grid {
+  height: calc(100% - 70px) !important;
+}
+
+/**********************/
+/* line 154, ../../sass/_grids.scss */
+#orders-grid {
+  height: calc(100% - 40px) !important;
+}
+
+/* line 160, ../../sass/_grids.scss */
+.grid-page .grid-header .title {
+  position: relative;
+  height: 35px;
+  line-height: 30px;
+  text-align: center;
+  width: 100% !important;
+  background: #5293d5;
+  box-shadow: 0px 0px 15px black;
+  z-index: 1;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* line 176, ../../sass/_grids.scss */
+#control-line {
+  position: relative;
+  height: 35px;
+  background: lightcyan;
+  border-bottom: 5px solid #d4d4d4;
+  z-index: 9;
+}
+
+/* line 186, ../../sass/_grids.scss */
+#control-line ul {
+  position: relative;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 45px;
+}
+
+/* line 194, ../../sass/_grids.scss */
+#control-line ul li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  border-left: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
+  height: 30px;
+  background: #f4f9bd;
+}
+
+/* line 203, ../../sass/_grids.scss */
+#control-line ul li:last-child {
+  border-right: 1px solid #d4d4d4;
+}
+
+/* line 206, ../../sass/_grids.scss */
+#control-line ul li.button button {
+  margin: 0;
+  padding: 0 7px;
+  height: 100%;
+  background: #faffc2;
+  color: black;
+  transition: .5s;
+  border-radius: 0;
+  transform: scale(1);
+  z-index: 1;
+  box-shadow: 0px 0px 0px black;
+}
+
+/* line 218, ../../sass/_grids.scss */
+#control-line ul li.button button:hover {
+  color: white;
+  transition: .5s;
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0px 0px 10px black;
+}
+
+/* line 226, ../../sass/_grids.scss */
+#control-line ul li.button button span.effect {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #046b96;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: width 0.4s, height 0.4s;
+  transition: width 0.4s, height 0.4s;
+  z-index: -1;
+}
+
+/* line 239, ../../sass/_grids.scss */
+#control-line ul li.button button:hover span.effect {
+  width: 300.5px;
+  height: 300.5px;
+}
+
+/* line 245, ../../sass/_grids.scss */
+#control-line ul li.select {
+  transition: .5s;
+  transform: scale(1);
+  overflow: hidden;
+}
+
+/* line 250, ../../sass/_grids.scss */
+#control-line ul li.select:hover {
+  color: white;
+  transition: .5s;
+  transform: scale(0.9);
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* line 258, ../../sass/_grids.scss */
+#control-line ul li.select span.effect {
+  position: absolute;
+  display: block;
+  left: 100%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #8fb9e4;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: width 0.4s, height 0.4s;
+  transition: width 0.4s, height 0.4s;
+  z-index: -1;
+}
+
+/* line 273, ../../sass/_grids.scss */
+#control-line ul li.select:hover span.effect {
+  width: 350.5px;
+  height: 350.5px;
+}
+
+/* line 281, ../../sass/_grids.scss */
+#control-line ul li.icon-li {
+  text-align: center;
+  padding: 9px 5px;
+  color: yellow;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: fantasy;
+  background: rgba(0, 0, 255, 0.47);
+  box-shadow: 0px 0px 9px black;
+  z-index: 1;
+}
+
+/* line 292, ../../sass/_grids.scss */
+#control-line ul li md-datepicker {
+  display: block;
+  height: 39px;
+}
+
+/* line 296, ../../sass/_grids.scss */
+#control-line ul li md-datepicker button.md-datepicker-button.md-icon-button {
+  display: none;
+}
+
+/* line 297, ../../sass/_grids.scss */
+#control-line ul li md-datepicker .md-datepicker-input-container {
+  height: 100%;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* line 302, ../../sass/_grids.scss */
+#control-line ul li md-datepicker .md-datepicker-input-container input {
+  height: 100%;
+  padding-left: 14px;
+}
+
+/* line 306, ../../sass/_grids.scss */
+#control-line ul li md-datepicker .md-datepicker-input-container button {
+  position: absolute;
+  top: 9px;
+  height: 105%;
+  right: 8px;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  background: #8fb9e3;
+  border-radius: 0;
+  box-shadow: 0px 0px 4px black;
+}
+
+/* line 320, ../../sass/_grids.scss */
+#control-line ul li md-input-container {
+  max-width: 100%;
+  height: 39px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 326, ../../sass/_grids.scss */
+#control-line ul li md-input-container md-select {
+  height: 100%;
+}
+
+/* line 329, ../../sass/_grids.scss */
+#control-line ul li md-input-container md-select .md-select-icon {
+  position: absolute;
+  top: 0px;
+  height: 114%;
+  right: -2px;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  background: #8fb9e3;
+  border-radius: 0;
+  box-shadow: 0px 0px 4px black;
+}
+
+/* line 341, ../../sass/_grids.scss */
+#control-line ul li md-input-container md-select .md-select-icon:after {
+  display: block;
+  content: '\25BC';
+  position: relative;
+  top: 8px;
+  right: 1px;
+  speak: none;
+  font-size: 18px;
+  color: #9e9e00;
+  transform: scaleY(0.5) scaleX(1);
+}
+
+/* line 356, ../../sass/_grids.scss */
+.orders-grid-controller .ui-grid-pager-panel {
+  display: none;
+}
+
+/* line 357, ../../sass/_grids.scss */
+.screen-grid-controller .ui-grid-pager-panel {
+  display: none;
+}
+
+/* line 358, ../../sass/_grids.scss */
+.states-dialog .ui-grid-pager-panel {
+  display: none;
+}
+
+/* line 359, ../../sass/_grids.scss */
+.screen-grid-controller .ui-grid-viewport {
+  height: 100%;
+}
+
+/* line 360, ../../sass/_grids.scss */
+.states-dialog .ui-grid-viewport {
+  height: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* line 362, ../../sass/_grids.scss */
+.grid-page .ui-grid-category {
+  background: rgba(16, 108, 200, 0.46);
+  color: white;
+}
+
+/* line 366, ../../sass/_grids.scss */
+#checkpoint-grid .ui-grid-header-cell-wrapper {
+  background: rgba(16, 108, 200, 0.46);
+  color: white;
+}
+
+/* line 370, ../../sass/_grids.scss */
+.grid-page {
+  position: relative;
+  height: 100%;
+}
+
+/* line 374, ../../sass/_grids.scss */
+#screen-grid .ui-grid-viewport {
+  overflow: hidden !important;
+}
+
+/* line 377, ../../sass/_grids.scss */
+.grid-page .grid {
+  height: calc(100% - 40px) !important;
+}
+
+/* line 380, ../../sass/_grids.scss */
+.grid-page .red-left-border {
+  border-left: 1px solid red;
+}
+
+/* line 382, ../../sass/_grids.scss */
+.grid-page .select-countdown {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 386, ../../sass/_grids.scss */
+#screen-smart-panel {
+  position: absolute;
+  display: block;
+  background: white;
+  height: 100%;
+  width: 14px;
+  top: 50px;
+  right: 0;
+  box-shadow: 0px 0px 15px black;
+  transition: 1s;
+  overflow: hidden;
+}
+
+/* line 398, ../../sass/_grids.scss */
+#smart-screen-expander {
+  display: block;
+  width: 10px;
+  height: 50px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+/* line 409, ../../sass/_grids.scss */
+#screen-smart-panel.expanded {
+  width: 620px;
+  transition: 1s;
+}
+
+/* line 413, ../../sass/_grids.scss */
+#smart-screen-expander:hover {
+  background: rgba(16, 108, 200, 0.46);
+  transition: .5s;
+}
+
+/* line 417, ../../sass/_grids.scss */
+#add-order-dialog md-input-container.md-input-focused label:not(.md-no-float), #add-order-dialog md-input-container.md-input-has-placeholder label:not(.md-no-float), #add-order-dialog md-input-container.md-input-has-value label:not(.md-no-float) {
+  -webkit-transform: translate3d(100px, 35px, 0px) scale(0.75);
+  transform: translate3d(60px, 35px, 0px) scale(0.75);
+  -webkit-transition: width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
+  transition: width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
+  transition: transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
+  transition: transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
+}
+
+/* line 426, ../../sass/_grids.scss */
+#screen-smart-panel .panel-slider {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 100%;
+  z-index: 99;
+  min-width: 14px;
+  border: solid 1px;
+  border: none;
+  position: relative;
+  background-color: rgba(130, 146, 160, 0.24);
+  float: left;
+}
+
+/* line 439, ../../sass/_grids.scss */
+#screen-smart-panel .panel-slider .ml-panel-button {
+  z-index: 40;
+  min-width: 14px;
+  width: 14px;
+  border: none;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  overflow: hidden;
+  background-color: rgba(23, 22, 22, 0.5);
+  border-radius: 3px 0px 0px 3px;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+/* line 456, ../../sass/_grids.scss */
+#screen-smart-panel .panel-slider .ml-panel-button #smart-screen-expander {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-image: url(img/arrow_left.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 465, ../../sass/_grids.scss */
+#clock {
+  position: absolute;
+  display: block;
+  bottom: 55px;
+  left: 0;
+  width: 100%;
+}
+
+/* line 472, ../../sass/_grids.scss */
+#screen-smart-panel:not(.expanded) #clock {
+  display: none;
+}
+
+/* line 476, ../../sass/_grids.scss */
+.clock {
+  position: relative;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  font-family: monaco,consolas,"courier new",monospace;
+  font-size: 3.5rem;
+  line-height: 1.375;
+}
+
+/* line 487, ../../sass/_grids.scss */
+.clock:before,
+.clock:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: ':';
+  z-index: 2;
+  color: #333;
+  padding-top: 10px;
+  font-size: 50px;
+  line-height: 55px;
+}
+
+/* line 500, ../../sass/_grids.scss */
+.clock:before {
+  left: 232px;
+}
+
+/* line 504, ../../sass/_grids.scss */
+.clock:after {
+  right: 232px;
+}
+
+/* line 508, ../../sass/_grids.scss */
+.clock span {
+  width: 50px;
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  padding: 0 .25em;
+  margin: 0 .06125em;
+  z-index: 1;
+  -webkit-transform: perspective(750);
+  -moz-transform: perspective(750);
+  -ms-transform: perspective(750);
+  transform: perspective(750);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 528, ../../sass/_grids.scss */
+.clock span:first-child {
+  margin-left: 0;
+}
+
+/* line 532, ../../sass/_grids.scss */
+.clock span:last-child {
+  margin-right: 0;
+}
+
+/* line 536, ../../sass/_grids.scss */
+.clock span:nth-child(2),
+.clock span:nth-child(4) {
+  margin-right: .3em;
+}
+
+/* line 541, ../../sass/_grids.scss */
+.clock span:nth-child(3),
+.clock span:nth-child(5) {
+  margin-left: .3em;
+}
+
+/* line 546, ../../sass/_grids.scss */
+.clock span:before,
+.clock span:after {
+  position: absolute;
+  padding-top: 5px;
+  font-size: 50px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: #eee;
+  text-shadow: 0 1px 0 #fff;
+  background: #333;
+  border-radius: .125em;
+  outline: 1px solid transparent;
+  /* fix jagged edges in ff */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .75s, opacity .75s;
+  -moz-transition: -moz-transform .75s, opacity .75s;
+  -ms-transition: -ms-transform .75s, opacity .75s;
+  transition: transform .75s, opacity .75s;
+}
+
+/* line 572, ../../sass/_grids.scss */
+.clock span:before {
+  opacity: 1;
+  z-index: 1;
+  content: attr(data-old);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+  -moz-transform: translate3d(0, 0, 0) rotateX(0);
+  -ms-transform: translate3d(0, 0, 0) rotateX(0);
+  transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+/* line 588, ../../sass/_grids.scss */
+.clock span:after {
+  opacity: 0;
+  z-index: 2;
+  content: attr(data-now);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+  -moz-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+  -ms-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+  transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+}
+
+/* line 604, ../../sass/_grids.scss */
+.clock .flip:before {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+  -moz-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+  -ms-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+  transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+}
+
+/* line 612, ../../sass/_grids.scss */
+.clock .flip:after {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+  -moz-transform: translate3d(0, 0, 0) rotateX(0);
+  -ms-transform: translate3d(0, 0, 0) rotateX(0);
+  transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+/* line 621, ../../sass/_grids.scss */
+#SinoptikInformer {
+  width: 606px;
+  margin-left: 14px;
+  box-shadow: 2px 0px 10px black;
+}
+
+/* line 628, ../../sass/_grids.scss */
+#alerts {
+  position: relative;
+  display: block;
+  padding: 0;
+  padding-left: 15px;
+  list-style: none;
+  height: auto;
+  overflow: hidden;
+  margin: 5px 0;
+  border-bottom: 1px solid #106cc8;
+}
+
+/* line 639, ../../sass/_grids.scss */
+#alerts li {
+  margin: 5px 0;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid black;
+}
+
+/* line 650, ../../sass/_grids.scss */
+.cell-green-back div {
+  background: rgba(3, 177, 12, 0.31);
+}
+
+/* line 654, ../../sass/_grids.scss */
+.row-selected .ui-grid-cell div {
+  background: yellowgreen;
+}
+
+/* line 657, ../../sass/_grids.scss */
+.red-cell {
+  background: rgba(255, 0, 0, 0.37);
+}
+
+/* line 660, ../../sass/_grids.scss */
+.green-cell {
+  background: rgba(3, 177, 12, 0.31);
+}
+
+/* line 666, ../../sass/_grids.scss */
+#self-added-manege ul {
+  position: relative;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 10px 5px;
+}
+
+/* line 673, ../../sass/_grids.scss */
+#self-added-manege ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 680, ../../sass/_grids.scss */
+#self-added-manege ul li p {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 691, ../../sass/_grids.scss */
+.yellow-light {
+  background: #e5ff42;
+}
+
+/* line 694, ../../sass/_grids.scss */
+.red-state {
+  border: 2px solid red;
+}
+
+/* line 698, ../../sass/_grids.scss */
+.contextmenu {
+  position: fixed !important;
+}
+
+/* line 701, ../../sass/_grids.scss */
+#workersStatesDialog, #add-order-dialog, md-dialog {
+  position: relative;
+  width: 660px;
+  overflow: hidden;
+  height: auto;
+  left: 0 !important;
+  top: 0 !important;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+/* line 713, ../../sass/_grids.scss */
+#workersStatesDialog form, #add-order-dialog form, md-dialog form {
+  position: relative;
+  display: block;
+  width: auto;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* line 720, ../../sass/_grids.scss */
+#workersStatesDialog .md-toolbar-tools {
+  cursor: move;
+}
+
+/* line 723, ../../sass/_grids.scss */
+#vehiclesStatesDialog {
+  width: 660px;
+  height: auto;
+}
+
+/* line 728, ../../sass/_grids.scss */
+.states-dialog #control-line li md-select {
+  margin: 0;
+  height: 100%;
+}
+
+/* line 732, ../../sass/_grids.scss */
+#add-order-dialog .dialog-bottom {
+  box-shadow: 0px 0px 2px black;
+  z-index: 99;
+}
+
+/* line 736, ../../sass/_grids.scss */
+#add-order-dialog .desc-input.md-input-has-value label:not(.md-no-float) {
+  transform: translate3d(285px, 35px, 0px) scale(0.75);
+  -webkit-transform: translate3d(285px, 35px, 0px) scale(0.75);
+}
+
+/* line 741, ../../sass/_grids.scss */
+#help-icon {
+  position: relative;
+  color: white;
+  font-size: 20px;
+  float: left;
+  margin-right: 15px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  margin-top: 11px;
+  display: block;
+  text-align: center;
+  line-height: 28px;
+  text-decoration: none;
+  transform: rotate(0deg) scale(1);
+  transition: .5s;
+}
+
+/* line 761, ../../sass/_grids.scss */
+#help-icon:hover {
+  transform: rotate(360deg) scale(1.5);
+  transition: .5s;
+}
+
+/* line 771, ../../sass/_grids.scss */
+#orders-viewport .content ul {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 781, ../../sass/_grids.scss */
+#orders-viewport .content ul li {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+/**********************/
+/* line 788, ../../sass/_grids.scss */
+.orders-grid-controller {
+  height: 100%;
+}
+/* line 792, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper {
+  height: 100%;
+}
+/* line 797, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper #orders-grid {
+  width: calc(100% - 2px);
+  min-width: calc(100% - 2px);
+  height: calc(100% - 118px) !important;
+}
+/* line 802, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper #orders-grid .ui-grid-row {
+  clear: both;
+}
+/* line 804, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper #orders-grid .ui-grid-row .expandableRow {
+  width: auto !important;
+}
+/* line 807, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper #orders-grid .ui-grid-row .expandableRow .order-table-row-expanded {
+  height: 350px;
+  width: 866px;
+  overflow: auto;
+  direction: rtl;
+}
+/* line 813, ../../sass/_grids.scss */
+.orders-grid-controller .grid-wraper #orders-grid-wraper #orders-grid .ui-grid-row .expandableRow .order-table-row-expanded .order-table-row-expanded-wrapper {
+  direction: ltr;
+  padding: 3px;
+}
+
+/* line 827, ../../sass/_grids.scss */
+.wrapper-monitoring-header, #orders-grid-wraper {
+  position: relative;
+  overflow: hidden;
+}
+/* line 831, ../../sass/_grids.scss */
+.wrapper-monitoring-header select-countdown, #orders-grid-wraper select-countdown {
+  margin-left: 10px;
+}
+/* line 835, ../../sass/_grids.scss */
+.wrapper-monitoring-header .title, #orders-grid-wraper .title {
+  position: absolute;
+  height: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 70px;
+  font-size: 27px;
+  /* font-weight: bold; */
+  min-width: 600px;
+}
+
+/* line 851, ../../sass/_grids.scss */
+#alerts-wrapper .alerts-dnd-list {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: auto;
+  min-height: 50px;
+}
+
+/* line 861, ../../sass/_grids.scss */
+#alerts-wrapper .alerts-dnd-list li {
+  position: relative;
+  display: block;
+  padding: 5px;
+  background: lightgrey;
+  border: 1px solid black;
+  transform: scale(1);
+  box-shadow: 0px 0px 0px black;
+  transition: .5s;
+  z-index: 1;
+  min-height: 75px;
+}
+
+/* line 873, ../../sass/_grids.scss */
+#alerts-wrapper .alerts-dnd-list li:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0px 0px 15px black;
+  transition: .5s;
+  z-index: 2;
+}
+
+/* line 881, ../../sass/_grids.scss */
+#alerts-zones .row .drop-zone:nth-child(1) .zone-container {
+  border: 7px solid green;
+}
+
+/* line 884, ../../sass/_grids.scss */
+#alerts-zones .row .drop-zone:nth-child(2) .zone-container {
+  border: 7px solid #386280;
+}
+
+/* line 887, ../../sass/_grids.scss */
+#alerts-zones .row .drop-zone:nth-child(3) .zone-container {
+  border: 7px solid #800019;
+}
+
+/*1111111111111111111111*/
+/* line 896, ../../sass/_grids.scss */
+.mainpage-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 9999;
+  box-shadow: 0px -2px 5px black;
+}
+
+/* line 906, ../../sass/_grids.scss */
+#main-viewport {
+  position: relative;
+  display: block;
+  height: calc(100% - 75px);
+  overflow: hidden;
+}
+
+/* line 912, ../../sass/_grids.scss */
+#main-menu-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background: white;
+  height: 100%;
+  width: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+/* line 923, ../../sass/_grids.scss */
+#main-menu-container:hover {
+  width: 280px;
+  transition: .5s;
+}
+
+/* line 927, ../../sass/_grids.scss */
+.menu-expanded {
+  width: 280px;
+  transition: .5s;
+}
+
+/* line 931, ../../sass/_grids.scss */
+#main-menu-container .main-menu-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 10px;
+  height: 100%;
+  background: #5192d5;
+  float: left;
+}
+
+/* line 941, ../../sass/_grids.scss */
+#main-menu-container .main-menu {
+  display: none;
+  position: relative;
+  width: 270px;
+  float: left;
+}
+
+/* line 947, ../../sass/_grids.scss */
+#main-menu-container.menu-expanded .main-menu {
+  display: block;
+}
+
+/* line 950, ../../sass/_grids.scss */
+#page-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+/* line 960, ../../sass/_grids.scss */
+.md-toolbar-tools {
+  position: relative;
+  display: block;
+  background: #5293d6;
+  box-shadow: 0px -1px 5px black;
+}
+
+/* line 967, ../../sass/_grids.scss */
+.md-toolbar-tools h2 {
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 973, ../../sass/_grids.scss */
+#popup-header-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: auto;
+  overflow: hidden;
+  padding-top: 5px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/* line 987, ../../sass/_grids.scss */
+#popup-header-list li {
+  position: relative;
+  display: block;
+  width: 50%;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+}
+
+/* line 998, ../../sass/_grids.scss */
+#popup-header-list li span {
+  font-weight: bold;
+}
+
+/* line 1001, ../../sass/_grids.scss */
+#popup-header-list li select {
+  background: white;
+  border: 1px solid grey;
+  padding: 3px;
+  transition: .5s;
+}
+
+/* line 1008, ../../sass/_grids.scss */
+#popup-header-list li select:hover {
+  background: rgba(16, 108, 200, 0.32);
+  transition: .5s;
+}
+
+/* line 1013, ../../sass/_grids.scss */
+#add-order-dialog md-toolbar {
+  height: 60px;
+  position: relative;
+  display: block;
+  min-height: 40px;
+}
+
+/* line 1020, ../../sass/_grids.scss */
+.in-step .auto-lable {
+  position: relative;
+  display: inline-block;
+  width: 85px;
+  float: left;
+  margin-right: 5px;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+/* line 1030, ../../sass/_grids.scss */
+.in-step .auto-input {
+  position: relative;
+  width: 260px;
+  display: inline-block;
+  float: left;
+  padding: 2px 0;
+}
+
+/* line 1038, ../../sass/_grids.scss */
+.in-step .time-input {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  float: left;
+  height: 20px;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+/* line 1049, ../../sass/_grids.scss */
+.in-step .time-input span {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+/* line 1054, ../../sass/_grids.scss */
+#add-order-dialog md-dialog-content {
+  padding: 5px 0;
+}
+
+/* line 1058, ../../sass/_grids.scss */
+.step-inner-block-full {
+  position: relative;
+  display: block;
+  padding: 0 5px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 1067, ../../sass/_grids.scss */
+.step-inner-block-full p, .step-inner-block p {
+  text-align: center;
+  background: rgba(16, 108, 200, 0.46);
+}
+
+/* line 1072, ../../sass/_grids.scss */
+.time-input md-input-container {
+  height: 40px;
+}
+
+/* line 1076, ../../sass/_grids.scss */
+.bottom-graph-info {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* line 1084, ../../sass/_grids.scss */
+.orders-grid-controller .grid .ui-grid-row, .orders-grid-controller .grid .ui-grid-cell, .orders-grid-controller .grid .ui-grid-cell .ui-grid-vertical-bar {
+  height: 50px;
+  line-height: 10px;
+  border-bottom: 1px solid red;
+}
+
+/* line 1090, ../../sass/_grids.scss */
+#add-order-dialog {
+  overflow: visible;
+  width: 740px;
+  border: 5px solid #106cc8;
+  float: left;
+}
+
+/* line 1097, ../../sass/_grids.scss */
+#control-line ul li.info span {
+  position: relative;
+  height: 100%;
+  display: block;
+  line-height: 30px;
+  width: 170px;
+  text-align: center;
+  background: white;
+}
+
+/* line 1107, ../../sass/_grids.scss */
+.wi-error {
+  background: red !important;
+}
+
+/* line 1111, ../../sass/_grids.scss */
+#orders-grid .ui-grid-viewport .ui-grid-row {
+  border-bottom: 1px solid black;
+}
+
+/* line 1115, ../../sass/_grids.scss */
+#orders-grid .ui-grid-viewport .ui-grid-row .ui-grid-cell .ui-grid-cell-contents {
+  padding: 0;
+}
+
+/* line 1118, ../../sass/_grids.scss */
+#orders-grid .ui-grid-viewport .ui-grid-row .ui-grid-cell .ui-grid-cell-contents div {
+  padding: 2px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 24px;
+  line-height: 20px;
+}
+
+/* line 1126, ../../sass/_grids.scss */
+#orders-grid .ui-grid-viewport .ui-grid-row .ui-grid-cell .ui-grid-cell-contents div.single {
+  height: 100%;
+  line-height: 40px;
+}
+
+/* line 1130, ../../sass/_grids.scss */
+#orders-grid .ui-grid-viewport .ui-grid-row .ui-grid-cell .ui-grid-cell-contents div:nth-child(1) {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/* line 1135, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+/* line 1144, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list:hover {
+  transition: .5s;
+  background: #7a6080;
+}
+
+/* line 1149, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list ul.sub {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  transition: .5s;
+  left: 0;
+  top: 100%;
+}
+
+/* line 1161, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list:hover ul.sub {
+  display: block;
+  transition: .5s;
+}
+
+/* line 1165, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list ul.sub li {
+  width: 100%;
+  background: greenyellow;
+  height: auto;
+  overflow: hidden;
+  transition: .5s;
+  text-shadow: 0px 0px 1px white;
+}
+
+/* line 1173, ../../sass/_grids.scss */
+.grid-page #control-line .control-menu li.list ul.sub li:hover {
+  transition: .5s;
+  background: green;
+  text-shadow: 2px 2px 2px white;
+}
+
+/* line 1180, ../../sass/_grids.scss */
+#add-order-dialog .md-toolbar-tools .header-mp {
+  color: black;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+/* line 1191, ../../sass/_grids.scss */
+#add-order-dialog .md-toolbar-tools .header-mp span {
+  color: #0021ff;
+}
+
+/* line 1195, ../../sass/_grids.scss */
+#calendarEditPopup {
+  min-width: 350px;
+}
+
+/* line 1199, ../../sass/_grids.scss */
+#calendarEditPopup .ui-grid-pager-panel {
+  display: none;
+}
+
+/* line 1203, ../../sass/_grids.scss */
+#calendarEditPopupHeader {
+  background-color: lightcyan;
+}
+
+/* line 1207, ../../sass/_grids.scss */
+.grid-row-edited .ui-grid-cell {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 1213, ../../sass/_grids.scss */
+.in-step .sub-wsft {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 1223, ../../sass/_grids.scss */
+.in-step .sub-wsft li {
+  position: relative;
+  display: inline-block;
+  width: 22%;
+  margin-left: 6px;
+  height: auto;
+  float: left;
+}
+
+/* line 1231, ../../sass/_grids.scss */
+.in-step li:first-child {
+  margin-left: 0 !important;
+}
+
+/* line 1235, ../../sass/_grids.scss */
+.in-step .sub-wsft li div:first-child {
+  background: #91bbe6;
+  border-bottom: 1px solid grey;
+  text-align: center;
+}
+
+/* line 1240, ../../sass/_grids.scss */
+.in-step .sub-wsft li div:nth-child(2) {
+  overflow: hidden;
+  padding: 5px 0;
+  padding-left: 10px;
+  border-bottom: 1px solid #91bbe6;
+  border-left: 1px solid #91bbe6;
+  border-right: 1px solid #91bbe6;
+  height: 31px;
+}
+
+/* line 1250, ../../sass/_grids.scss */
+.in-step .sub-wsft li div:last-child md-input-container {
+  display: block;
+  height: 20px;
+  width: 35px;
+  margin: 0;
+  float: left;
+  border-bottom: 1px solid #106cc8;
+}
+
+/* line 1258, ../../sass/_grids.scss */
+.in-step .sub-wsft li div:last-child span {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: auto;
+  float: left;
+}
+
+/* line 1265, ../../sass/_grids.scss */
+.in-step .sub-wsft li div:last-child md-input-container input {
+  height: 20px;
+}
+
+/* line 1273, ../../sass/_grids.scss */
+.drv1-error p, .veh1-error p {
+  background: rgba(255, 0, 0, 0.42);
+  margin: 0;
+}
+
+/* line 1277, ../../sass/_grids.scss */
+.drv2-error p, .veh2-error p {
+  background: rgba(255, 0, 0, 0.42);
+  margin: 0;
+}
+
+/* line 1284, ../../sass/_grids.scss */
+.in-step.implode p {
+  margin: 0 !important;
+  background: rgba(187, 255, 0, 0.45);
+}
+
+/* line 1289, ../../sass/_grids.scss */
+md-autocomplete input:not(.md-input) {
+  border-bottom: 2px solid #106cc8;
+}
+
+/* line 1293, ../../sass/_grids.scss */
+#add-order-dialog md-autocomplete md-autocomplete-wrap {
+  box-shadow: none;
+  border: 1px solid rgba(128, 128, 128, 0.49804);
+}
+
+/* line 1298, ../../sass/_grids.scss */
+#add-order-dialog md-autocomplete button {
+  background: rgba(255, 0, 0, 0.43);
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* line 1306, ../../sass/_grids.scss */
+.header-mp span {
+  color: black !important;
+}
+
+/* line 1309, ../../sass/_grids.scss */
+.header-mp span b {
+  color: red !important;
+}
+
+/* line 1313, ../../sass/_grids.scss */
+#add-order-dialog md-dialog-content .md-dialog-content {
+  padding: 12px 2px;
+  min-width: 735px;
+}
+
+/* line 1318, ../../sass/_grids.scss */
+#control-line .control-menu, #control-line .control-menu md-autocomplete,
+#control-line .control-menu md-autocomplete md-autocomplete-wrap,
+#control-line .control-menu md-autocomplete md-autocomplete-wrap input,
+#control-line .control-menu .select md-datepicker {
+  height: 30px;
+}
+
+/* line 1325, ../../sass/_grids.scss */
+.red-state li {
+  margin-left: 5px !important;
+}
+
+/* line 1328, ../../sass/_grids.scss */
+.wsft-error p {
+  background: rgba(255, 0, 0, 0.42);
+  margin: 0;
+}
+
+/* line 1332, ../../sass/_grids.scss */
+#control-line .control-menu li span.up-lable {
+  position: absolute;
+}
+
+/* line 1336, ../../sass/_grids.scss */
+.screen-set-ul {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 200px;
+}
+
+/* line 1344, ../../sass/_grids.scss */
+.screen-set-ul li {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 20px;
+  background: rgba(82, 147, 214, 0.38);
+  margin-bottom: 3px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* line 1364, ../../sass/_grids.scss */
+.screen-set-ul li span {
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+/* line 1370, ../../sass/_grids.scss */
+#screen-grid .ui-grid-header-cell {
+  background: #5293d5;
+  color: white;
+  text-align: center;
+  border-color: white;
+}
+
+/* line 1377, ../../sass/_grids.scss */
+#ms-bottom-screen {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  height: 30px;
+  transition: .5s;
+}
+
+/* line 1386, ../../sass/_grids.scss */
+#ms-bottom-screen .handler {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 30px;
+  background: #f4f9bd;
+  overflow: hidden;
+}
+
+/* line 1394, ../../sass/_grids.scss */
+#ms-bottom-screen .handler span {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 30px;
+  font-weight: bold;
+  color: white;
+  background: #5293d6;
+  border-radius: 20px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  transition: .5s;
+}
+
+/* line 1410, ../../sass/_grids.scss */
+#ms-bottom-screen .handler h6 {
+  position: absolute;
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 6px 0;
+  top: 0;
+}
+
+/* line 1418, ../../sass/_grids.scss */
+#ms-bottom-screen .handler h6:first-child {
+  left: 10%;
+}
+
+/* line 1421, ../../sass/_grids.scss */
+#ms-bottom-screen .handler h6:last-child {
+  right: 10%;
+}
+
+/* line 1424, ../../sass/_grids.scss */
+#ms-bottom-screen .handler:hover span {
+  transition: .5s;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  border-radius: 0px;
+}
+
+/* line 1431, ../../sass/_grids.scss */
+#ms-bottom-screen .body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1436, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block {
+  position: relative;
+  display: inline-block;
+  float: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 49%;
+  margin-left: 1%;
+  height: 90%;
+}
+
+/* line 1450, ../../sass/_grids.scss */
+#ms-bottom-screen.expanded {
+  height: 400px;
+  transition: .5s;
+}
+
+/* line 1455, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* line 1462, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 2px;
+  background: rgba(0, 128, 0, 0.22);
+  margin-bottom: 5px;
+}
+
+/* line 1471, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  float: left;
+  height: 100%;
+  border-left: 1px solid grey;
+}
+
+/* line 1479, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div:nth-child(1) {
+  border-left: none;
+  width: 120px;
+  text-align: center;
+}
+
+/* line 1484, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div:nth-child(2) {
+  width: 200px;
+  text-align: center;
+}
+
+/* line 1488, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div:nth-child(3) {
+  width: 100px;
+  text-align: center;
+}
+
+/* line 1492, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div:nth-child(4) {
+  width: 100px;
+  text-align: center;
+}
+
+/* line 1496, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div span {
+  position: relative;
+  display: block;
+}
+
+/* line 1500, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div.manage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: none;
+  width: 0%;
+  opacity: 0;
+  transition: .5s;
+}
+
+/* line 1509, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li div.manage button {
+  margin: 0;
+  height: 100%;
+  background: #5293d6;
+  color: white;
+  text-transform: none;
+  font-weight: bold;
+}
+
+/* line 1519, ../../sass/_grids.scss */
+#ms-bottom-screen .body .block ul li.show-control div.manage {
+  width: 25%;
+  opacity: 100;
+  transition: .5s;
+}
+
+/* line 1525, ../../sass/_grids.scss */
+.ngdialog {
+  z-index: 99 !important;
+}
+
+/* line 1529, ../../sass/_grids.scss */
+.ar-time {
+  position: relative;
+  display: inline-block !important;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+/* line 1536, ../../sass/_grids.scss */
+.ar-time input {
+  height: 25px;
+}
+
+/* line 1540, ../../sass/_grids.scss */
+.cel-current {
+  background-color: rgba(0, 128, 0, 0.5) !important;
+}
+
+/* line 1544, ../../sass/_grids.scss */
+#mws-popup-window {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+}
+
+/* line 1551, ../../sass/_grids.scss */
+#mws-popup-window li {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* line 1563, ../../sass/_grids.scss */
+#mws-popup-window li:last-child div.btns {
+  position: relative;
+  display: block;
+  float: right;
+  height: 40px;
+  width: 44%;
+}
+
+/* line 1570, ../../sass/_grids.scss */
+#mws-popup-window li:last-child div.btns button {
+  border-radius: 0;
+  position: relative;
+  display: block;
+  margin: 0;
+  float: left;
+  height: 40px;
+  padding: 0;
+}
+
+/* line 1581, ../../sass/_grids.scss */
+#mws-popup-window li:last-child div.btns button:last-child {
+  transition: .5s;
+  opacity: 100;
+  width: 90px;
+  border-left: 2px solid #106cc8;
+  background: darkred;
+  color: white;
+  display: block;
+}
+
+/* line 1590, ../../sass/_grids.scss */
+#mws-popup-window li:last-child md-select {
+  position: relative;
+  float: left;
+  margin: 0px;
+  width: 130px;
+  height: 40px;
+  border-right: 1px solid #106cc8;
+  border-bottom: 2px solid #106cc8;
+}
+
+/* line 1600, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content {
+  padding: 35px 10px 5px 10px !important;
+}
+
+/* line 1604, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content .head-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #106cc8;
+  height: 32px;
+}
+
+/* line 1612, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content .head-block h3 {
+  position: relative;
+  padding: 3px 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+/* line 1621, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content .ngdialog-close {
+  width: 40px;
+  height: 32px;
+  border-radius: 0 !important;
+  background: #106cc8;
+  border: none;
+  transition: .5s;
+}
+
+/* line 1630, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content .ngdialog-close:hover {
+  background: red;
+  transition: .5s;
+}
+
+/* line 1635, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content .ngdialog-close:before {
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* line 1644, ../../sass/_grids.scss */
+.ngdialog-theme-default .ngdialog-content p {
+  text-align: center;
+}
+
+/* line 1648, ../../sass/_grids.scss */
+.md-dialog-container.ui-draggable {
+  position: absolute !important;
+  display: block;
+  top: 40px;
+  height: auto !important;
+  width: auto;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px black;
+  border: 1px solid #106cc8;
+  margin-top: 50px;
+}
+
+/* line 1659, ../../sass/_grids.scss */
+.md-scroll-mask {
+  z-index: -1 !important;
+}
+
+/* line 1663, ../../sass/_grids.scss */
+#vehicles-states-grid .ui-grid-viewport .ui-grid-canvas {
+  max-height: 250px;
+}
+
+/* line 1667, ../../sass/_grids.scss */
+#workers-states-grid .ui-grid-viewport .ui-grid-canvas {
+  max-height: 250px;
+}
+
+/* line 11, ../../sass/_orders.scss */
+table.orders-workshift-table {
+  border: solid 1px black;
+  width: 800px;
+  margin-bottom: 2px;
+}
+/* line 15, ../../sass/_orders.scss */
+table.orders-workshift-table td {
+  padding-left: 5px;
+}
+/* line 18, ../../sass/_orders.scss */
+table.orders-workshift-table tr.table-header-row {
+  border: solid 1px black;
+}
+/* line 20, ../../sass/_orders.scss */
+table.orders-workshift-table tr.table-header-row td {
+  border: solid 1px black;
+  /* box-sizing: content-box; */
+  font-weight: bold;
+}
+/* line 27, ../../sass/_orders.scss */
+table.orders-workshift-table .table-row-worker td {
+  vertical-align: top;
+  border: solid 1px black;
+}
+/* line 32, ../../sass/_orders.scss */
+table.orders-workshift-table span.conductor-number {
+  width: 135px;
+  display: inline-block;
+}
+/* line 36, ../../sass/_orders.scss */
+table.orders-workshift-table span.driver-number {
+  display: inline-block;
+  width: 135px;
+}
+/* line 41, ../../sass/_orders.scss */
+table.orders-workshift-table span.driver-name, table.orders-workshift-table span.conductor-name {
+  width: 368px;
+  display: inline-block;
+  padding-left: 4px;
+}
+/* line 46, ../../sass/_orders.scss */
+table.orders-workshift-table span.driver-time-from, table.orders-workshift-table span.conductor-time-from {
+  width: 125px;
+  display: inline-block;
+  padding-left: 0px;
+}
+/* line 51, ../../sass/_orders.scss */
+table.orders-workshift-table span.driver-time-to, table.orders-workshift-table span.conductor-time-to {
+  width: 130px;
+  display: inline-block;
+  padding-left: 0px;
+}
+
+/* line 58, ../../sass/_orders.scss */
+.dialog-edit-workshift {
+  width: 600px;
+  min-height: 400px;
+}
+/* line 61, ../../sass/_orders.scss */
+.dialog-edit-workshift form {
+  height: 400px;
+}
+/* line 63, ../../sass/_orders.scss */
+.dialog-edit-workshift form md-dialog-content {
+  height: 300px;
+}
+/* line 68, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-workshift {
+  display: flex;
+  align-items: flex-end;
+}
+/* line 71, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-workshift > label {
+  margin-left: 20px;
+  margin-right: 18px;
+  width: 100px;
+}
+/* line 76, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-workshift .select-workshift {
+  margin-bottom: 8px;
+  text-align: center;
+  width: 250px;
+}
+/* line 82, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-workshift button {
+  margin-left: auto;
+}
+/* line 87, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-vehicles {
+  display: flex;
+  align-items: baseline;
+}
+/* line 90, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-vehicles > label {
+  margin-left: 20px;
+  margin-right: 18px;
+  width: 100px;
+}
+/* line 95, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-vehicles .select-vehicles {
+  text-align: center;
+  width: 250px;
+}
+/* line 101, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-drivers {
+  display: flex;
+  align-items: baseline;
+}
+/* line 104, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-drivers > label {
+  margin-left: 20px;
+  margin-right: 18px;
+  width: 100px;
+}
+/* line 109, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-drivers .select-drivers {
+  text-align: center;
+  width: 250px;
+}
+/* line 115, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-conductors {
+  display: flex;
+  align-items: baseline;
+}
+/* line 118, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-conductors > label {
+  margin-left: 20px;
+  margin-right: 18px;
+  width: 100px;
+}
+/* line 123, ../../sass/_orders.scss */
+.dialog-edit-workshift .wrapper-edit-conductors .select-conductors {
+  text-align: center;
+  width: 250px;
+}
+/* line 128, ../../sass/_orders.scss */
+.dialog-edit-workshift .dialog-content-edit-workshift-loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 138, ../../sass/_orders.scss */
+.dialog-edit-workshift .dialog-content-edit-workshift .vehicle-board-number, .dialog-edit-workshift .dialog-content-edit-workshift .driver-number, .dialog-edit-workshift .dialog-content-edit-workshift .conductor-number {
+  flex: 1;
+}
+/* line 141, ../../sass/_orders.scss */
+.dialog-edit-workshift .dialog-content-edit-workshift .vehicle-board-number span, .dialog-edit-workshift .dialog-content-edit-workshift .driver-number span, .dialog-edit-workshift .dialog-content-edit-workshift .conductor-number span {
+  width: 130px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* line 151, ../../sass/_orders.scss */
+.select-workshifts-edit input.select-header-searchbox {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+/* line 155, ../../sass/_orders.scss */
+.select-workshifts-edit input.select-header-searchbox.ng-not-empty {
+  -webkit-box-shadow: inset 0px 0px 6px -1px #0f22fa;
+  -moz-box-shadow: inset 0px 0px 6px -1px #0f22fa;
+  box-shadow: inset 0px 0px 6px -1px #0f22fa;
+}
+/* line 160, ../../sass/_orders.scss */
+.select-workshifts-edit input.select-header-searchbox.ng-empty {
+  -webkit-box-shadow: inset 0px 0px 6px -1px black;
+  -moz-box-shadow: inset 0px 0px 6px -1px black;
+  box-shadow: inset 0px 0px 6px -1px black;
+}
+
+/* line 4, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards {
+  width: 800px;
+  height: 395px;
+  max-height: 395px;
+  min-width: 800px;
+}
+/* line 5, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards .md-toolbar-tools {
+  height: 59px !important;
+  max-height: 59px !important;
+}
+/* line 8, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards .md-toolbar-tools button {
+  margin-left: auto !important;
+}
+/* line 16, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content {
+  padding: 15px;
+}
+/* line 18, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main {
+  display: flex;
+}
+/* line 20, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info {
+  width: calc(100% - 302px);
+  max-width: calc(100% - 302px);
+  margin-right: 15px;
+}
+/* line 24, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .select-worker-wrapper {
+  display: flex;
+  height: 40px;
+}
+/* line 27, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .select-worker-wrapper .label-workers {
+  width: 160px;
+  font-weight: bold;
+  line-height: 40px;
+}
+/* line 32, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .select-worker-wrapper .select-workers {
+  width: calc(100% - 170px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 36, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .select-worker-wrapper .select-workers .ml-select-label {
+  display: none;
+}
+/* line 42, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper > div {
+  display: inline-block;
+  height: 40px;
+}
+/* line 47, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .label-worker-name,
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .label-basic-number,
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .label-workers-views {
+  width: 160px;
+  font-weight: bold;
+  line-height: 40px;
+}
+/* line 54, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .value-worker-name,
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .value-basic-number,
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .current-worker-wrapper .value-workers-views {
+  width: calc(100% - 170px);
+}
+/* line 60, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .card-status-wrapper {
+  display: flex;
+  height: 40px;
+}
+/* line 64, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .card-status-wrapper .label-status {
+  width: 160px;
+  font-weight: bold;
+  line-height: 40px;
+}
+/* line 69, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .card-status-wrapper .select-status {
+  width: calc(100% - 170px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 76, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .smart-card-main-info .button-wrapper {
+  width: 100%;
+}
+/* line 80, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .worker-photo-wrapper {
+  width: 302px;
+  max-width: 302px;
+  position: relative;
+}
+/* line 84, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .worker-photo-wrapper img {
+  width: 100%;
+  height: auto;
+}
+/* line 88, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .smartcard-main .worker-photo-wrapper button.change-photo {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+/* line 95, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing {
+  position: relative;
+  width: 100%;
+  box-sizing: content-box;
+}
+/* line 97, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .background-transparent-block {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 60px;
+  opacity: 0.3;
+  color: #fff;
+  background-color: #ece9e9;
+  text-shadow: #474747 3px 5px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 113, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .button-open-photo {
+  position: absolute;
+}
+/* line 116, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .cancel-change-photo {
+  position: absolute;
+  bottom: -10px;
+  right: 94px;
+}
+/* line 121, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .save-change-photo {
+  position: absolute;
+  bottom: -10px;
+  right: -1px;
+}
+/* line 129, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .image-editing-wrapper {
+  display: flex;
+}
+/* line 131, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .image-editing-wrapper .cropArea {
+  width: calc(100% - 303px) !important;
+  height: 303px !important;
+}
+/* line 135, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .image-editing-wrapper img-crop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+/* line 142, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .image-editing-wrapper .image-result {
+  padding: 7px;
+  width: 303px;
+  height: 303px;
+}
+/* line 146, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing .image-editing-wrapper .image-result img {
+  width: 100%;
+}
+/* line 152, ../../sass/_smartcards.scss */
+.dialog-edit-smartcards md-dialog-content .worker-photo-editing img-crop canvas {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* line 164, ../../sass/_smartcards.scss */
+.smartCards-grid-controller {
+  height: 100%;
+  position: relative;
+}
+/* line 167, ../../sass/_smartcards.scss */
+.smartCards-grid-controller .header {
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 171, ../../sass/_smartcards.scss */
+.smartCards-grid-controller .header .title {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  line-height: 70px;
+  top: 0;
+  text-align: center;
+  font-size: 27px;
+  min-width: 560px;
+}
+/* line 181, ../../sass/_smartcards.scss */
+.smartCards-grid-controller .header button.update {
+  z-index: 1;
+  margin-top: 27px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+/* line 189, ../../sass/_smartcards.scss */
+.smartCards-grid-controller .grid-smart-cards {
+  height: calc(100% - 75px) !important;
+}
+/* line 193, ../../sass/_smartcards.scss */
+.smartCards-grid-controller button.create {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+}
+
+/* line 203, ../../sass/_smartcards.scss */
+.workers-grid-controller #workers-grid {
+  height: calc(100% - 75px) !important;
+}
+
+/* line 1, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog {
+  width: auto;
+  border: 5px solid #106cc8;
+}
+
+/* line 6, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+/* line 12, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block {
+  position: relative;
+  display: inline-block;
+  width: 362px;
+  float: left;
+  padding: 0 5px;
+}
+
+/* line 19, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .left {
+  border-right: 2px solid grey;
+}
+
+/* line 25, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block .in-step:last-child {
+  padding-bottom: 10px;
+}
+
+/* line 28, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block .in-step {
+  position: relative;
+  display: block;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 35, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block .in-step p {
+  position: relative;
+  display: block;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+/* line 43, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block .in-step .last-inner md-input-container.md-block {
+  margin: 0;
+}
+
+/* line 46, ../../sass/_popup-windows-chekpoints.scss */
+#add-order-dialog .md-dialog-content .ao-step .step-inner-block .in-step .last-inner {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+
+/* line 53, ../../sass/_popup-windows-chekpoints.scss */
+.md-autocomplete-suggestions-container ul.md-autocomplete-suggestions li {
+  background: white;
+  transition: .5s;
+  border-bottom: 1px solid darkgrey;
+}
+
+/* line 58, ../../sass/_popup-windows-chekpoints.scss */
+.md-autocomplete-suggestions-container ul.md-autocomplete-suggestions li:hover {
+  background: #5293d6;
+  color: white;
+  transition: .5s;
+  height: 55px;
+  font-size: 16px;
+}
+
+/* line 66, ../../sass/_popup-windows-chekpoints.scss */
+.md-autocomplete-suggestions-container ul.md-autocomplete-suggestions md-autocomplete-parent-scope .item-title {
+  position: relative;
+  width: 100%;
+  display: block;
+  height: 50%;
+}
+
+/* line 72, ../../sass/_popup-windows-chekpoints.scss */
+.md-autocomplete-suggestions-container ul.md-autocomplete-suggestions md-autocomplete-parent-scope .item-title span.ng-binding {
+  position: relative;
+  display: block;
+  height: 100%;
+  line-height: 24px;
+}
+
+/* line 78, ../../sass/_popup-windows-chekpoints.scss */
+.md-autocomplete-suggestions-container ul.md-autocomplete-suggestions md-autocomplete-parent-scope .item-metadata {
+  position: relative;
+  display: block;
+  line-height: 20px;
+}
+
+/* line 89, ../../sass/_popup-windows-chekpoints.scss */
+.mcChekpointSingle {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 94, ../../sass/_popup-windows-chekpoints.scss */
+.mcChekpointSingle .left {
+  position: relative;
+  display: block;
+  width: 300px;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 101, ../../sass/_popup-windows-chekpoints.scss */
+.mcChekpointSingle img {
+  width: 300px;
+  height: 300px;
+}
+
+/* line 105, ../../sass/_popup-windows-chekpoints.scss */
+.mcChekpointSingle .right {
+  position: relative;
+  display: block;
+  width: 50%;
+  float: left;
+  padding: 0 10px;
+}
+
+/* line 112, ../../sass/_popup-windows-chekpoints.scss */
+.mcChekpointSingle .right h3 {
+  margin-top: 0;
+}
+
+/* line 120, ../../sass/_popup-windows-chekpoints.scss */
+#last-mc-grid {
+  height: auto !important;
+  padding-bottom: 50px;
+}
+
+/* line 124, ../../sass/_popup-windows-chekpoints.scss */
+#last-mc-grid .ui-grid-viewport {
+  height: auto;
+}
+
+/* line 127, ../../sass/_popup-windows-chekpoints.scss */
+#last-mc-grid .ui-grid-pager-panel {
+  display: none;
+}
+
+/* line 130, ../../sass/_popup-windows-chekpoints.scss */
+#chekpoints-loading-wraper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.91);
+  z-index: 9;
+}
+
+/* line 140, ../../sass/_popup-windows-chekpoints.scss */
+.medical-service-dialog, .pg-dialog, .tcd-dialog {
+  min-width: 700px;
+  min-height: 500px;
+}
+/* line 144, ../../sass/_popup-windows-chekpoints.scss */
+.medical-service-dialog form, .pg-dialog form, .tcd-dialog form {
+  min-height: 500px;
+}
+/* line 147, ../../sass/_popup-windows-chekpoints.scss */
+.medical-service-dialog form md-dialog-content, .pg-dialog form md-dialog-content, .tcd-dialog form md-dialog-content {
+  height: 100%;
+}
+/* line 150, ../../sass/_popup-windows-chekpoints.scss */
+.medical-service-dialog form md-dialog-content h2.error-message, .pg-dialog form md-dialog-content h2.error-message, .tcd-dialog form md-dialog-content h2.error-message {
+  line-height: 400px;
+  text-align: center;
+  margin: 0px;
+}
+
+/* line 163, ../../sass/_popup-windows-chekpoints.scss */
+.tcd-dialog md-dialog-content span.not-exist-workshift {
+  font-size: 20px;
+  color: red;
+}
+
+/* line 171, ../../sass/_popup-windows-chekpoints.scss */
+.loader {
+  position: relative;
+  margin: 13% auto;
+  width: 160px;
+  height: 160px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #8c982b;
+}
+/* line 180, ../../sass/_popup-windows-chekpoints.scss */
+.loader:before {
+  content: '';
+  width: 164px;
+  height: 164px;
+  display: block;
+  position: absolute;
+  border: 2px solid #dd2c00;
+  border-radius: 50%;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  clip: rect(0px, 35px, 35px, 0px);
+  z-index: 10;
+  animation: rotate infinite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+/* line 200, ../../sass/_popup-windows-chekpoints.scss */
+.loader:after {
+  content: '';
+  width: 164px;
+  height: 164px;
+  display: block;
+  position: absolute;
+  border: 2px solid #00f329;
+  border-radius: 50%;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  clip: rect(0px, 164px, 150px, 0px);
+  z-index: 9;
+  animation: rotate2 3s linear infinite;
+}
+
+/* line 224, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon-container {
+  position: relative;
+  top: 33px;
+  left: 41px;
+  border-radius: 50%;
+}
+
+/* line 231, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon {
+  position: absolute;
+  width: 40px;
+  height: 23px;
+  background-color: #106cc8;
+  list-style: none;
+}
+/* line 237, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 11.5px solid #106cc8;
+}
+/* line 248, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 11.5px solid #106cc8;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_1 {
+  top: 0px;
+  left: 0px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 0.21429s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_2 {
+  top: 0px;
+  left: 42px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 0.42857s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_3 {
+  top: 36px;
+  left: 63px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 0.64286s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_4 {
+  top: 72px;
+  left: 42px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 0.85714s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_5 {
+  top: 72px;
+  left: 0px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 1.07143s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_6 {
+  top: 36px;
+  left: -21px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 1.28571s;
+}
+
+/* line 272, ../../sass/_popup-windows-chekpoints.scss */
+.hexagon.hex_7 {
+  top: 36px;
+  left: 21px;
+  animation: Animasearch 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes Animasearch {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  15%,
+  50% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    clip: rect(0px, 35px, 35px, 0px);
+  }
+  50% {
+    clip: rect(0px, 40px, 40px, 0px);
+  }
+  100% {
+    transform: rotate(360deg);
+    clip: rect(0px, 35px, 35px, 0px);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+    clip: rect(0px, 164px, 150px, 0px);
+  }
+  50% {
+    clip: rect(0px, 164px, 0px, 0px);
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(720deg);
+    clip: rect(0px, 164px, 150px, 0px);
+  }
+}
+@keyframes rotate3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 1, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards {
+  width: 600px;
+  height: 350px;
+}
+/* line 3, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards md-dialog-content {
+  height: 100%;
+}
+/* line 11, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .md-toolbar-tools button.cancel {
+  margin-left: auto;
+}
+/* line 16, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards {
+  height: calc(100% - 30px);
+}
+/* line 19, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .empty-smartcard-dialog {
+  height: 100%;
+  margin: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 229px;
+  text-align: center;
+}
+/* line 29, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog {
+  height: 100%;
+  margin: 15px;
+}
+/* line 33, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .label-card-number {
+  display: inline-block;
+  width: 200px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 41, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .value-card-number {
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+/* line 49, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.new .label-status {
+  display: inline-block;
+  width: 200px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 57, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.new .value-status {
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+/* line 63, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.new .button-wrapper {
+  margin-top: 140px;
+}
+/* line 71, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .label-worker-name,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .label-worker-number,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .label-workers-views,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .label-status {
+  width: 200px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 81, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .value-worker-name,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .value-worker-number,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .value-workers-views,
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .wrapper-worker-info .value-status {
+  display: inline-block;
+  width: calc(100% - 210px);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+/* line 93, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .info-smartcard-dialog .info-smartcards.exist .button-wrapper {
+  margin-top: 30px;
+}
+/* line 100, ../../sass/_add_smart_card_dialog.scss */
+.dialog-add-smartcards .dialog-content-add-smartcards .empty-smartcard-dialog {
+  margin: 15px;
+}
+
+/* line 1, ../../sass/_dictionary.scss */
+.dictionary-main {
+  height: 100%;
+}
+/* line 4, ../../sass/_dictionary.scss */
+.dictionary-main > div {
+  height: 100%;
+}
+/* line 8, ../../sass/_dictionary.scss */
+.dictionary-main .fuel-consumption, .dictionary-main .router-length, .dictionary-main .zero-flight {
+  height: 100%;
+}
+
+/* line 30, ../../sass/_dictionary.scss */
+.dictionary-main .grid .grid-cell-header, .smartCards-grid-controller .grid .grid-cell-header {
+  border-color: #d4d4d4;
+  background-color: rgba(16, 108, 200, 0.81);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+/* line 38, ../../sass/_dictionary.scss */
+.dictionary-main .grid .ui-grid-header-viewport, .smartCards-grid-controller .grid .ui-grid-header-viewport {
+  background-color: rgba(16, 108, 200, 0.81);
+}
+
+/* line 3, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .red {
+  color: red;
+}
+/* line 7, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .green {
+  color: green;
+}
+/* line 13, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .grid .day-cell-template {
+  border-color: #d4d4d4;
+  background-color: rgba(16, 108, 200, 0.81);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+/* line 21, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .grid .worker-name-cell-template {
+  border-color: #d4d4d4;
+  background-color: rgba(16, 108, 200, 0.81);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+/* line 32, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .grid-wraper #workers-graphs-grid {
+  height: calc(100% - 75px) !important;
+}
+
+/* line 38, ../../sass/_workers_graphs.scss */
+.workers-grid-export-controller .worker-name-cell-template, .workers-grid-controller .worker-name-cell-template {
+  border-color: #d4d4d4;
+  background-color: rgba(16, 108, 200, 0.81);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+/* line 54, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller #grid-worker-context-menu-name {
+  display: none;
+}
+/* line 58, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .custom-context-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5555;
+}
+/* line 66, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .custom-context-menu-wrapper .custom-context-menu {
+  position: absolute;
+  min-width: 222px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+/* line 68, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .custom-context-menu-wrapper .custom-context-menu li {
+  text-align: center;
+  border: solid 1px lightgrey;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 1px;
+  border-radius: 7px;
+}
+/* line 94, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .custom-context-menu-wrapper .custom-context-menu .custom-context-menuitem {
+  display: block;
+}
+/* line 97, ../../sass/_workers_graphs.scss */
+.workers-graphs-grid-controller .custom-context-menu-wrapper .custom-context-menu .custom-context-menuitem a, .workers-graphs-grid-controller .custom-context-menu-wrapper .custom-context-menu .custom-context-menuitem a:hover {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 19, ../../sass/site.scss */
+.main-page {
+  height: 100%;
+}
+
+/* line 24, ../../sass/site.scss */
+html {
+  height: 100%;
+}
+
+/* line 28, ../../sass/site.scss */
+body {
+  height: 100%;
+  min-width: 640px;
+}
+
+/* line 34, ../../sass/site.scss */
+html, head {
+  transition: none;
+  overflow-y: hidden;
+}
+
+/* line 40, ../../sass/site.scss */
+.class-transition *, .class-transition {
+  -moz-transition: all 0.7s linear;
+  -webkit-transition: all 0.7s linear;
+  -o-transition: all 0.7s linear;
+  transition: all 0.7s linear;
+}
+
+/* line 50, ../../sass/site.scss */
+.tree-container {
+  min-height: 0 !important;
+}
+
+/* line 54, ../../sass/site.scss */
+[ng-controller="MainGridCtrl"], [ng-controller="MainGridCtrl"] * {
+  transition: none;
+}
+
+/* line 58, ../../sass/site.scss */
+[ng-controller="MainGridCtrl"] {
+  display: flex;
+  height: calc(100%);
+  flex-direction: column;
+  overflow-y: hidden;
+}
+/* line 63, ../../sass/site.scss */
+[ng-controller="MainGridCtrl"] .grid {
+  flex: 1;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none !important;
+}
+/* line 72, ../../sass/site.scss */
+[ng-controller="MainGridCtrl"] .grid * {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none !important;
+  /*  -moz-transition: all 0.9s ease;
+    -webkit-transition: all 0.9s ease;
+    -o-transition: all 0.9s ease;
+    transition: all 0.9s ease;*/
+}
+
+/* line 86, ../../sass/site.scss */
+.wrapper-accordion {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* line 92, ../../sass/site.scss */
+v-pane.is-expanded > v-pane-content > div {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* line 97, ../../sass/site.scss */
+.md-select-menu-container {
+  z-index: 110;
+}
+
+/* line 103, ../../sass/site.scss */
+md-menu-content md-input-container {
+  width: 100%;
+}
+
+/* line 108, ../../sass/site.scss */
+.loading-date-message {
+  height: 100%;
+  line-height: 100%;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  vertical-align: bottom;
+  align-items: center;
+  justify-content: center;
+  font-size: 81px;
+  font-weight: bold;
+}
+
+/* line 122, ../../sass/site.scss */
+.not-complete .ui-grid-cell {
+  -webkit-box-shadow: 0px 0px 5px 0px #f50a0a;
+  -moz-box-shadow: 0px 0px 5px 0px #f50a0a;
+  box-shadow: 0px 0px 5px 0px #f50a0a;
+}

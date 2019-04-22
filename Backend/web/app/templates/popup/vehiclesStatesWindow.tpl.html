@@ -1,0 +1,123 @@
+<md-dialog aria-label="vehiclesStates" id="vehiclesStatesDialog"  class="states-dialog grid-page">
+    <form ng-cloak name="formVehiclesStates">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{lang.words['stack_vehicles']}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <script type="text/ng-template" id="mvs-popup">
+            <ul id="mws-popup-window" class="control-menu">
+                <li>
+                    <md-autocomplete required
+                                     md-no-cache="noCache"
+                                     md-selected-item="addData.veh"
+                                     md-search-text="searchText"
+                                     md-items="item in queryVehicleSearch(searchText)"
+                                     md-item-text="'(' + item.board_number + ') ' + item.state_number"
+                                     md-selected-item-change="selectedVehicleChange(item)"
+                                     md-min-length="0"
+                                     placeholder="Почніть вводити держ. номер"
+                                     md-menu-class="autocomplete-custom-template">
+                        <md-item-template>
+                              <span class="item-title">
+                                <span> {{item.state_number}} </span>
+                              </span>
+                            <span class="item-metadata">
+                                <span class="item-metastat">
+                                  <strong>{{item.name}}</strong>
+                                </span>
+                                <span class="item-metastat">
+                                  <strong>{{item.board_number}}</strong>
+                                </span>
+                              </span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </li>
+                <li class="select">
+                    <md-select required ng-model="addData.state">
+                        <md-option ng-repeat="item in states" ng-value="item.id" ng-attr-selected="item.id == 2">{{item.name}}</md-option>
+                    </md-select>
+                    <span class="effect"></span>
+                </li>
+                <li class="select">
+                    <md-datepicker ng-model="addData.from" md-placeholder="{{lang.words['from']}}"></md-datepicker>
+                </li>
+                <li class="select">
+                    <md-datepicker ng-model="addData.to" md-placeholder="{{lang.words['to']}}"></md-datepicker>
+                </li>
+                <li class="button" style="overflow: hidden;"><md-button ng-disabled="formVehiclesStates.$invalid" ng-click="addVehicleState()">{{lang.words['add']}}</md-button></li>
+                <li class="button" ng-if="loadedId != 0" style="overflow: hidden;"><md-button ng-disabled="formVehiclesStates.$invalid" ng-click="removeVehicleState()">Видалити</md-button></li>
+                <div class="head-block"><h3>Вікно статусу</h3></div>
+            </ul>
+        </script>
+        <md-dialog-content>
+            <!--<div id="control-line">-->
+                <!--<ul class="control-menu">-->
+                    <!--&lt;!&ndash;<li class="icon-li"> >> </li>&ndash;&gt;-->
+                    <!--<li ng-if="userData.access_level.orders < 2">-->
+                        <!--<md-autocomplete required-->
+                                         <!--md-no-cache="noCache"-->
+                                         <!--md-selected-item="addData.veh"-->
+                                         <!--md-search-text="searchText"-->
+                                         <!--md-items="item in queryVehicleSearch(searchText)"-->
+                                         <!--md-item-text="'(' + item.board_number + ') ' + item.state_number"-->
+                                         <!--md-selected-item-change="selectedVehicleChange(item)"-->
+                                         <!--md-min-length="0"-->
+                                         <!--placeholder="Почніть вводити держ. номер"-->
+                                         <!--md-menu-class="autocomplete-custom-template">-->
+                            <!--<md-item-template>-->
+                              <!--<span class="item-title">-->
+                                <!--<span> {{item.state_number}} </span>-->
+                              <!--</span>-->
+                                <!--<span class="item-metadata">-->
+                                <!--<span class="item-metastat">-->
+                                  <!--<strong>{{item.name}}</strong>-->
+                                <!--</span>-->
+                                <!--<span class="item-metastat">-->
+                                  <!--<strong>{{item.board_number}}</strong>-->
+                                <!--</span>-->
+                              <!--</span>-->
+                            <!--</md-item-template>-->
+                        <!--</md-autocomplete>-->
+                    <!--</li>-->
+                    <!--<li class="select" ng-if="userData.access_level.orders < 2">-->
+                        <!--<md-select required ng-model="addData.state">-->
+                            <!--<md-option ng-repeat="item in states" ng-value="item.id" ng-attr-selected="item.id == 2">{{item.name}}</md-option>-->
+                        <!--</md-select>-->
+                        <!--<span class="effect"></span>-->
+                    <!--</li>-->
+                    <!--&lt;!&ndash;<li ng-if="userData.access_level.orders < 2">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<md-input-container class="md-block">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<label>Причина</label>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input md-maxlength="120" md-no-asterisk name="description" ng-model="addData.reason">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</md-input-container>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--<li class="select" ng-if="userData.access_level.orders < 2">-->
+                        <!--<md-datepicker ng-model="addData.from" md-placeholder="{{lang.words['from']}}"></md-datepicker>-->
+                        <!--<span class="effect"></span>-->
+                    <!--</li>-->
+                    <!--<li class="select" ng-if="userData.access_level.orders < 2">-->
+                        <!--<md-datepicker ng-model="addData.to" md-placeholder="{{lang.words['to']}}"></md-datepicker>-->
+                        <!--<span class="effect"></span>-->
+                    <!--</li>-->
+                    <!--<li class="button" style="overflow: hidden;" ng-if="userData.access_level.orders < 2"><md-button ng-disabled="formVehiclesStates.$invalid" ng-click="addVehicleState()">{{lang.words['add']}}<span class="effect"></span></md-button></li>-->
+
+                    <!--<li class="info"><span>{{displayDate}}</span></li>-->
+
+                <!--</ul>-->
+            <!--</div>-->
+            <div id="vehicles-states-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="newState()" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                Додати
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

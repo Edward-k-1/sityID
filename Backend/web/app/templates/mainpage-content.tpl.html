@@ -1,0 +1,53 @@
+<div ng-controller="PageContentController" class="page-content-controller">
+    <div ng-if="contentname=='monitoring'">
+        <ng-include src="'app/templates/grid/monitoring.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='vehicles'" >
+    <ng-include src="'app/templates/grid/vehicles.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='routes'">
+        <ng-include src="'app/templates/grid/routes.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='orders'">
+        <ng-include src="'app/templates/grid/orders.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='carriers'">
+        <ng-include src="'app/templates/grid/carriers.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='parks'">
+        <ng-include src="'app/templates/grid/parks.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='workers'">
+        <ng-include src="'app/templates/grid/workers.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='smartcards'">
+        <ng-include src="'app/templates/grid/smartcards.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='notification'">
+        <ng-include src="'app/templates/grid/notification.tpl.html'"></ng-include>
+    </div><div ng-if="contentname=='reports'">
+        <ng-include src="'app/templates/grid/reports.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='users'">
+        <ng-include src="'app/templates/grid/users.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='calendar'">
+        <ng-include src="'app/templates/grid/calendar.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='checkpoints'">
+        <ng-include src="'app/templates/grid/checkpoints.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='screen'">
+        <ng-include src="'app/templates/grid/screen.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='alerts'">
+    <ng-include src="'app/templates/grid/alerts.tpl.html'"></ng-include>
+</div>
+    <div ng-if="contentname=='dictionary'">
+        <ng-include src="'app/templates/grid/dictionary.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="contentname=='technical_performance_indicator'">
+        <ng-include src="'app/templates/grid/technical_performance_indicator.tpl.html'"></ng-include>
+    </div>
+
+</div>

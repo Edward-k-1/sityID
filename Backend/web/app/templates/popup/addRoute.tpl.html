@@ -1,0 +1,49 @@
+<md-dialog aria-label="addRoute">
+    <form ng-cloak name="formAddRoute">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Додати Маршрут</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container>
+                    <label>Номер</label>
+                    <input md-maxlength="4" required md-no-asterisk name="RouteName" ng-model="data.routeName">
+                    <div ng-messages="data.routeName.$error">
+                        <div ng-message="required">Обовязково</div>
+                        <div ng-message="md-maxlength">до 4 символів</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Назва</label>
+                    <input md-maxlength="100" required md-no-asterisk name="RouteFullName" ng-model="data.routeFullName">
+                    <div ng-messages="data.routeFullName.$error">
+                        <div ng-message="required">Обовязково</div>
+                        <div ng-message="md-maxlength">до 100 символів</div>
+                    </div>
+                </md-input-container>
+
+            </div>
+            <div id="self-added-manege">
+                <ul class="my-graphs">
+                    <li ng-repeat="myr in data.myRoutes">
+                        <p>{{myr.name}}</p><p class="delete-myg" ng-click="deleteRoute(myr.id, $event)">Видилити</p>
+                    </li>
+                </ul>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-disabled="formAddRoute.$invalid" ng-click="confirmAdd()" aria-label="Confirm">
+                Зберегти
+            </md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

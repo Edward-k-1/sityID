@@ -1,0 +1,68 @@
+<div ng-controller="MonitoringCompanyGridController" class="monitoring-company-grid-controller grid-page">
+  <div class="grid-wraper">
+    <div class="grid-header">
+      <div class="title">
+        {{lang.words["Manager screen"]}}
+      </div>
+      <div id="control-line">
+        <ul class="control-menu">
+          <!--<li class="icon-li"> >> </li>-->
+          <li class="select"><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown><span class="effect"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div  id="monitoring-company-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+
+    <div id="ms-bottom-screen">
+      <div class="handler" ng-click="toggleBS()"><h6>Виїзд: {{stack.go.length}}</h6><span>&gt;</span><h6>Заїзд: {{stack.come.length}}</h6></div>
+      <div class="body">
+        <div class="block left">
+            <ul>
+                <li ng-repeat="item in stack.go" ng-click="toggleButtons($event)">
+                    <div><span>{{item.board_number}}</span><span>{{item.state_number}}</span></div>
+                    <div><span>{{item.name | FullNameToShort}}({{item.basic_number}})</span><span></span></div>
+                    <div><span>{{item.time_start | sliceTime}}</span></div>
+                    <div><span>{{item.route}}/{{item.graph}}</span></div>
+                    <div class="manage">
+                        <md-button ng-click="confirmAction('out', item)">Виїхав</md-button>
+                        <!--<md-button ng-click="discardAction('out', item)">Проблема</md-button>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="block right">
+            <ul>
+                <li ng-repeat="item in stack.come" ng-click="toggleButtons($event)">
+                    <div><span>{{item.board_number}}</span><span>{{item.state_number}}</span></div>
+                    <div><span>{{item.name | FullNameToShort}}({{item.basic_number}})</span><span></span></div>
+                    <div><span>{{item.time_start | sliceTime}}</span></div>
+                    <div><span>{{item.route}}/{{item.graph}}</span></div>
+                    <div class="manage">
+                        <md-button ng-click="confirmAction('in', item)">Заїхав</md-button>
+                        <!--<md-button ng-click="discardAction('in', item)">Проблема</md-button>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="chekpoints-loading-wraper" style="display:none;">
+      <div class="loader">
+        <ul class="hexagon-container">
+          <li class="hexagon hex_1"></li>
+          <li class="hexagon hex_2"></li>
+          <li class="hexagon hex_3"></li>
+          <li class="hexagon hex_4"></li>
+          <li class="hexagon hex_5"></li>
+          <li class="hexagon hex_6"></li>
+          <li class="hexagon hex_7"></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,39 @@
+<div ng-controller="CalendarGridController" class="calendar-controller grid-page"  >
+    <div class="grid-wraper">
+        <div class="grid-header">
+            <div class="title">
+                {{lang.words["screen orders"]}}
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <!--<li class="icon-li"> >> </li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 3"><md-button ng-click="GenerateOrders()">{{lang.words["order_duplication"]}}<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 10"><md-button ng-click="excelExport()">{{lang.words["order_export"]}}<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="addRoute()">Додати маршрут<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="addGraph()">Додати графік<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="openOverPage()">Працівники<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="openOverPageVeh()">ТЗ<span class="effect"></span></md-button></li>-->
+                    <!--<li class="select"><md-datepicker ng-change="loadOrdersByDate()" ng-model="displayOrderDate" md-placeholder="Дата"></md-datepicker><span class="effect"></span></li>-->
+                    <!--<li class="select"><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown><span class="effect"></span></li>-->
+                    <!--<li class="info"><span>Тип дня: <strong>{{dayType}}</strong></span></li>-->
+                    <!--<li class="button"><md-button ng-click="CheckOrders()">Експортувати<span class="effect"></span></md-button></li>-->
+                </ul>
+            </div>
+        </div>
+        <div id="calendar-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"></div>
+
+        <div id="chekpoints-loading-wraper" style="display:none;">
+            <div class="loader">
+                <ul class="hexagon-container">
+                    <li class="hexagon hex_1"></li>
+                    <li class="hexagon hex_2"></li>
+                    <li class="hexagon hex_3"></li>
+                    <li class="hexagon hex_4"></li>
+                    <li class="hexagon hex_5"></li>
+                    <li class="hexagon hex_6"></li>
+                    <li class="hexagon hex_7"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<md-dialog aria-label="calendarEdit" id="calendarEditPopup">
+    <form ng-cloak name="formCalendarEdit">
+        <md-toolbar>
+            <div class="md-toolbar-tools" id="calendarEditPopupHeader">
+                <h2>{{lHeader}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <style>
+h2 {
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+table {
+    font-size: 1.25em;
+}
+
+td, th {
+    padding: 5px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+td.weekend {
+    background-color: #ccf;
+}
+                </style>
+                <h2>{{monthHeader}}</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th ng-repeat="dayType in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд']">
+                                {{dayType}}
+                            </th>
+                        </tr>
+                        <tr ng-repeat="(id, row) in calendarTable">
+                            <td
+                                ng-repeat="day in row track by $index"
+                                ng-class="day.type === 2 ? 'weekend' : 'weekday'"
+                                ng-dblclick="changeDayType(day.number)"
+                            >
+                                {{day.value}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,7 @@
+<md-input-container flex="50" class="select-countdown">
+    <label>{{lang.words['Updating']}}</label>
+<md-select ng-model="selectTime" placeholder="{{lang.words['Updating']}}" md-on-open="onMdOnOpen()" class="md-no-underline"
+           md-on-close="changeTime()" aria-label=" ">
+    <md-option ng-repeat="option in selectOptions" ng-value="option.value">{{option.text}}</md-option>
+</md-select>
+</md-input-container>

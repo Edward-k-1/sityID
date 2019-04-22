@@ -1,0 +1,35 @@
+
+.popup-loader
+, .popup-loader
+*  {
+
+}
+
+.popup-loader
+{
+
+
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+  .content-popup-loader
+  {
+    height: 100%;
+    vertical-align: middle;
+    position: relative;
+    md-progress-circular.ng-isolate-scope.md-mode-indeterminate
+    {
+      width: 96px;
+      height: 96px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(0,-50%);
+    }
+  }
+}

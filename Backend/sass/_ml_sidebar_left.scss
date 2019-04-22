@@ -1,0 +1,101 @@
+@import "compass/css3";
+$panel_width : 14px;
+$button_border_radius : 3px;
+$height_button: 70px;
+.ml-sidebar-left{
+  transition: none;
+  width: 100%;
+  display: flex;
+  border: solid 1px;
+  height: calc(100% - 75px);
+  border: none;
+  .ml-content-left {
+    flex: 1;
+    overflow: auto;
+  }
+  .ml-panel-left {
+    display: flex;
+    border:none;
+    min-width: 0;
+    //overflow: hidden;
+    .panel-slider {
+      min-width: $panel_width;
+      border: solid 1px;
+      border: none;
+
+      position: relative;
+      background-color: rgba(130, 146, 160, 0.24);
+     /* background-color: #1e5799; // Old browsers
+      @include filter-gradient(#1e5799, #7db9e8, horizontal); // IE6-9
+      @include background-image(linear-gradient(left,  #1e5799 0%,#2989d8 50%,#1e5799 100%));
+     */
+      .ml-panel-button:hover {
+        background-color: rgba(23, 22, 22, 0.8);
+
+      }
+      .ml-panel-button {
+        z-index: 40;
+        min-width: $panel_width;
+        width: $panel_width;
+        border: none;
+        height:$height_button;
+        position: absolute;
+        top: 50%;
+        margin-top: (-$height_button) /2;
+        overflow: hidden;
+        background-color: rgba(23, 22, 22, 0.5);
+        border-radius: $button_border_radius 0px 0px $button_border_radius;
+        -moz-transition: all 0.3s linear ;
+        -webkit-transition: all 0.3s linear ;
+        -o-transition: all 0.3s linear ;
+        transition: all 0.3s linear ;
+        .button-panel{
+          width: 100%;
+          height: 100%;
+          border: none;
+
+
+          background-image: url("img/arrow_left.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      .button-panel:focus {outline:0;}
+      .button-panel:hover {
+      }
+      }
+    }
+    .panel-slider.panel-collapsed {
+      -moz-transition: all 0.9s linear 0.4s;
+      -webkit-transition: all 0.9s linear 0.4s;
+      -o-transition: all 0.9s linear 0.4s;
+      transition: all 0.9s linear 0.4s;
+      width: 0px;
+      min-width: 0px;
+      .ml-panel-button:hover {
+        background-color: rgba(23, 22, 22, 0.8);
+      }
+      .ml-panel-button {
+        border-radius: 0px $button_border_radius $button_border_radius 0px;
+        background-color: rgba(23, 22, 22, 0.5);
+        -moz-transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear ;
+        .button-panel{
+
+          background-image: url("img/arrow_right.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .button-panel:focus {outline:0;}
+      }
+    }
+    .panel-content {
+      overflow: hidden;
+      flex: 1;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+<v-pane>
+    <v-pane-header>
+        {{lang.words['Checkpoints']}}
+    </v-pane-header>
+    <v-pane-content>
+        <div  class="acordeon-tree-wraper" ng-controller="CheckpointsController">
+            <div class="tree-container" style="min-height:220px;">
+                <tree nodes='checkpoints'></tree>
+            </div>
+        </div>
+    </v-pane-content>
+</v-pane>

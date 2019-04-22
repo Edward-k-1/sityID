@@ -1,0 +1,40 @@
+<md-dialog aria-label="mcStatus">
+    <form ng-cloak name="formMcChange">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{lHeader}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container>
+                    <label>{{lSelect}}</label>
+                    <md-select ng-model="selectedMcOption">
+                        <md-option ng-repeat="option in mcOptions" value="{{ option.id }}">{{ option.name }}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>{{lInput}}</label>
+                    <input md-maxlength="30" required md-no-asterisk name="description" ng-model="mcDescription.description">
+                    <div ng-messages="mcDescription.description.$error">
+                        <div ng-message="required">{{mRequired}}</div>
+                        <div ng-message="md-maxlength">{{mCharacters}}</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-disabled="formMcChange.$invalid" ng-click="changeMcStatus()" aria-label="Confirm">
+                {{bConfirm}}
+            </md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

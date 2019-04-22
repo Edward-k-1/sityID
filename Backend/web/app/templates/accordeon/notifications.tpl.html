@@ -1,0 +1,12 @@
+<v-pane>
+    <v-pane-header>
+        {{lang.words['Notification']}}
+    </v-pane-header>
+    <v-pane-content>
+        <div  class="acordeon-tree-wraper" ng-controller="NotificationController">
+            <div class="tree-container" style="min-height:220px;">
+                <tree nodes='notification'></tree>
+            </div>
+        </div>
+    </v-pane-content>
+</v-pane>

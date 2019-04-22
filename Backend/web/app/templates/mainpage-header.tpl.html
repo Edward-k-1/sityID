@@ -1,0 +1,37 @@
+<div class="mainpage-header" md-whiteframe="2" ng-controller="MainPageHeaderController">
+    <div class="header-logo-wrapper">
+        <img src="img/kpt.png">
+    </div>
+    <div class="header-text">ЕШЛ - Електронний шляховий лист</div>
+    <div class="toolbar-wrapper">
+        <div class="user-info-wraper">
+            <a id="help-icon" href="/help/about.doc">?</a>
+            <img class="header-logo-user" src="img/user.svg"/>
+            <div class="header-user-name">{{ getUserName()}}</div>
+        </div>
+        <md-menu>
+            <md-button class=" md-raised md-fab md-raised md-mini button-header-menu"
+                       ng-click="openMenu($mdOpenMenu, $event)" aria-label="menu">
+                <md-icon md-svg-icon="img/menu.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-input-container class="container-lang">
+                        <md-select ng-model="select_lang.current_lang" md-on-close="languageSelectChange()"
+                                   aria-label="No selected value">
+                            <md-option ng-cloak ng-repeat="lan in lang.list" value="{{lan.code}}"><img
+                                    class="select-lang-image" ng-src="img/lang/{{lan.code}}.png">{{lan.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </md-menu-item>
+                <md-menu-item>
+                    <div>
+                        <md-button class="md-primary md-raised  button-logout-header-menu" ng-click="logout()">
+                            {{lang.words["Logout"]}}
+                        </md-button>
+                    </div>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</div>

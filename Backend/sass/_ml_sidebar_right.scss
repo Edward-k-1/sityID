@@ -1,0 +1,75 @@
+@import "compass/css3";
+.ml-sidebar-right{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  border: solid 1px;
+  .ml-content-right {
+    flex: 1;
+  }
+  .ml-panel-right {
+    display: flex;
+    flex-direction: row-reverse;
+    border:none;
+    min-width: 30px;
+    overflow: hidden;
+    .panel-slider {
+      min-width: 30px;
+      border: solid 1px;
+      border-top: none;
+      border-bottom: none;
+      position: relative;
+      background-color: #1e5799; // Old browsers
+      @include filter-gradient(#1e5799, #7db9e8, horizontal); // IE6-9
+      @include background-image(linear-gradient(left,  #1e5799 0%,#2989d8 50%,#1e5799 100%));
+      .ml-panel-button {
+        min-width: 30px;
+        width: 30px;
+        border: none;
+        height:70px;
+        background: none;
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        button{
+          border-radius: 00px 30px 30px 00px;
+          width: 95%;
+          height: 100%;
+          border: none;
+          -moz-transition: all 0.3s ease 0.4s;
+          -webkit-transition: all 0.3s ease 0.4s;
+          -o-transition: all 0.3s ease 0.4s;
+          transition: all 0.3s ease 0.4s;
+          background-image: url("img/arrow_right.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        button:focus {
+          outline:0;
+        }
+      }
+    }
+    .panel-slider.panel-collapsed {
+      -moz-transition: all 0.9s ease 0.4s;
+      -webkit-transition: all 0.9s ease 0.4s;
+      -o-transition: all 0.9s ease 0.4s;
+      transition: all 0.9s ease 0.4s;
+      .ml-panel-button {
+        button{
+          border-radius: 30px 0px 0px 30px;
+          background-image: url("img/arrow_left.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        button:focus {outline:0;}
+      }
+    }
+    .panel-content {
+      overflow: hidden;
+      flex: 1;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+}

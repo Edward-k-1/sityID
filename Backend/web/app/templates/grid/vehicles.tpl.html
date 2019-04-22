@@ -1,0 +1,18 @@
+<div ng-controller="VehiclesGridController" class="vehicles-grid-controller grid-page">
+    <div class="grid-wraper">
+
+        <div class="grid-header">
+            <div class="title">
+                {{lang.words["Vehicles"]}}
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <li class="icon-li"> >> </li>
+                    <li><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown></li>
+                </ul>
+            </div>
+        </div>
+        <div  id="vehicles-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+
+    </div>
+</div>

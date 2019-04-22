@@ -1,0 +1,26 @@
+<md-dialog aria-label="  " >
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+           Edit  current Workshift
+            <md-button ng-click="cancel()"
+                       class="  md-accent md-raised md-hue-1 md-mini  md-fab cancel "
+                       aria-label="Cancel" style="margin-left: auto;">
+                <md-icon md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height: 300px;min-width: 500px;">
+        <div style="height:100%;width:100%;" ng-if="data.length ==0">
+            Зміна не закрита
+        </div>
+        <div >
+            <md-button ng-click="generateCompleteWorkshift()"> generate complete order </md-button>
+        </div>
+        <div>
+
+
+        </div>
+
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,34 @@
+
+<div ng-controller="ChekpointsGridController" class="monitoring-company-grid-controller grid-page">
+    <div class="grid-wraper">
+        <div class="grid-header">
+            <div class="title">
+                {{screenTitle}}
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <li class="icon-li"> >> </li>
+                    <li><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown></li>
+                </ul>
+            </div>
+        </div>
+        <div  id="checkpoint-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+        <div id="chekpoints-loading-wraper" style="display:none;">
+            <div class="loader">
+                <ul class="hexagon-container">
+                    <li class="hexagon hex_1"></li>
+                    <li class="hexagon hex_2"></li>
+                    <li class="hexagon hex_3"></li>
+                    <li class="hexagon hex_4"></li>
+                    <li class="hexagon hex_5"></li>
+                    <li class="hexagon hex_6"></li>
+                    <li class="hexagon hex_7"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,50 @@
+.mainpage-header
+{
+  background-color: rgb(16,108,200);
+  color: rgba(255,255,255,0.9);
+  .header-logo-wrapper
+  {
+    width: 260px;
+  }
+  .header-text
+  {
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 23px;
+    letter-spacing: 5px;
+  }
+  height: 50px;
+  display:flex;
+  .toolbar-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    .button-header-menu
+    {
+      margin-top: 5px;
+    }
+    .user-info-wraper {
+      margin-right: 10px;
+      line-height: 50px;
+      img.header-logo-user {
+        height: 25px;
+        margin-top: -3px;
+        display: inline-block;
+      }
+      .header-user-name
+      {
+        display: inline-block;
+        line-height: 50px;
+      }
+    }
+  }
+
+}
+.select-lang-image
+ {
+   margin-right: 15px;
+ }
+.button-logout-header-menu{
+  margin-left: 0;
+  width: 100%;
+}

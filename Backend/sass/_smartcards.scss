@@ -1,0 +1,207 @@
+$width_label: 160px;
+$line_height: 40px;
+
+.dialog-edit-smartcards {
+  .md-toolbar-tools {
+    height: 59px !important;
+    max-height: 59px !important;
+    button {
+      margin-left: auto !important;
+    }
+  }
+  width: 800px;
+  height: 395px;
+  max-height: 395px;
+  min-width: 800px;
+  md-dialog-content {
+    padding: 15px;
+    .smartcard-main {
+      display: flex;
+      .smart-card-main-info {
+        width: calc(100% - 302px);
+        max-width: calc(100% - 302px);
+        margin-right: 15px;
+        .select-worker-wrapper {
+          display: flex;
+          height: $line_height;
+          .label-workers {
+            width: $width_label;
+            font-weight: bold;
+            line-height: $line_height;
+          }
+          .select-workers {
+            width: calc(100% - 170px);
+            margin-top: 0;
+            margin-bottom: 0;
+            .ml-select-label {
+              display: none
+            }
+          }
+        }
+        .current-worker-wrapper {
+          & > div {
+            display: inline-block;
+            height: $line_height;
+
+          }
+          .label-worker-name,
+          .label-basic-number,
+          .label-workers-views {
+            width: $width_label;;
+            font-weight: bold;
+            line-height: $line_height;;
+          }
+          .value-worker-name,
+          .value-basic-number,
+          .value-workers-views {
+            width: calc(100% - 170px);
+          }
+        }
+        .card-status-wrapper {
+          display: flex;
+          height: $line_height;
+
+          .label-status {
+            width: $width_label;
+            font-weight: bold;
+            line-height: $line_height;
+          }
+          .select-status {
+            width: calc(100% - 170px);
+            margin-top: 0;
+            margin-bottom: 0;
+
+          }
+        }
+        .button-wrapper {
+          width: 100%;
+        }
+      }
+      .worker-photo-wrapper {
+        width: 302px;
+        max-width: 302px;
+        position: relative;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        button.change-photo {
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+        }
+      }
+    }
+    .worker-photo-editing {
+      position: relative;
+      .background-transparent-block {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 60px;
+        opacity: 0.3;
+        color: #fff;
+        background-color: #ece9e9;
+        text-shadow: #474747 3px 5px 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .button-open-photo {
+        position: absolute;
+      }
+      .cancel-change-photo {
+        position: absolute;
+        bottom: -10px;
+        right: 94px;
+      }
+      .save-change-photo {
+        position: absolute;
+        bottom: -10px;
+        right: -1px;
+      }
+      width: 100%;
+      box-sizing: content-box;
+
+      .image-editing-wrapper {
+        display: flex;
+        .cropArea {
+          width: calc(100% - 303px) !important;
+          height: 303px !important;
+        }
+        img-crop {
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: relative;
+          overflow: hidden;
+        }
+        .image-result {
+          padding: 7px;
+          width: 303px;
+          height: 303px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      img-crop canvas {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      }
+    }
+  }
+}
+
+.smartCards-grid-controller {
+  height:100%;
+  position: relative;
+  .header {
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    .title {
+      z-index: 0;
+      position: absolute;
+      width: 100%;
+      line-height: 70px;
+      top: 0;
+      text-align: center;
+      font-size: 27px;
+      min-width: 560px;
+    }
+    button.update
+    {
+      z-index: 1;
+      margin-top: 27px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  .grid-smart-cards
+  {
+    height:calc(100% - 75px) !important;
+  }
+  button.create{
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+  }
+
+
+}
+.workers-grid-controller
+{
+  #workers-grid
+  {
+    height: calc(100% - 75px) !important;
+  }
+}

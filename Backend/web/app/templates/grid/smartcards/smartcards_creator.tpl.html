@@ -1,0 +1,21 @@
+<div ng-controller="SmartCardCreatorGridController" class="smartCards-grid-controller grid-page">
+    <div class="grid-wraper">
+
+        <div class="grid-header">
+            <div class="title">
+                Конструктор смарт-карток
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <li class="icon-li"> >> </li>
+                    <li class="button"><md-button class="md-primary md-raised update" ng-click="gridOptions.reloadCurrentData()">{{lang.words["Update"]}} <span class="effect"></span></md-button></li>
+                    <li><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown></li>
+                </ul>
+            </div>
+        </div>
+        <div   ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid grid-smart-cards"   ></div>
+        <md-button class="md-fab md-primary md-hue-2 create" ng-click="addSmartCarts()">
+            <md-icon md-svg-src="img/plus.svg"></md-icon>
+        </md-button>
+    </div>
+</div>

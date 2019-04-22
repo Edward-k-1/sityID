@@ -1,0 +1,28 @@
+<md-dialog aria-label="screenSettings">
+    <form ng-cloak name="formScreenSettings">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Налаштування інформаційного екрану</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <ul ng-sortable class="screen-set-ul">
+                    <li ng-repeat="column in settings_data" id="{{column.n}}"><span>{{column.name}}</span></li>
+                </ul>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-disabled="formScreenSettings.$invalid" ng-click="saveSettings()" aria-label="Confirm">
+                Зберегти
+            </md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

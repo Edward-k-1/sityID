@@ -1,0 +1,87 @@
+@import "compass/css3";
+$height :14px;
+$button_border_radius : 3px;
+
+
+
+.ml-sidebar-bottom{
+  width: 100%;
+  display: flex;
+  border: none;
+  flex-direction: column-reverse;
+  height: 100%;
+  .ml-content-bottom {
+    flex: 1;
+    overflow-y: hidden;
+  }
+  .ml-panel-bottom
+  {
+    display: flex;
+    flex-direction: column-reverse;
+    border:none;
+    min-height: $height;
+    overflow: hidden;
+    .panel-slider {
+      min-height: $height;
+      position: relative;
+      background-color: rgba(130, 146, 160, 0.24);
+      overflow: visible;
+      background-color: rgba(130, 146, 160, 0.24);
+
+      .ml-panel-button:hover {
+        background-color: rgba(23, 22, 22, 0.8);
+      }
+      .ml-panel-button {
+        overflow: hidden;
+        min-width: 70px;
+        width: 70px;
+        position: absolute;
+        left: 50%;
+        margin-left: -20px;
+
+        border-radius: 0px 0px $button_border_radius $button_border_radius;
+        background-color: rgba(23, 22, 22, 0.5);
+
+        .button-panel{
+          width: 70px;
+          height: $height;
+          border: none;
+          -moz-transition: all 0.3s ease ;
+          -webkit-transition: all 0.3s ease ;
+          -o-transition: all 0.3s ease ;
+          transition: all 0.3s ease ;
+          background-image: url("img/arrow_down.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .button-panel:focus {outline:0;}
+
+      }
+    }
+    .panel-slider.panel-collapsed {
+      -moz-transition: all 0.9s ease 0.4s;
+      -webkit-transition: all 0.9s ease 0.4s;
+      -o-transition: all 0.9s ease 0.4s;
+      transition: all 0.9s ease 0.4s;
+      background-color: rgba(18, 19, 21, 0.71);
+
+      .ml-panel-button:hover {
+        background-color: rgba(23, 22, 22, 0.8);
+      }
+      .ml-panel-button {
+        background-color: rgba(23, 22, 22, 0.5);
+        border-radius: $button_border_radius $button_border_radius 0px 0px;
+        .button-panel{
+          background-image: url("img/arrow_up.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .button-panel:focus {outline:0;}
+      }
+    }
+      .panel-content {
+      overflow: auto;
+      flex: 1;
+    }
+  }
+}

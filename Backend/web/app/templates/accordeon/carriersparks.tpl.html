@@ -1,0 +1,12 @@
+<v-pane>
+    <v-pane-header>
+        {{lang.words['Carriers and parks']}}
+    </v-pane-header>
+    <v-pane-content>
+        <div class="acordeon-tree-wraper" ng-controller="CarriersParksController">
+            <div class="tree-container" style="min-height:220px;">
+                <tree nodes='carriers'></tree>
+            </div>
+        </div>
+    </v-pane-content>
+</v-pane>

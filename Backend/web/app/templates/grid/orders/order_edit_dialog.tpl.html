@@ -1,0 +1,136 @@
+<md-dialog aria-label="Mango (Fruit)" class="dialog-edit-workshift">
+    <form ng-cloak name="formSave">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                {{lang.words['Editing orders']}}
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="dialog-content-edit-workshift-loading" ng-if="is_loaded!==true">
+                <md-progress-circular md-mode="indeterminate" md-diameter="150"></md-progress-circular>
+            </div>
+            <div class="dialog-content-edit-workshift" ng-if="is_empty==true" ng-form="ExportForm">
+                наряди не заповнені
+                <input type="date"
+                       ng-model="dateFilterExport"
+                       required>
+                <md-button ng-click="exportWorkshitsFromDate()" class="md-primary md-raised" ng-disabled="ExportForm.$invalid">
+                    Експорт
+                </md-button>
+            </div>
+            <div class="dialog-content-edit-workshift" ng-if="is_loaded==true&&is_empty!==true">
+                <div class="wrapper-edit-workshift">
+                    <label> {{lang.words['Workshift']}} </label>
+                    <md-select ng-model="current.Workshift" md-on-close="selectWorkshiftChanged()" required
+                               class="select-workshift" aria-label=" ">
+                        <md-option ng-value="ws_item" ng-repeat="ws_item in workshift_orders">{{$index+1}}</md-option>
+                    </md-select>
+
+                    <md-button ng-click="deleteCurrentWorkshift()" class="md-primary md-raised  delete-workshift"
+                               ng-if="workshift_orders.length>0">{{lang.words['Delete']}}
+                    </md-button>
+                </div>
+                <div ng-if="workshift_orders.length>0">
+                    <div class="wrapper-edit-vehicles">
+                        <label>{{lang.words['Vehicle_short']}}</label>
+                        <md-input-container class="">
+                            <label>{{lang.words['Vehicle']}}</label>
+                            <md-select ng-model="current.Workshift.dep.vehiclesWorkshift.vehicles_id"
+                                       aria-label="" required class="select-vehicles" md-on-close="clearFilterVehicles()"
+                                       data-md-container-class="select-workshifts-edit" md-on-open="onOpenSelectVehicles()">
+                                <md-select-header class="select-worker-export-header">
+                                    <input ng-model="selectfilters.searchVehicleStateNumber"
+                                           type="search"
+                                           placeholder="{{lang.words['Vehicle']}} "
+                                           class="select-header-searchbox md-text"
+                                           ng-keydown="$event.stopPropagation()" ng-change="changeInputFilterVehicles()">
+                                </md-select-header>
+                                <md-optgroup label="{{lang.words['Vehicle']}} ">
+                                    <md-option ng-value="item.id"
+                                               ng-repeat="item in (filter.vehiclesFilter)">
+                                        {{item.state_number}}
+                                    </md-option>
+                                    <md-button ng-mouseover="loadMoreVehicles()"
+                                               style="width: calc(100% - 20px);text-align: center;"> load
+                                    </md-button>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <div class="vehicle-board-number"><span>{{lang.words['board number']}}</span> {{getVehicleBoardById
+                            (current.Workshift.dep.vehiclesWorkshift.vehicles_id)}}
+                        </div>
+                    </div>
+                    <div class="wrapper-edit-drivers">
+                        <label>{{lang.words['Driver']}} </label>
+                        <md-input-container class="">
+                            <label>{{lang.words['Driver']}} </label>
+                            <md-select ng-model="current.Workshift.dep.driversWorkshift.drivers_id"
+                                       aria-label="" required class="select-drivers" md-on-close="clearFilterDrivers()"
+                                       data-md-container-class="select-workshifts-edit"
+                                       md-on-open="onOpenSelectDrivers()"
+                            >
+                                <md-select-header class="select-worker-export-header">
+                                    <input ng-model="selectfilters.searchDriverName"
+                                           type="search"
+                                           class="select-header-searchbox md-text"
+                                           ng-keydown="$event.stopPropagation()" ng-change="changeInputFilterDrivers()">
+                                </md-select-header>
+                                <md-optgroup label="{{lang.words['Driver']}}">
+                                    <md-option ng-value="item.id"
+                                               ng-repeat="item in (filter.workersDriver)">
+                                        {{item.name}}
+                                    </md-option>
+                                    <md-button ng-mouseover="loadMoreDrivers()"
+                                               style="width: calc(100% - 20px);text-align: center;"> load
+                                    </md-button>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <div class="driver-number"><span>  {{lang.words['Driver number']}} </span>{{getWorkerNumberById(current.Workshift.dep.driversWorkshift.drivers_id)}}
+                        </div>
+                    </div>
+                    <div class="wrapper-edit-conductors">
+                        <label> {{lang.words['Conductor']}} </label>
+                        <md-input-container class="">
+                            <label>{{lang.words['Conductor']}} </label>
+                            <md-select ng-model="current.Workshift.dep.conductorsWorkshift.conductors_id"
+                                       aria-label="" required class="select-conductors"
+                                       md-on-close="clearFilterConductors()"
+                                       data-md-container-class="select-workshifts-edit" md-on-open="onOpenSelectConductors()">
+                                <md-select-header class="select-worker-export-header">
+                                    <input ng-model="selectfilters.searchConductorsName"
+                                           type="search"
+                                           class="select-header-searchbox md-text"
+                                           ng-keydown="$event.stopPropagation()" ng-change="changeInputFilterConductors()">
+                                </md-select-header>
+                                <md-optgroup label="{{lang.words['Conductor']}}">
+                                    <md-option ng-value="item.id"
+                                               ng-repeat="item in (filter.workersConductors) ">
+                                        {{item.name}}
+                                    </md-option>
+                                    <md-button ng-mouseover="loadMoreConductors()"
+                                               style="width: calc(100% - 20px);text-align: center;"> load
+                                    </md-button>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <div class="conductor-number"><span>{{lang.words['Conductor number']}}</span>
+                            {{getWorkerNumberById(current.Workshift.dep.conductorsWorkshift.conductors_id)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button type="submit" ng-disabled="formSave.$invalid || is_loaded!=true||is_empty==true"
+                       ng-click="saveCurrentWorkshift()" class="md-primary md-raised save-current-workshift">
+                {{lang.words['Save']}}
+            </md-button>
+            <md-button ng-click="cancel()"
+                       class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift"
+                       aria-label="Cancel">
+                <md-icon md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

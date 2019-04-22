@@ -1,0 +1,24 @@
+<md-dialog aria-label="GenerateOrders">
+    <form ng-cloak name="formGenerateOrders">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{lang.words['order_duplicate']}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <span>На дату:</span>
+                <md-datepicker required ng-model="selectedDate" md-placeholder="{{lang.words['date_of_order']}}"></md-datepicker>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-disabled="formGenerateOrders.$invalid" ng-click="generateForDate()">Копіювати</md-button>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

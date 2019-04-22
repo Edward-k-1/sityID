@@ -1,0 +1,54 @@
+<md-dialog aria-label="completeOrder">
+    <form ng-cloak name="formCompleteOrder">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Закрити наряд</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="order-info">
+                    <h4>Наряд №. {{orderData.order.id}}</h4>
+                    <div class="wrkft-01">
+                        <p><span>Водій</span>{{orderData.order.dw[0].name | FullNameToShort}} <strong>({{orderData.order.dw[0].basic_number}})</strong></p>
+                        <p><span>ТЗ</span>{{orderData.order.vw[0].state_number}} <strong>({{orderData.order.vw[0].board_number}})</strong></p>
+                        <p><span>Кондуктор</span>{{orderData.order.cw[0].name | FullNameToShort}} <strong>({{orderData.order.cw[0].basic_number}})</strong></p>
+                    </div>
+                    <div class="wrkft-02">
+                        <p><span>Водій</span>{{orderData.order.dw[1].name | FullNameToShort}} <strong>({{orderData.order.dw[1].basic_number}})</strong></p>
+                        <p><span>ТЗ</span>{{orderData.order.vw[1].state_number}} <strong>({{orderData.order.vw[1].board_number}})</strong></p>
+                        <p><span>Кондуктор</span>{{orderData.order.cw[1].name | FullNameToShort}} <strong>({{orderData.order.cw[1].basic_number}})</strong></p>
+                    </div>
+                </div>
+                <div class="order-data-counted">
+                    <div class="pre-counteng"  ng-if="conc.pressed == 0">
+                        <md-input-container class="md-block">
+                            <label>Кількість кругів</label>
+                            <input required type="number" step="1" name="flights" ng-model="conc.flights" min="0" max="20">
+
+                            <div ng-messages="formCompleteOrder.flights.$error" multiple md-auto-hide="false">
+                                <div ng-message="required">
+                                    Обовязкове поле
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-button ng-click="performCounting()" ng-disabled="formCompleteOrder.$invalid">Рахувати</md-button>
+                    </div>
+                    <div class="counted-display">
+
+                    </div>
+                </div>
+                <div class="order-data-fact-edit"></div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

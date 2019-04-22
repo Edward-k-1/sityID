@@ -1,0 +1,12 @@
+<v-pane>
+    <v-pane-header>
+        {{lang.words['Workers']}}
+    </v-pane-header>
+    <v-pane-content>
+        <div  class="acordeon-tree-wraper" ng-controller="WorkersController">
+            <div class="tree-container" style="min-height:220px;">
+                <tree nodes='treeWorker'></tree>
+            </div>
+        </div>
+    </v-pane-content>
+</v-pane>

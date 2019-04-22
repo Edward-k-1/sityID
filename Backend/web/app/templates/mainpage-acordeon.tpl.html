@@ -1,0 +1,22 @@
+<div ng-controller="AcordeonController" class="wrapper-accordion">
+<v-accordion class="vAccordion--default"  style="min-width:200px;"  control="accordion" >
+    <ng-include ng-if="userData.access_level.hasOwnProperty('checkpoints')" src="'app/templates/accordeon/checkpoints.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('screen')" src="'app/templates/accordeon/screen.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('alerts')" src="'app/templates/accordeon/alerts.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('monitoring')" src="'app/templates/accordeon/monitoring.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('orders')" src="'app/templates/accordeon/orders.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('orders')" src="'app/templates/accordeon/calendar.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('workers')" src="'app/templates/accordeon/workers.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('vehicles')" src="'app/templates/accordeon/vehicles.tpl.html'"></ng-include>
+    <!--<ng-include ng-if="user.role < 3" src="'app/templates/accordeon/routes.tpl.html'"></ng-include>-->
+    <ng-include ng-if="userData.access_level.hasOwnProperty('dictionary')" src="'app/templates/accordeon/dictionary.tpl.html'"></ng-include>
+
+    <ng-include ng-if="userData.access_level.hasOwnProperty('carriersparks')" src="'app/templates/accordeon/carriersparks.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('smartcards')" src="'app/templates/accordeon/smartcards.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('notifications')" src="'app/templates/accordeon/notifications.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('reports')" src="'app/templates/accordeon/reports.tpl.html'"></ng-include>
+    <ng-include ng-if="userData.access_level.hasOwnProperty('users')" src="'app/templates/accordeon/users.tpl.html'"></ng-include>
+    <ng-include ng-if="user.role < 3" src="'app/templates/accordeon/technical_performance_indicator.tpl.html'"></ng-include>
+
+</v-accordion>
+</div>

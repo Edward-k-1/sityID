@@ -1,0 +1,55 @@
+<div ng-controller="WorkersExportController"  ng-if="workers.type=='workers_export'" class="workers-grid-export-controller grid-page">
+    <div class="grid-wraper">
+
+        <div class="grid-header">
+            <div class="title">
+                Еспорт працівників
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <li class="icon-li"> >> </li>
+                    <li class="button"><md-button class="md-accent md-raised" ng-click="exportCsv()"  > {{lang.words['Export']}} <span class="effect"></span></md-button></li>
+                    <li>
+                        <md-input-container class="select-worker-export">
+                            <label>{{lang.words['workers views']}}</label>
+                            <md-select ng-model="workersTypes.selected" style="width:200px;"
+                                       multiple aria-label="" md-on-close="applyFilter()" placeholder="{{lang.words['workers views']}}"
+                                       data-md-container-class="select-worker-export">
+                                <md-select-header class="select-worker-export-header" style="line-height: 49px;min-height: 49px">
+                                    <input ng-model="selectFilter.searchWorkerView"
+                                           type="search"
+                                           placeholder="{{lang.words['workers views']}}"
+                                           class="select-header-searchbox md-text"
+                                           ng-keydown="$event.stopPropagation()" >
+                                </md-select-header>
+                                <md-optgroup label="Workers">
+                                    <md-option ng-value="item.id" ng-repeat="item in workersTypes.list|filter:{name:selectFilter.searchWorkerView}">{{item.name}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </li>
+                    <li>
+                        <md-input-container class="select-worker-export">
+                            <label>{{lang.words['parks']}}</label>
+                            <md-select ng-model="workersParks.selected" style="width: 100px;"
+                                       multiple aria-label=" " md-on-close="applyFilter()" placeholder="{{lang.words['parks']}}" data-md-container-class="select-worker-export">
+                                <md-select-header  class="select-worker-export-header" >
+                                    <input ng-model="selectFilter.searchParks"
+                                           type="search"
+                                           placeholder="{{lang.words['parks']}}"
+                                           class="select-header-searchbox md-text"
+                                           ng-keydown="$event.stopPropagation()"
+                                    >
+                                </md-select-header>
+                                <md-optgroup label="parks 111">
+                                    <md-option ng-value="item.id" ng-repeat="item in workersParks.list|filter:{name:selectFilter.searchParks}">{{item.name}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  id="workers-grid-export" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+    </div>
+</div>

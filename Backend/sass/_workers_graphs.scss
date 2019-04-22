@@ -1,0 +1,108 @@
+.workers-graphs-grid-controller
+{
+  .red
+  {
+    color: red;
+  }
+  .green
+  {
+    color: green;
+  }
+  .grid
+  {
+    .day-cell-template {
+      border-color: #d4d4d4;
+      background-color: rgba(16, 108, 200, 0.81);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+    .worker-name-cell-template
+    {
+      border-color: #d4d4d4;
+      background-color: rgba(16, 108, 200, 0.81);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+  }
+  .grid-wraper {
+    #workers-graphs-grid {
+      height: calc(100% - 75px) !important;
+    }
+  }
+}
+.workers-grid-export-controller,.workers-grid-controller {
+  .worker-name-cell-template {
+    border-color: #d4d4d4;
+    background-color: rgba(16, 108, 200, 0.81);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+  }
+
+
+}
+
+
+.workers-graphs-grid-controller
+{
+
+  #grid-worker-context-menu-name
+  {
+    display: none;
+  }
+  .custom-context-menu-wrapper
+  {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5555;
+  //  background: white;
+    .custom-context-menu
+    {
+      li{
+        text-align: center;
+        border: solid 1px lightgrey;
+        height: 30px;
+        line-height: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 1px;
+        border-radius: 7px;
+      }
+      position: absolute;
+
+      min-width: 222px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      font-size: 14px;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0, 0, 0, .15);
+      border-radius: 11px;
+      -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+      .custom-context-menuitem
+      {
+        display: block;
+        a,a:hover
+        {
+          cursor: pointer;
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+
+}

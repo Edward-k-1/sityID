@@ -1,0 +1,140 @@
+<div ng-controller="OrdersGridController" class="orders-grid-controller grid-page"  >
+    <div class="grid-wraper">
+        <div class="grid-header">
+            <div class="title">
+                {{lang.words["screen orders"]}}
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                    <li class="select"><md-datepicker ng-change="loadData()" ng-model="presets.date.js" md-placeholder="Дата"></md-datepicker><span class="effect"></span></li>
+                    <li class="info"><span>Тип дня: <strong>{{presets.dayType.str}}</strong></span></li>
+
+                    <!--<li class="icon-li"> >> </li>-->
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">Функції</span>
+                        <ul class="sub">
+                            <li ng-click="GenerateOrders()">Дублювання</li>
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span>Календар</span>
+                        <ul class="sub">
+                            <li ng-click="syncCalendar()">Оновити</li>
+                            <li ng-click="showCalendar()">Переглянути</li>
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">Розклад</span>
+                        <ul class="sub">
+                            <li ng-click="loadData()"><span>Оновити все</span></li>
+                            <!--<li>Оновити маршрут</li>-->
+                            <!--<li>Корегувати</li>-->
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">ТЗ</span>
+                        <ul class="sub">
+                            <!--<li>Оновити</li>-->
+                            <li ng-click="openOverPageVeh()">Відсутні</li>
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">Водії</span>
+                        <ul class="sub">
+                            <!--<li>Оновити</li>-->
+                            <li ng-click="openOverPage()">Відсутні</li>
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">Кондуктори</span>
+                        <ul class="sub">
+                            <!--<li>Оновити</li>-->
+                            <li ng-click="openOverPage()">Відсутні</li>
+                        </ul>
+                    </li>
+                    <li class="list" ng-if="userData.access_level.orders < 3">
+                        <span class="lable">Експортувати</span>
+                        <ul class="sub">
+                            <li ng-click="ExportOrdersASDU()">АСДУ</li>
+                            <li ng-click="CheckOrders()">1С</li>
+                            <li ng-click="excelExport()">Таблиця</li>
+                        </ul>
+                    </li>
+                    <!--<li class="button" ng-if="userData.access_level.orders < 3"><md-button ng-click="GenerateOrders()">{{lang.words["order_duplication"]}}<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 10"><md-button ng-click="excelExport()">{{lang.words["order_export"]}}<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="addRoute()">Додати маршрут<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="addGraph()">Додати графік<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="openOverPage()">Працівники<span class="effect"></span></md-button></li>-->
+                    <!--<li class="button" ng-if="userData.access_level.orders < 2"><md-button ng-click="openOverPageVeh()">ТЗ<span class="effect"></span></md-button></li>-->
+                    <!--<li class="select"><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown><span class="effect"></span></li>-->
+                    <!--<li class="button"><md-button ng-click="CheckOrders()">Експортувати<span class="effect"></span></md-button></li>-->
+                </ul>
+            </div>
+        </div>
+        <div contextmenu-container="meta.contextmenu"  id="orders-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+        <!--<div id="orders-viewport">-->
+            <!--<div class="header">-->
+                <!--&lt;!&ndash;<ul class="heading">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><div class="header-cell"></div><div class="cells"><p></p><p></p></div></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="content" style="overflow-y: scroll">-->
+                <!--<ul ng-repeat="o in orders">-->
+                    <!--<li>{{o.name}}</li>-->
+                    <!--<li>{{o.graph}}</li>-->
+                    <!--<li>{{o.order.vw[0].board_number}}</li>-->
+                    <!--<li>{{o.order.vw[0].state_number}}</li>-->
+                    <!--<li>{{o.order.dw[0].name | FullNameToShort}}</li>-->
+                    <!--<li>{{o.order.dw[0].basic_number}}</li>-->
+                    <!--<li>{{o.order.dw[0].desc}}</li>-->
+                    <!--<li>{{o.order.cw[0].name | FullNameToShort}}</li>-->
+                    <!--<li>{{o.order.cw[0].basic_number}}</li>-->
+                    <!--<li>{{o.order.dw[0].time_from | sliceTime}}</li>-->
+                    <!--<li>{{o.order.workshift_time | sliceWorkshiftTime}}</li>-->
+                    <!--<li>{{o.order.dw[1].time_to | sliceTime}}</li>-->
+                    <!--<li>{{o.order.vw[1].board_number}}</li>-->
+                    <!--<li>{{o.order.vw[1].state_number}}</li>-->
+                    <!--<li>{{o.order.dw[1].name | FullNameToShort}}</li>-->
+                    <!--<li>{{o.order.dw[1].basic_number}}</li>-->
+                    <!--<li>{{o.order.dw[1].desc}}</li>-->
+                    <!--<li>{{o.order.cw[1].name | FullNameToShort}}</li>-->
+                    <!--<li>{{o.order.cw[1].basic_number}}</li>-->
+                    <!--<li>{{o.order.schedule_types_id | scheduleTypeFilter}}</li>-->
+                    <!--<li>{{o.order.create_date}}</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="footer"></div>-->
+        <!--</div>-->
+        <!--suppress XmlInvalidId -->
+        <div contextmenu="meta.contextmenu" class="dropdown contextmenu">
+            <ul class="dropdown-menu" role="menu">
+                <!--<li class="dropdown-header">-->
+                    <!--<a href ng-click="finishOrder(meta.contextmenu.$item.entity)"><span>finish</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+
+                <!--</li>-->
+                <li>
+                    <a role="menuitem" href ng-click="deleteOrder(meta.contextmenu.$item.entity)">
+                        <span>Видалити</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="chekpoints-loading-wraper" style="display:none;">
+            <div class="loader">
+                <ul class="hexagon-container">
+                    <li class="hexagon hex_1"></li>
+                    <li class="hexagon hex_2"></li>
+                    <li class="hexagon hex_3"></li>
+                    <li class="hexagon hex_4"></li>
+                    <li class="hexagon hex_5"></li>
+                    <li class="hexagon hex_6"></li>
+                    <li class="hexagon hex_7"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

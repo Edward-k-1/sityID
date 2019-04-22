@@ -1,0 +1,69 @@
+<div ng-controller="AlertsGridController" class="alerts-grid-controller grid-page">
+ <div class="grid-wraper">
+  <div class="grid-header">
+   <div class="title">
+    Повідомлення
+   </div>
+   <div id="control-line">
+    <ul class="control-menu">
+     <li class="icon-li"> >> </li>
+     <li class="button"><md-button ng-click="saveAlerts()">{{lang.words['Save']}}<span class="effect"></span></md-button></li>
+     <li class="button"><md-button ng-click="newAlert()">{{lang.words['new_alert']}}<span class="effect"></span></md-button></li>
+     <li class="select"><select-countdown lang="lang" timer-callback="timerCallback()" style="z-index: 2;"></select-countdown><span class="effect"></span></li>
+    </ul>
+   </div>
+  </div>
+  <div id="alerts-wrapper">
+
+   <script type="text/ng-template" id="list.html">
+    <ul dnd-list="list" class="alerts-dnd-list">
+     <li ng-repeat="item in list"
+         dnd-draggable="item"
+         dnd-effect-allowed="move"
+         dnd-moved="list.splice($index, 1)"
+         dnd-selected="models.selected = item"
+         ng-class="{selected: models.selected === item}"
+         ng-include="item.type + '.html'">
+     </li>
+    </ul>
+   </script>
+
+
+   <!-- Template for a normal list item -->
+   <script type="text/ng-template" id="item.html">
+    <div class="item" ng-dblclick="editAlert(item)">
+     <h5>{{item.title}}</h5>
+     <p>{{item.body}}</p>
+    </div>
+   </script>
+
+   <!-- Main area with dropzones and source code -->
+   <div id="alerts-zones" class="col-md-10">
+    <div class="row">
+     <div ng-repeat="(zone, list) in models.dropzones" class="col-md-4 drop-zone">
+      <div class="dropzone box box-yellow">
+       <!-- The dropzone also uses the list template -->
+       <h3>{{lang.words[zone]}}</h3>
+       <div class="zone-container" ng-include="'list.html'"></div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+
+  <!--<div  id="alerts-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>-->
+  <div id="chekpoints-loading-wraper" style="display:none;">
+   <div class="loader">
+    <ul class="hexagon-container">
+     <li class="hexagon hex_1"></li>
+     <li class="hexagon hex_2"></li>
+     <li class="hexagon hex_3"></li>
+     <li class="hexagon hex_4"></li>
+     <li class="hexagon hex_5"></li>
+     <li class="hexagon hex_6"></li>
+     <li class="hexagon hex_7"></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>

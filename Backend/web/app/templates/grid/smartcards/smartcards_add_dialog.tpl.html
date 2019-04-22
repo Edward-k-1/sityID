@@ -1,0 +1,52 @@
+<md-dialog aria-label="  " class="dialog-add-smartcards">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            {{lang.words["Add smart-card"]}}
+            <md-button ng-click="cancel()"
+                       class="  md-accent md-raised md-hue-1 md-mini  md-fab cancel "
+                       aria-label="Cancel">
+                <md-icon md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="dialog-content-add-smartcards">
+            <div class="empty-smartcard-dialog" ng-if="isSmartCardLoaded == false">
+                {{lang.words["Place the card to the reader"]}}
+            </div>
+            <div class="info-smartcard-dialog" ng-if="isSmartCardLoaded == true">
+                <div class="label-card-number">{{lang.words["Smart-cards UID"]}}: </div>
+                <div class="value-card-number">{{loadedData.card_id}}</div>
+                    <div class="info-smartcards new" ng-if="loadedData.dep.is_new==true">
+                    <div class="label-status">{{lang.words["status"]}}:</div><div class="value-status">{{lang.words["Not found in database"]}}</div>
+                    <div class="button-wrapper">
+                    <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click="removeListenCart()">{{lang.words["Cancel"]}}</md-button>
+                    <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click="saveCurrentCard()">{{lang.words["Save"]}}</md-button>
+                    <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click="saveAndEditCurrentCard()">{{lang.words["Save and edit"]}}</md-button>
+                    </div>
+
+                </div>
+                <div class="info-smartcards exist" ng-if="loadedData.dep.is_new==false">
+                    <div class="wrapper-worker-info" ng-if="loadedData.dep.card_id!==null ">
+                        <div class="label-worker-name">{{lang.words["Worker name"]}}</div>
+                        <div class="value-worker-name">{{getWorkerNameById(loadedData.dep.card.workers_id)}}</div>
+                        <div class="label-worker-number">{{lang.words["Worker number"]}}</div>
+                        <div class="value-worker-number">{{getWorkerNumberById(loadedData.dep.card.workers_id)}}</div>
+                        <div class="label-workers-views">{{lang.words["workers views"]}}</div>
+                        <div class="value-workers-views">{{getWorkerViewsByIdWorkers(loadedData.dep.card.workers_id)}}</div>
+                        <div class="label-status">{{lang.words["status"]}}</div>
+                        <div class="value-status">{{loadedData.dep.card.status==1?lang.words["Active"]:lang.words["InActive"]}}</div>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click="removeListenCart()">{{lang.words["Cancel"]}}</md-button>
+                        <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click="editCurrentCard()">{{lang.words["Edit"]}}</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </md-dialog-content>
+
+</md-dialog>

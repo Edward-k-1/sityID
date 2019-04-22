@@ -1,0 +1,12 @@
+<div ng-controller="DictionaryGridController" class="dictionary-main">
+    <div ng-if="dictionary.type=='routes_length'">
+        <ng-include src="'app/templates/grid/dictionary/routes_length.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="dictionary.type=='fuel_consumption'">
+        <ng-include src="'app/templates/grid/dictionary/fuel_consumption.tpl.html'"></ng-include>
+    </div>
+    <div ng-if="dictionary.type=='zero_flight'">
+        <ng-include src="'app/templates/grid/dictionary/zero_flight.tpl.html'"></ng-include>
+    </div>
+
+</div>

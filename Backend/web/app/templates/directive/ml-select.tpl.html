@@ -1,0 +1,29 @@
+
+
+<md-input-container >
+    <label ng-if="!(label==null&&label==undefined)" class="ml-select-label">{{label}}</label>
+    <md-select ng-model="select.selected"
+               aria-label=" "   md-on-close="onMdOnClose()"
+               data-md-container-class="select-workshifts-edit" md-on-open="onMdOnOpen()">
+        <md-select-header >
+            <input ng-model="select.filter"
+                   type="search"
+                   placeholder="{{placeholderInput}}"
+                   class="select-header-searchbox md-text"
+                   ng-keydown="$event.stopPropagation()" ng-change="changeInputFilterItems()"
+                   ng-if="hasField==true">
+        </md-select-header>
+
+            <md-option ng-value="item.id"
+                       ng-repeat="item in (filterList)"  ng-if="hasField==true">
+                {{item[field]}}
+            </md-option>
+            <md-option ng-value="item.id"
+                       ng-repeat="item in (filterList)"  ng-if="hasField==false">
+                {{item}}
+            </md-option>
+            <md-button ng-mouseover="loadMoreItems()"
+                       style="width: calc(100% - 20px);text-align: center;"> {{buttonText}}
+            </md-button>
+    </md-select>
+</md-input-container>

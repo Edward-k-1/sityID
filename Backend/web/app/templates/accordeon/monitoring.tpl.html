@@ -1,0 +1,12 @@
+<v-pane expanded="true">
+    <v-pane-header>
+        {{lang.words['Monitoring company']}}
+    </v-pane-header>
+    <v-pane-content>
+        <div  class="acordeon-tree-wraper" ng-controller="MonitoringController">
+            <div class="tree-container" style="min-height:220px;">
+                <tree nodes='monitoring'></tree>
+            </div>
+        </div>
+    </v-pane-content>
+</v-pane>

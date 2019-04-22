@@ -1,0 +1,128 @@
+@import "loginform";
+@import "compass/css3";
+@import "ml_sidebar_left";
+@import "ml_sidebar_bottom";
+@import "ml_sidebar_right";
+@import "select-countdown";
+@import "mainpage-header";
+@import "mainpage-footer";
+@import "FullPopupLoader";;
+@import "grid-wraper";
+@import "grids";
+@import "orders";
+@import "smartcards";
+@import "popup-windows-chekpoints";
+@import "add_smart_card_dialog";
+@import "dictionary";
+@import "workers_graphs";
+
+.main-page
+{
+  height: 100%;
+}
+
+html
+{
+  height: 100%;
+}
+body
+{
+  height:100%;
+  min-width: 640px;
+
+}
+html, head
+{
+  transition: none;
+  overflow-y: hidden;
+}
+
+.class-transition *,.class-transition
+{
+  -moz-transition: all 0.7s linear;
+  -webkit-transition: all 0.7s linear;
+  -o-transition: all 0.7s linear;
+  transition: all 0.7s linear;
+
+
+}
+
+.tree-container
+{
+  min-height:  0 !important;
+}
+[ng-controller="MainGridCtrl"],[ng-controller="MainGridCtrl"] *
+{
+  transition: none;
+}
+[ng-controller="MainGridCtrl"]
+{display: flex;
+  height: calc(100%);
+  flex-direction: column;
+  overflow-y: hidden;
+  .grid{
+   flex: 1;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none !important;
+
+
+  }
+  .grid *{
+
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none !important;
+  /*  -moz-transition: all 0.9s ease;
+    -webkit-transition: all 0.9s ease;
+    -o-transition: all 0.9s ease;
+    transition: all 0.9s ease;*/
+
+  }
+}
+
+.wrapper-accordion
+{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+v-pane.is-expanded>v-pane-content>div
+{
+  max-height: 300px;
+  overflow-y: auto;
+}
+.md-select-menu-container
+{
+  z-index: 110;
+}
+md-menu-content
+{
+  md-input-container
+  {
+    width: 100%;
+  }
+}
+.loading-date-message
+{
+  height: 100%;
+  line-height: 100%;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  vertical-align: bottom;
+  align-items: center;
+  justify-content: center;
+  font-size: 81px;
+  font-weight: bold;
+}
+.not-complete {
+  .ui-grid-cell {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(245, 10, 10, 1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(245, 10, 10, 1);
+    box-shadow: 0px 0px 5px 0px rgba(245, 10, 10, 1);
+  }
+}
+

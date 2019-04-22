@@ -1,0 +1,72 @@
+<md-dialog aria-label="workersStates" id="workersStatesDialog" class="states-dialog grid-page">
+    <form ng-cloak name="formWorkersStates">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{lang.words['stack_workers']}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <script type="text/ng-template" id="mws-popup">
+                <ul id="mws-popup-window" class="control-menu">
+                    <li>
+                        <md-autocomplete required
+                                         md-no-cache="noCache"
+                                         md-selected-item="addData.wid"
+                                         md-search-text="searchText"
+                                         md-items="item in queryWorkerSearch(searchText)"
+                                         md-item-text="'(' + item.basic_number + ') ' + (item.name | FullNameToShort)"
+                                         md-selected-item-change="selectedWorkerChange(item)"
+                                         md-min-length="0"
+                                         placeholder="Почніть вводити прізвище"
+                                         md-menu-class="autocomplete-custom-template">
+                            <md-item-template>
+                              <span class="item-title">
+                                <!--<md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>-->
+                                <span> {{item.name}} </span>
+                              </span>
+                                <span class="item-metadata">
+                                <span class="item-metastat">
+                                  <strong>{{item.basic_number}}</strong>
+                                </span>
+                              </span>
+                            </md-item-template>
+                        </md-autocomplete>
+                    </li>
+                    <li class="select">
+                        <md-datepicker ng-model="addData.from" md-placeholder="{{lang.words['from']}}"></md-datepicker>
+                        <md-datepicker ng-model="addData.to" md-placeholder="{{lang.words['to']}}"></md-datepicker>
+                    </li>
+                    <li class="select">
+                        <md-select aria-label="workerState" required ng-model="addData.state">
+                            <md-option ng-repeat="item in states" ng-value="item.id"  ng-attr-selected="item.id == 2">{{item.name}}</md-option>
+                        </md-select>
+                        <div class="btns">
+                            <md-button ng-disabled="formWorkersStates.$invalid" ng-click="addWorkerState()">{{lang.words['add']}}</md-button>
+                            <md-button ng-if="loadedId != 0" ng-click="removeWorkerState()">Видалити</md-button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="head-block"><h3>Вікно статусу</h3></div>
+        </script>
+        <md-dialog-content>
+
+
+            <div id="workers-states-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"></div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <!--<md-button ng-click="editState()" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">-->
+                <!--edit-->
+            <!--</md-button>-->
+            <md-button ng-click="newState()" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                Додати
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="answer('Cancel')" class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini save-current-workshift" aria-label="Cancel">
+                <md-icon  md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+
+</md-dialog>

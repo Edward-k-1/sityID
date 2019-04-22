@@ -1,0 +1,79 @@
+<md-dialog aria-label="Mango (Fruit)" class="dialog-edit-smartcards" style="width:800px;height: 600px;">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                {{lang.words["Editing smart-cards"]}}
+                <md-button ng-click="cancel()"
+                                                  class="cancel-edit-workshift  md-accent md-raised md-hue-1 md-mini  md-fab save-current-workshift"
+                                                  aria-label="Cancel">
+                <md-icon md-svg-src="img/close.svg"></md-icon>
+            </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <form ng-cloak name="formSave"><div class="smartcard-main" ng-if="imageChanging ==false">
+                <div class="smart-card-main-info">
+                    <div class="select-worker-wrapper">
+                        <div class="label-workers">{{lang.words["Workers"]}}</div>
+                        <ml-select selected="row.workers_id" field="name" options="workers_filter"
+                                   label="lang.words['Workers']" placeholder-input="lang.words['name']"
+                                   button-text="lang.words['More']" class="select-workers"></ml-select>
+                    </div>
+                    <div class="card-status-wrapper" >
+                    <div class="label-status">{{lang.words["Status"]}}</div>
+                    <md-select ng-model="row.status" aria-label=" " class="select-status">
+                        <md-option ng-value="0">
+                            {{lang.words["InActive"]}}
+                        </md-option>
+                        <md-option ng-value="1">
+                            {{lang.words["Active"]}}
+                        </md-option>
+                    </md-select>
+                </div>
+                    <div  class="current-worker-wrapper">
+                    <div class="label-worker-name">{{lang.words["Current Worker"]}}</div>
+                    <div class="value-worker-name">{{getWorkerNameById(row_original.workers_id)}}</div>
+                    <div class="label-basic-number">{{lang.words["basic number"]}}</div>
+                    <div class="value-basic-number">{{getWorkerNumberById(row_original.workers_id)}}</div>
+                    <div class="label-workers-views">{{lang.words["workers views"]}}</div>
+                    <div class="value-workers-views">{{getWorkerViewById(row_original.workers_id)}}</div>
+                </div>
+                    <div class="button-wrapper">
+                        <md-button ng-disabled="row_original.workers_id==null||row_original.status!==0" ng-click="deleteWorkerFromSmartCart()" class="md-primary md-raised">{{lang.words["Delete Worker"]}}</md-button>
+                        <md-button ng-disabled="row.workers_id==null" ng-click="saveWorkerForSmartCart()" class="md-primary md-raised">{{lang.words['Save']}}</md-button>
+                    </div>
+                </div>
+                <div class="worker-photo-wrapper" >
+                    <img ng-src="{{workerPhoto}}" ng-if="reloadCurrentImage!=true">
+
+                    <md-button ng-click="changePhoto()" ng-if="hasSavedWorker==true" class="change-photo md-fab md-primary">
+                        <md-icon md-svg-src="img/change_photo.svg"></md-icon>
+                    </md-button>
+                </div>
+            </div> </form>
+            <div class="worker-photo-editing" ng-if="imageChanging ==true">
+                <form name="formImage">
+                    <div class="background-transparent-block" ng-show="formImage.selectImage.$error.required" >{{lang.words["Please load image"]}}</div>
+
+
+                    <md-button name="selectImage" ngf-select ng-model="picFile" accept="image/*" class="button-open-photo md-fab md-primary" required="" >
+                    <md-icon md-svg-src="img/change_photo.svg"></md-icon>
+                    </md-button>
+                    <div class="image-editing-wrapper">
+                    <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+                         class="cropArea" style="width: 300px;height: 300px;">
+                        <img-crop image="picFile  | ngfDataUrl"
+                                  result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+                        </img-crop>
+                    </div>
+                    <div class="image-result">
+                        <img ng-src="{{croppedDataUrl}}" />
+                    </div>
+                    </div>
+                    <md-button ng-click="calcelchangePhoto()" class="cancel-change-photo md-primary md-raised">{{lang.words["Cancel"]}}</md-button>
+                    <md-button ng-disabled="formImage.selectImage.$error.required" ng-click="upload(croppedDataUrl)" class="save-change-photo md-primary md-raised">{{lang.words['Save']}}</md-button>
+                </form>
+            </div>
+        </md-dialog-content>
+
+</md-dialog>

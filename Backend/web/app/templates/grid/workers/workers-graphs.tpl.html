@@ -1,0 +1,47 @@
+<div ng-controller="WorkersGraphsGridController" class="workers-graphs-grid-controller grid-page" >
+    <div class="grid-wraper">
+
+        <div class="grid-header">
+            <div class="title">
+                Графік роботи працівників
+            </div>
+            <div id="control-line">
+                <ul class="control-menu">
+                   <li>
+                       <input id="exampleInput" type="month" name="input" ng-model="current_month" ng-change="dataPickerChange()"
+                              placeholder="yyyy-MM" min="2013-01" max="2020-12" required />
+
+                </ul>
+            </div>
+        </div>
+        <div   id="workers-graphs-grid" ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-edit ui-grid-pagination ui-grid-resize-columns class="grid"   ></div>
+    </div>
+    <div  class="custom-context-menu-wrapper">
+        <ul class="custom-context-menu" id="grid-worker-context-menu-name" >
+
+            <li class="custom-context-menuitem">
+                <a  href ng-click="fillAllWorked()">
+                     <span>Заповнити всі робочі </span>
+                </a></li>
+            <li class="custom-context-menuitem">
+                <a  href ng-click="fillAllFree()">
+                     <span>Заповнити всі вихідні </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="chekpoints-loading-wraper" style="display:none;">
+        <div class="loader">
+            <ul class="hexagon-container">
+                <li class="hexagon hex_1"></li>
+                <li class="hexagon hex_2"></li>
+                <li class="hexagon hex_3"></li>
+                <li class="hexagon hex_4"></li>
+                <li class="hexagon hex_5"></li>
+                <li class="hexagon hex_6"></li>
+                <li class="hexagon hex_7"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+<div class="login-form">
+<md-dialog aria-label="login" class="dialog-main-login">
+  <form ng-cloak name="formLogin">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{lang.words['app_name']}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div>
+        <md-input-container class="container-user">
+          <label>{{lang.words.Login}}</label>
+          <input ng-model="user.login" required md-minlength="3">
+        </md-input-container>
+        </div>
+        <md-input-container class="container-pass">
+          <label>{{lang.words.Password}}</label>
+          <input ng-model="user.password" type="password" required md-minlength="3">
+        </md-input-container>
+        <md-input-container class="container-lang">
+          <label>{{lang.words.Language}}</label>
+          <md-select ng-model="current_lang" md-on-close="languageSelectChange()" aria-label="No selected value">
+            <md-option ng-cloak ng-repeat="lan in lang.list" value="{{lan.code}}"><img class="select-lang-image" ng-src="img/lang/{{lan.code}}.png">{{lan.name}}</md-option>
+          </md-select>
+        </md-input-container>
+      <span style="color:red;" ng-show="lp_invalid" >{{lang.words["Incorrect login or password"]}}</span>
+</div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button type="submit" ng-disabled="formLogin.$invalid" class="md-primary md-raised" ng-click="submit()">
+        {{lang.words['Sign In']}}
+      </md-button>
+      </md-dialog-actions>
+  </form>
+</md-dialog>
+</div>

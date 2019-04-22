@@ -1,0 +1,44 @@
+.dictionary-main
+{
+  height: 100%;
+  & > div
+  {
+    height: 100%;
+  }
+  .fuel-consumption,.router-length,.zero-flight
+  {
+    height:100%;
+  }
+
+  .fuel-consumption
+  {
+
+  }
+  .router-length
+  {
+
+  }
+  .zero-flight
+  {
+
+  }
+
+}
+.dictionary-main,.smartCards-grid-controller
+{
+  .grid {
+    .grid-cell-header {
+      border-color: #d4d4d4;
+      background-color: rgba(16, 108, 200, 0.81);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+    .ui-grid-header-viewport
+    {
+      background-color: rgba(16, 108, 200, 0.81);
+    }
+  }
+
+}
