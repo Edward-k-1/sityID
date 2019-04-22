@@ -44,14 +44,14 @@
       <li>{{item.poizdka}} поїздки(а)</li>
       <li>Активний</li>
       <li>{{item.tsina_qr}} грн</li>
-        <li> <a href="#" id="main">
-          <div id="zatemnenie">
+        <li> <a href="#" id="zatemnenie">
+          <div id="">
           <div id="okno">
-            <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20"  ></qrcode>
+            <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20" ></qrcode>
           </div>
           </div>
           </a>
-          <a href="#main">Показати QR</a>
+          <a href="#zatemnenie">Показати QR</a>
           </li>
         </ul>
 
