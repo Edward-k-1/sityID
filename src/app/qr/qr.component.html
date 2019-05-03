@@ -1,30 +1,33 @@
 
 <div>
   <div class="add-qr">
-    <a href="#zatemnenie1"><span class="button" >Придбати QR</span></a>
+    <span class="button" (click)="ngxSmartModalService.getModal('myModal').open()" ng-click="addInit()">Придбати QR</span>
   </div>
-
-  <div id="zatemnenie1" class="index">
+  <ngx-smart-modal #myModal identifier="myModal"   >
+  <!--<div id="zatemnenie1" class="index">
     <div id="okno1">
-      <a href="#" class="close">X</a>
+      <a href="#" class="close">X</a>-->
+      <div class="group">
       <h3>Придбати QR</h3>
-      <div><span>Ваш баланс:</span>
-        <span class="fonds">{{currentUser.wallet}}</span>
-        <span class="nominal">грн.</span>
 
-       <br></div>
-      <div>
+          <div class="suma"><label>Ваш баланс:</label>
+        <span class="fonds"><label class="amount"> {{currentUser.wallet}}</label></span>
+        <span class="nominal"> грн.</span>
+      </div>
+      </div>
+      <div class="group">
+          <input class="input" (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka" max="20" min="1" required>
+          <span class="bar"></span>
+          <label class="labell">Кількість поїздок:</label>
+          </div>
+      <p class="radio1" *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked >{{t.name}}</span></p>
+     <div class="suma"> <label>Сума до сплати:</label>
+         <span [(ngModel)]="addData.tsina_qr.wallet" > <label class="amount">{{amount}}</label> грн</span></div>
+        <br>
+          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()" (click)="myModal.close()">
 
-      Кількість поїздок:<input (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka"><br>
-      <p *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked>{{t.name}}</span></p>
-      <span>Сума до сплати:</span>
-        <span [(ngModel)]="addData.tsina_qr.wallet" >{{amount}} грн</span></div>
-      <br>
-      <p><input type="submit" value="Придбати QR" (click)="addQR()"></p>
-    </div>
-    </div>
-  </div>
 
+  </ngx-smart-modal >
   <div >
 <br>
       <p class="title">Придбані QR</p>
@@ -36,6 +39,7 @@
         <li>Статус</li>
         <li>Ціна QR</li>
         <li>Відкрити QR</li>
+          <li>Дата покупки</li>
         </ul>
 
 
@@ -44,15 +48,15 @@
       <li>{{item.poizdka}} поїздки(а)</li>
       <li>Активний</li>
       <li>{{item.tsina_qr}} грн</li>
-        <li> <a href="#" id="zatemnenie">
-          <div id="">
+         <li>
+             <a href="#" id="zatemnenie">
           <div id="okno">
-            <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20" ></qrcode>
-          </div>
+              <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20" ></qrcode>
           </div>
           </a>
-          <a href="#zatemnenie">Показати QR</a>
-          </li>
+        <a href="#zatemnenie">Показати QR</a>
+         </li>
+      <li>{{item.data_add | date:'short'}}</li>
         </ul>
 
   </div>
