@@ -115,6 +115,18 @@ export class QRComponent implements OnInit {
             return;
         }
         this.addData.tsina_qr = this.amount;
+        if (this.currentUser.wallet < this.amount) {
+            this.alertService.error('Недостатьньо коштів для покупки');
+            for (let i = 0; i < this.trips; i++) {
+                this.result.pop();
+            }
+            this.trips = undefined;
+            this.amount = 0;
+            this.loadWallet();
+            this.loadQR();
+            return;
+        }
+
         this.qrServise.addQR(this.addData)
             .pipe(first())
             .subscribe(
