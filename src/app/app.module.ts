@@ -20,14 +20,15 @@ import { RegisterComponent } from './register';
 import { SidebarModule } from 'ng-sidebar';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletService } from './_services/wallet.service';
-import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 import { CardsComponent } from './cards/cards.component';
 import { QRComponent } from './qr/qr.component';
 import {QRService} from './_services/qr.service';
 import { HelpComponent } from './help/help.component';
 import {HelpService} from './_services/help.service';
 import { KoshikComponent } from './koshik/koshik.component';
-
+import { ModalModule } from 'ngb-modal';
 
 
 
@@ -44,6 +45,9 @@ import { KoshikComponent } from './koshik/koshik.component';
         NgxSmartModalModule.forRoot(),
         FormsModule,
         QRCodeModule,
+        BrowserModule,
+        FormsModule,
+        ModalModule,
     ],
     declarations: [
         AppComponent,

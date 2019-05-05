@@ -1,12 +1,10 @@
 
 <div>
   <div class="add-qr">
-    <span class="button" (click)="ngxSmartModalService.getModal('myModal').open()" ng-click="addInit()">Придбати QR</span>
+    <span class="button" (click)="ngxSmartModalService.getModal('myModal').open()" >Придбати QR</span>
   </div>
-  <ngx-smart-modal #myModal identifier="myModal"   >
-  <!--<div id="zatemnenie1" class="index">
-    <div id="okno1">
-      <a href="#" class="close">X</a>-->
+  <ngx-smart-modal #myModal identifier="myModal"  >
+
       <div class="group">
       <h3>Придбати QR</h3>
 
@@ -16,7 +14,7 @@
       </div>
       </div>
       <div class="group">
-          <input class="input" (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka" max="20" min="1" required>
+          <input class="input" [defaultValue]="1" (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka" max="20" min="1" required>
           <span class="bar"></span>
           <label class="labell">Кількість поїздок:</label>
           </div>
@@ -24,11 +22,12 @@
      <div class="suma"> <label>Сума до сплати:</label>
          <span [(ngModel)]="addData.tsina_qr.wallet" > <label class="amount">{{amount}}</label> грн</span></div>
         <br>
-          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()" (click)="myModal.close()">
+          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()"  (click)="myModal.close()" >
+
 
 
   </ngx-smart-modal >
-  <div >
+    <div >
 <br>
       <p class="title">Придбані QR</p>
 
@@ -56,7 +55,7 @@
           </a>
         <a href="#zatemnenie">Показати QR</a>
          </li>
-      <li>{{item.data_add | date:'short'}}</li>
+      <li>{{item.data_add }}</li>
         </ul>
 
   </div>

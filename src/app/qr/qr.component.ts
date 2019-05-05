@@ -6,6 +6,7 @@ import {first} from 'rxjs/operators';
 import {QRService} from '../_services/qr.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
+
 @Component({
   selector: 'app-qr',
   templateUrl: './qr.component.html',
@@ -29,6 +30,7 @@ export class QRComponent implements OnInit {
     amount = 0;
     result = [];
     addData = {poizdka: '', tsina_qr: 0, wallet: 0};
+
     constructor(private walletServise: WalletService, private qrServise: QRService, private alertService: AlertService, public ngxSmartModalService: NgxSmartModalService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.userQR = JSON.parse(localStorage.getItem('userQR'));
@@ -119,6 +121,13 @@ export class QRComponent implements OnInit {
                 data => {
                     if (data.status) {
                         this.alertService.success('QR придбано');
+
+                        for (let i = 0; i < this.trips; i++) {
+                            this.result.pop();
+                        }
+                        this.trips = undefined;
+                        this.amount = 0;
+                        this.loadWallet();
                         this.loadQR();
                     } else {
                         this.alertService.error(data.reason);
@@ -142,5 +151,6 @@ export class QRComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                 });
-        }
     }
+
+}

@@ -25,9 +25,11 @@
     "jquery": "^3.3.1",
     "ng-sidebar": "^8.0.0",
     "ng2-opd-popup": "^1.1.21",
+    "ngb-modal": "^1.0.5",
     "ngx-qrcode2": "0.0.9",
     "ngx-smart-modal": "^7.1.1",
     "rxjs": "^6.0.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
