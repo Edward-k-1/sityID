@@ -29,7 +29,7 @@ import { HelpComponent } from './help/help.component';
 import {HelpService} from './_services/help.service';
 import { KoshikComponent } from './koshik/koshik.component';
 import { ModalModule } from 'ngb-modal';
-
+import { NgxQRCodeModule} from 'ngx-qrcode3';
 
 
 
@@ -48,6 +48,7 @@ import { ModalModule } from 'ngb-modal';
         BrowserModule,
         FormsModule,
         ModalModule,
+        NgxQRCodeModule,
     ],
     declarations: [
         AppComponent,

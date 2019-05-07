@@ -444,6 +444,7 @@ input.button1 {
     box-shadow: inset #d12825 0 -1px 1px, inset 0 1px 1px #ff3538, #aa0e07 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
     -webkit-animation: pulsate 1.2s linear infinite;
     animation: pulsate 1.2s linear infinite;
+    left: 22%;
 }
 input.button1:hover {
     -webkit-animation-play-state: paused;
@@ -462,16 +463,33 @@ input.button1:active {
 @keyframes pulsate {
     50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
 }
-H3, .suma, .radio1 { text-shadow: 3px 3px 5px red }
+
 .suma, .radio1 {
     font-size: 150%;
+    text-shadow: 3px 3px 5px red;
 }
+
 h3{
     font-size: 300%;
-    text-align: center;
+
+    text-shadow: 3px 3px 5px red
 }
 .amount {
     font-size: 200%;
 }
 
+.balans {
+    color: darkred;
+    font-size: 150%;
+}
 
+ul.rows:nth-child(1) li{
+    color: red;
+    text-shadow: 3px 3px 5px darkred;
+}
+.group {
+
+}
+div.group {
+    left: 10%;
+}

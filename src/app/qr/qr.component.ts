@@ -5,7 +5,7 @@ import {WalletService} from '../_services/wallet.service';
 import {first} from 'rxjs/operators';
 import {QRService} from '../_services/qr.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
-
+import { QRCode, ErrorCorrectLevel, QRNumber, QRAlphaNum, QR8BitByte, QRKanji } from 'qrcode-generator-ts/js';
 
 @Component({
   selector: 'app-qr',
@@ -23,14 +23,13 @@ export class QRComponent implements OnInit {
     currentUser;
     isWalletLoading = true;
     tax = [
-        {id: 0, name: 'Дитячий', tax: 2, value: 'child'},
+        {id: 0, name: 'Пільговий', tax: 2, value: 'child'},
         {id: 1, name: 'Дорослий', tax: 5, value: 'parent'}
     ];
     trips: number;
     amount = 0;
     result = [];
     addData = {poizdka: '', tsina_qr: 0, wallet: 0};
-
     constructor(private walletServise: WalletService, private qrServise: QRService, private alertService: AlertService, public ngxSmartModalService: NgxSmartModalService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.userQR = JSON.parse(localStorage.getItem('userQR'));
@@ -82,7 +81,6 @@ export class QRComponent implements OnInit {
                     this.loading = false;
                 });
     }
-
     private loadQR() {
         this.isQRLoading = true;
         this.qrServise.getQRs()
@@ -110,7 +108,7 @@ export class QRComponent implements OnInit {
     }
 
     addQR() {
-        if (this.addData.poizdka.length > 20) {
+        if (this.addData.poizdka.length > 20 ) {
             this.alertService.error('Некоректне число поїздок');
             return;
         }
@@ -126,7 +124,6 @@ export class QRComponent implements OnInit {
             this.loadQR();
             return;
         }
-
         this.qrServise.addQR(this.addData)
             .pipe(first())
             .subscribe(

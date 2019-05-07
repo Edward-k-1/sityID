@@ -1,74 +1,86 @@
 
 <div>
+
   <div class="add-qr">
     <span class="button" (click)="ngxSmartModalService.getModal('myModal').open()" >Придбати QR</span>
   </div>
+
+    <br>
+
+    <div class="balans"><label>Ваш баланс:</label>
+      <span ><label >  {{currentUser.wallet}} </label></span>
+      <span class="nominal">  грн.</span>
+    </div>
+
   <ngx-smart-modal #myModal identifier="myModal"  >
 
       <div class="group">
-      <h3>Придбати QR</h3>
+        <h3>Придбати QR</h3>
 
           <div class="suma"><label>Ваш баланс:</label>
-        <span class="fonds"><label class="amount"> {{currentUser.wallet}}</label></span>
-        <span class="nominal"> грн.</span>
-      </div>
+            <span class="fonds"><label class="amount"> {{currentUser.wallet}}</label></span>
+            <span class="nominal"> грн.</span>
+           </div>
       </div>
       <div class="group">
           <input class="input"  (change)="calculateAmount()"  [(ngModel)]="trips" type="number" [name]="trips" [(ngModel)]="addData.poizdka" max="20" min="1" required>
           <span class="bar"></span>
           <label class="labell">Кількість поїздок:</label>
-          </div>
-      <p class="radio1" *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked >{{t.name}}</span></p>
-     <div class="suma"> <label>Сума до сплати:</label>
-         <span [(ngModel)]="addData.tsina_qr.wallet" > <label class="amount">{{amount}}</label> грн</span></div>
+
+        <p class="radio1" *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked >{{t.name}}</span></p>
+
+       <div  class="suma"> <label>Сума до сплати:</label>
+          <span [(ngModel)]="addData.tsina_qr.wallet" > <label class="amount">{{amount}}</label> грн</span>
+       </div>
+     </div>
         <br>
-          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()"  (click)="myModal.close()" >
 
-
+          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()"  (click)="myModal.close()"  >
 
   </ngx-smart-modal >
-    <div >
-<br>
-      <p class="title">Придбані QR</p>
+
+
+    <div class="tab">
+      <p class="balans" >Придбані QR</p>
 
 
         <ul class="title">
-        <li>Назва</li>
-        <li>Обмеження</li>
-        <li>Статус</li>
-        <li>Ціна QR</li>
-        <li>Відкрити QR</li>
-          <li>Дата покупки</li>
+          <li>Назва</li>
+          <li>Обмеження</li>
+          <li>Статус</li>
+          <li>Ціна QR</li>
+          <li>Відкрити QR</li>
+            <li>Дата покупки</li>
         </ul>
+        <div>
+        <ul class="rows" *ngFor="let item of userQR">
+          <li>QR</li>
+          <li>{{item.poizdka}} поїздки(а)</li>
+          <li>Активний</li>
+          <li>{{item.tsina_qr}} грн</li>
+          <li>
+            <a href="#" id="zatemnenie">
+                <div id="okno">
+                    <ngx-qrcode [qrc-version]=10 [qrc-correction-level]="'L'"></ngx-qrcode>
+                </div>
+            </a>
+            <a href="#zatemnenie">Показати QR</a>
+           </li>
+           <li>{{item.data_add }}</li>
+           </ul>
+        </div>
+    </div>
 
 
-    <ul class="rows" *ngFor="let item of userQR">
-      <li>QR</li>
-      <li>{{item.poizdka}} поїздки(а)</li>
-      <li>Активний</li>
-      <li>{{item.tsina_qr}} грн</li>
-         <li>
-             <a href="#" id="zatemnenie">
-          <div id="okno">
-              <qrcode [qrdata]="item.qr_key" [size]="300" [level]="'H'" qrc-version = "20" ></qrcode>
-          </div>
-          </a>
-        <a href="#zatemnenie">Показати QR</a>
-         </li>
-      <li>{{item.data_add }}</li>
-        </ul>
 
-  </div>
-
-
-<div class="loading" *ngIf="isQRLoading">
-<div class="cube-wrapper">
-  <div class="cube-folding">
-    <span class="leaf1"></span>
-    <span class="leaf2"></span>
-    <span class="leaf3"></span>
-    <span class="leaf4"></span>
-  </div>
-  <span class="loading" data-name="Loading">Завантаження</span>
-</div>
-</div>
+ <div class="loading" *ngIf="isQRLoading">
+   <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+       <span class="loading" data-name="Loading">Завантаження</span>
+   </div>
+ </div>

@@ -9,12 +9,13 @@ import {NgxSmartModalService} from 'ngx-smart-modal';
 
 @Injectable()
 export class QRService {
-    constructor(private http: HttpClient, public ngxSmartModalService: NgxSmartModalService) { }
+    constructor(private http: HttpClient, public ngxSmartModalService: NgxSmartModalService) {
+    }
 
     load() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         // return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password }, httpOptions)
@@ -28,10 +29,11 @@ export class QRService {
                 return data;
             }));
     }
+
     addQR(c) {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         const body = new HttpParams()
@@ -47,7 +49,7 @@ export class QRService {
     getQRs() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         return this.http.get<any>(`${environment.apiUrl}/v1/qr/qr`, httpOptions)
@@ -60,7 +62,7 @@ export class QRService {
     addWallet(c) {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         const body = new HttpParams()
@@ -75,7 +77,7 @@ export class QRService {
     getWallets() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         return this.http.get<any>(`${environment.apiUrl}/v1/qr/wallet`, httpOptions)
