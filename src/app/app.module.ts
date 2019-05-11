@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { QRCodeModule } from 'angularx-qrcode';
+
 // used to create fake backend
 
 import { fakeBackendProvider } from './_helpers';
@@ -30,8 +30,7 @@ import {HelpService} from './_services/help.service';
 import { KoshikComponent } from './koshik/koshik.component';
 import { ModalModule } from 'ngb-modal';
 import { NgxQRCodeModule} from 'ngx-qrcode3';
-
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 
@@ -45,7 +44,6 @@ import { NgxQRCodeModule} from 'ngx-qrcode3';
         NgxSmartModalModule.forRoot(),
         FormsModule,
         QRCodeModule,
-        BrowserModule,
         FormsModule,
         ModalModule,
         NgxQRCodeModule,
@@ -60,7 +58,8 @@ import { NgxQRCodeModule} from 'ngx-qrcode3';
         CardsComponent,
         QRComponent,
         HelpComponent,
-        KoshikComponent],
+        KoshikComponent,
+             ],
     providers: [
         AuthGuard,
         AlertService,

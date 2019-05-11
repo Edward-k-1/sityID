@@ -26,6 +26,7 @@
     "ng-sidebar": "^8.0.0",
     "ng2-opd-popup": "^1.1.21",
     "ngb-modal": "^1.0.5",
+    "ngx-modal-dialog": "^3.0.0",
     "ngx-qrcode2": "0.0.9",
     "ngx-qrcode3": "^0.3.0",
     "ngx-smart-modal": "^7.1.1",

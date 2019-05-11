@@ -18,6 +18,9 @@ use app\api\v1\models\QR;
 use yii\rest\ActiveController;
 use yii\filters\auth\HttpBearerAuth;
 use yii\data\ActiveDataProvider;
+use xj\qrcode\QRcode;
+use xj\qrcode\widgets\Email;
+use xj\qrcode\widgets\Text;
 
 class QrController extends ActiveController
 {
@@ -170,4 +173,5 @@ class QrController extends ActiveController
         return ['status' => true, 'data'=> $data];
 
     }
+
 }

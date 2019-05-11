@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <div>
 
   <div class="add-qr">
@@ -35,7 +35,7 @@
      </div>
         <br>
 
-          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()"  (click)="myModal.close()"  >
+          <p><input class="button1" type="submit" value="Придбати QR" (click)="addQR()"  (click)="myModal.close()"   >
 
   </ngx-smart-modal >
 
@@ -53,24 +53,33 @@
             <li>Дата покупки</li>
         </ul>
         <div>
-        <ul class="rows" *ngFor="let item of userQR">
+        <ul class="rows" *ngFor="let item of userQR" >
           <li>QR</li>
           <li>{{item.poizdka}} поїздки(а)</li>
           <li>Активний</li>
           <li>{{item.tsina_qr}} грн</li>
           <li>
-            <a href="#" id="zatemnenie">
+              <div>
+                  <span  (click)="ngxSmartModalService.getModal('imgModal').open()" (click)="ngxSmartModalService.resetModalData('imgModal')">Показати QR</span>
+              <ngx-smart-modal #imgModal identifier="imgModal">
+                  <qrcode [qrdata]= "item.qr_key"  [size]="256" [level]="'M'" ></qrcode>
+              </ngx-smart-modal>
+              </div>
+
+            <!--<a href="#" id="zatemnenie">
                 <div id="okno">
-                    <ngx-qrcode [qrc-version]=10 [qrc-correction-level]="'L'"></ngx-qrcode>
+
+                    <qrcode [qrdata]= "item.qr_key"  [size]="256" [level]="'M'"></qrcode>
+
                 </div>
             </a>
-            <a href="#zatemnenie">Показати QR</a>
+            <a href="#zatemnenie">Показати QR</a>-->
+
            </li>
            <li>{{item.data_add }}</li>
            </ul>
         </div>
     </div>
-
 
 
  <div class="loading" *ngIf="isQRLoading">
@@ -84,3 +93,4 @@
        <span class="loading" data-name="Loading">Завантаження</span>
    </div>
  </div>
+

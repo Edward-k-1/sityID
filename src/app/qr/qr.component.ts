@@ -5,7 +5,6 @@ import {WalletService} from '../_services/wallet.service';
 import {first} from 'rxjs/operators';
 import {QRService} from '../_services/qr.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
-import { QRCode, ErrorCorrectLevel, QRNumber, QRAlphaNum, QR8BitByte, QRKanji } from 'qrcode-generator-ts/js';
 
 @Component({
   selector: 'app-qr',
@@ -81,6 +80,7 @@ export class QRComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
     private loadQR() {
         this.isQRLoading = true;
         this.qrServise.getQRs()
@@ -108,7 +108,7 @@ export class QRComponent implements OnInit {
     }
 
     addQR() {
-        if (this.addData.poizdka.length > 20 ) {
+        if (this.addData.poizdka.length > 20) {
             this.alertService.error('Некоректне число поїздок');
             return;
         }
@@ -161,5 +161,5 @@ export class QRComponent implements OnInit {
                     this.alertService.error(error);
                 });
     }
-
 }
+
