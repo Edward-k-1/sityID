@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 /*import {User} from '../_models';*/
 import {NgxSmartModalService} from 'ngx-smart-modal';
+import {pipe} from 'rxjs';
 
 
 @Injectable()
@@ -25,8 +26,11 @@ export class QRService {
             .pipe(map(data => {
                 // login successful if there's a jwt token in the response
                 console.log(data);
-
                 return data;
+            }))
+            .pipe(map(qr_key1 => {
+                console.log(qr_key1);
+                return qr_key1;
             }));
     }
 
@@ -58,7 +62,18 @@ export class QRService {
                 return data;
             }));
     }
-
+    qr() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        return this.http.get<any>(`${environment.apiUrl}/v1/qr/qr`, httpOptions)
+            .pipe(map(qr_key1 => {
+                console.log(qr_key1);
+                return qr_key1;
+            }));
+    }
     addWallet(c) {
         const httpOptions = {
             headers: new HttpHeaders({

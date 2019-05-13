@@ -5,6 +5,8 @@ import {WalletService} from '../_services/wallet.service';
 import {first} from 'rxjs/operators';
 import {QRService} from '../_services/qr.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import {FormControl, FormGroup} from '@angular/forms';
+import {pipe} from 'rxjs';
 
 @Component({
   selector: 'app-qr',
@@ -29,20 +31,23 @@ export class QRComponent implements OnInit {
     amount = 0;
     result = [];
     addData = {poizdka: '', tsina_qr: 0, wallet: 0};
+    qr_key: string;
     constructor(private walletServise: WalletService, private qrServise: QRService, private alertService: AlertService, public ngxSmartModalService: NgxSmartModalService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.userQR = JSON.parse(localStorage.getItem('userQR'));
+
     }
 
     ngOnInit() {
         this.loadWallet();
         this.loadQR();
+        /*this.createFormControls();
+        this.createForm();*/
     }
 
     addInit() {
         /*$('.add-qr').toggleClass('active');*/
     }
-
     ReCalculate(value) {
         if (value === 'child') {
             this.amount -= 3;
@@ -161,5 +166,20 @@ export class QRComponent implements OnInit {
                     this.alertService.error(error);
                 });
     }
+   /* createFormControls() {
+        this.imgQR = new FormControl('');
+    }
+
+    createForm() {
+        this.myform = new FormGroup({
+                imgQR: this.imgQR
+        });
+    }
+    onSubmit() {
+        if (this.myform) {
+            console.log('Form Submitted!');
+            this.myform.reset();
+        }
+    }*/
 }
 
