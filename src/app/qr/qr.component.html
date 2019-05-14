@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <div>
 
   <div class="add-qr">
     <span class="button" (click)="ngxSmartModalService.getModal('myModal').open()" >Придбати QR</span>
@@ -54,20 +55,20 @@
         </ul>
         <div>
         <ul class="rows" *ngFor="let item of userQR" >
-          <li>QR</li>
-          <li>{{item.poizdka}} поїздки(а)</li>
-          <li>Активний</li>
-          <li>{{item.tsina_qr}} грн</li>
-          <li>
+          <li class="col-">QR</li>
+          <li class="col-">{{item.poizdka}} поїздки</li>
+          <li class="col-">Активний</li>
+          <li class="col-">{{item.tsina_qr}} грн</li>
+          <li class="col-">
              <a href="#zatemnenie" (click)="set_qr(item.qr_key)">Показати QR</a>
           </li>
-            <li>{{item.data_add }}</li>
+            <li class="col-">{{item.data_add }}</li>
            </ul>
         </div>
     </div>
 
 
- <div class="loading" *ngIf="isQRLoading">
+   <div class="loading" *ngIf="isQRLoading">
    <div class="cube-wrapper">
       <div class="cube-folding">
         <span class="leaf1"></span>
@@ -77,12 +78,12 @@
       </div>
        <span class="loading" data-name="Loading">Завантаження</span>
    </div>
- </div>
+   </div>
 
     <div>
        <a href="#" id="zatemnenie">
           <div id="okno">
-             <qrcode [qrdata]= "qrdata"  [size]="256" [level]="'M'"></qrcode>
+             <qrcode [qrdata]= "qrdata"  [size]="175" [level]="'M'"></qrcode>
           </div>
        </a>
     </div>
