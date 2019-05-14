@@ -118,7 +118,7 @@ ul li{
     width: 13vw;
     text-align: center;
 }
- ul li:nth-child(1) {
+ul li:nth-child(1) {
     width: 8vw;
 }
 ul li:nth-child(2) {
@@ -134,7 +134,7 @@ ul li:nth-child(5) {
      width: 10vw;
  }
 ul li:nth-child(6) {
-    width: 10vw;
+    width: 15vw;
 }
 
 .action:first-child {
@@ -491,5 +491,8 @@ ul.rows:nth-child(1) li{
 
 }
 div.group {
-    left: 10%;
+    left: 20%;
+}
+.rows {
+    font-size: 130%;
 }

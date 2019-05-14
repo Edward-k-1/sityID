@@ -5,8 +5,7 @@ import {WalletService} from '../_services/wallet.service';
 import {first} from 'rxjs/operators';
 import {QRService} from '../_services/qr.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
-import {FormControl, FormGroup} from '@angular/forms';
-import {pipe} from 'rxjs';
+
 
 @Component({
   selector: 'app-qr',
@@ -31,11 +30,11 @@ export class QRComponent implements OnInit {
     amount = 0;
     result = [];
     addData = {poizdka: '', tsina_qr: 0, wallet: 0};
-    qr_key: string;
+    qrdata;
     constructor(private walletServise: WalletService, private qrServise: QRService, private alertService: AlertService, public ngxSmartModalService: NgxSmartModalService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.userQR = JSON.parse(localStorage.getItem('userQR'));
-
+        this.qrdata = null;
     }
 
     ngOnInit() {
@@ -181,5 +180,10 @@ export class QRComponent implements OnInit {
             this.myform.reset();
         }
     }*/
+
+   set_qr(qr) {
+       this.qrdata = qr;
+       console.log();
+   }
 }
 

@@ -59,18 +59,9 @@
           <li>Активний</li>
           <li>{{item.tsina_qr}} грн</li>
           <li>
-              <div>
-                  <span (click)="ngxSmartModalService.getModal('imgModal').open()" (click)="item.qr_key">Показати QR</span>
-              </div>
-            <!--<a href="#" id="zatemnenie">
-                <div id="okno">
-                    <qrcode [qrdata]= "item.qr_key"  [size]="256" [level]="'M'"></qrcode>
-                </div>
-            </a>
-            <a href="#zatemnenie">Показати QR</a>-->
-
-           </li>
-           <li>{{item.data_add }}</li>
+             <a href="#zatemnenie" (click)="set_qr(item.qr_key)">Показати QR</a>
+          </li>
+            <li>{{item.data_add }}</li>
            </ul>
         </div>
     </div>
@@ -88,10 +79,10 @@
    </div>
  </div>
 
- <div>
-        <ngx-smart-modal #imgModal identifier="imgModal">
-           <div>
-              <qrcode [qrdata]="qr_key"  [size]="256" [level]="'M'"></qrcode>
-           </div>
-        </ngx-smart-modal>
- </div>
+    <div>
+       <a href="#" id="zatemnenie">
+          <div id="okno">
+             <qrcode [qrdata]= "qrdata"  [size]="256" [level]="'M'"></qrcode>
+          </div>
+        </a>
+    </div>

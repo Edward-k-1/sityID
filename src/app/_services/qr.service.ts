@@ -27,10 +27,6 @@ export class QRService {
                 // login successful if there's a jwt token in the response
                 console.log(data);
                 return data;
-            }))
-            .pipe(map(qr_key1 => {
-                console.log(qr_key1);
-                return qr_key1;
             }));
     }
 
@@ -60,18 +56,6 @@ export class QRService {
             .pipe(map(data => {
                 console.log(data);
                 return data;
-            }));
-    }
-    qr() {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/x-www-form-urlencoded',
-            })
-        };
-        return this.http.get<any>(`${environment.apiUrl}/v1/qr/qr`, httpOptions)
-            .pipe(map(qr_key1 => {
-                console.log(qr_key1);
-                return qr_key1;
             }));
     }
     addWallet(c) {
