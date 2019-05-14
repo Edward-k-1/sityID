@@ -40,8 +40,6 @@ export class QRComponent implements OnInit {
     ngOnInit() {
         this.loadWallet();
         this.loadQR();
-        /*this.createFormControls();
-        this.createForm();*/
     }
 
     addInit() {
@@ -165,21 +163,6 @@ export class QRComponent implements OnInit {
                     this.alertService.error(error);
                 });
     }
-   /* createFormControls() {
-        this.imgQR = new FormControl('');
-    }
-
-    createForm() {
-        this.myform = new FormGroup({
-                imgQR: this.imgQR
-        });
-    }
-    onSubmit() {
-        if (this.myform) {
-            console.log('Form Submitted!');
-            this.myform.reset();
-        }
-    }*/
 
    set_qr(qr) {
        this.qrdata = qr;
