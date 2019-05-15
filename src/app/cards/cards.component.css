@@ -347,3 +347,232 @@ div.loading {
 .cards-wrapper ul li:nth-child(5) {
     width: 17vw;
 }
+.title1{
+    color: darkred;
+    font-size: 150%;
+}
+@media screen and (max-width: 960px){
+    .add-card .button {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 70%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background: #c3c3ca;
+        cursor: pointer;
+        transition: .5s;
+        overflow: hidden;
+        z-index: 999;
+    }
+    .add-card.active .button::after {
+        content: 'X';
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        font-size: 20px;
+    }
+
+    .add-card .card-add-form {
+        width: 80%;
+        height: 100px;
+        top: 50px;
+        position: absolute;
+        padding: 5px 0;
+        transition: 1s;
+    }
+
+    .add-card.active .card-add-form {
+        top: 0;
+        transition: 1s;
+    }
+    .add-card .card-add-form p {
+        margin-bottom: 10px;
+        width: 70%;
+        float: left;
+        text-align: center;
+
+    }
+    .add-card .card-add-form input {
+        margin: 0 5px;
+    }
+    .add-card .card-add-form p.card-name input {
+        width: 30%;
+    }
+    .add-card .card-add-form p.card-name span {}
+    .add-card .card-add-form input.card-uid {
+        width: 30%;
+    }
+    .add-card .card-add-form input.card-pin {
+        width: 30%;
+    }
+    .add-card .card-add-form span.add-btn {
+        display: block;
+        background: #545b62;
+        position: absolute;
+        width: 15%;
+        height: 50%;
+        right: 0px;
+        top: 5px;
+        line-height: 100%;
+        font-size: 17px;
+        padding: 15px 10px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 766px) {
+    .add-card, .cards {
+        width: 570px;
+        height: 40px;
+        overflow: hidden;
+        position: relative;
+        transition: .5s;
+    }
+    .add-card .button {
+        position: center;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 30%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: #c3c3ca;
+        cursor: pointer;
+        transition: .5s;
+        overflow: hidden;
+        z-index: 999;
+    }
+
+    .add-card .button:hover {
+        background: #ff3041;
+        transition: .5s;
+    }
+
+    .add-card.active {
+        height: 300px;
+        border-bottom: 1px solid #a40000;
+        transition: .5s;
+    }
+    .add-card.active .button {
+        width: 7%;
+        height: 15%;
+        right: 10px;
+        background: #ff3041;
+        color: #ff3041;
+        top: 15px;
+    }
+    .add-card.active .button::after {
+        content: 'X';
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        font-size: 25px;
+    }
+
+    .add-card .card-add-form {
+        width: 30%;
+        height: 100px;
+        top: 50px;
+        position: relative;
+        padding: 5px 0;
+        transition: 1s;
+    }
+
+    .add-card.active .card-add-form {
+        top: 0;
+        transition: 1s;
+    }
+    .add-card .card-add-form p {
+        margin-bottom: 10px;
+        width: 80%;
+        float: left;
+        text-align: center;
+    }
+    .add-card .card-add-form input {
+        margin: 0 15px;
+    }
+    .add-card .card-add-form p.card-name input {
+        width: 200px;
+    }
+    .add-card .card-add-form p.card-name span {}
+    .add-card .card-add-form input.card-uid {
+        width: 200px;
+    }
+    .add-card .card-add-form input.card-pin {
+        width: 200px;
+    }
+    .add-card .card-add-form span.add-btn {
+        display: inline-block;
+        background: #545b62;
+        position: relative;
+        width: 50%;
+        height: 50%;
+        right: -35px;
+        top: -2px;
+        line-height: 10%;
+        font-size: 15px;
+        padding: 20px 10px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    .cards {
+        margin-top: 20px;
+        height: auto;
+        width: 65vw;
+    }
+
+
+    .cards-wrapper ul.title {
+        font-size: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid red;
+    }
+    .cards-wrapper ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 75vw;
+    }
+
+    .cards-wrapper ul li {
+        position: relative;
+        display: inline-block;
+        width: 10vw;
+        text-align: center;
+    }
+    .cards-wrapper ul li:nth-child(1) {
+        width: 10vw;
+    }
+    .cards-wrapper ul li:nth-child(2) {
+        width: 20vw;
+    }
+    .cards-wrapper ul li:nth-child(3) {
+        width: 17vw;
+    }
+    .cards-wrapper ul li:nth-child(4) {
+        width: 7vw;
+    }
+    .cards-wrapper ul li:nth-child(5) {
+        width: 12vw;
+    }
+    .title1{
+        color: darkred;
+        font-size: 80%;
+    }
+    .title{
+        font-size: 5%;
+    }
+    .rows{
+        font-size: 10px;
+    }
+}

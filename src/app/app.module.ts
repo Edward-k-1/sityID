@@ -31,7 +31,7 @@ import { KoshikComponent } from './koshik/koshik.component';
 import { ModalModule } from 'ngb-modal';
 import { NgxQRCodeModule} from 'ngx-qrcode3';
 import { QRCodeModule } from 'angularx-qrcode';
-
+import { ResponsiveModule } from 'ngx-responsive';
 
 
 @NgModule({
@@ -47,6 +47,7 @@ import { QRCodeModule } from 'angularx-qrcode';
         FormsModule,
         ModalModule,
         NgxQRCodeModule,
+        ResponsiveModule.forRoot()
     ],
     declarations: [
         AppComponent,

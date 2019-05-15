@@ -453,3 +453,250 @@ div.loading {
 .history-block div.loading {
     width: 65vw;
 }
+@media screen and( max-width: 960px) {}
+@media screen and (max-width: 767px) {
+    .main-block {
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        background: #ffffffd6;
+        float: left;
+        padding: 15px;
+        box-shadow: 0px 0px 1px black;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .main-block .wallet {
+        width: 10em;
+        float: left;
+        height: 150px;
+    }
+    .main-block .wallet p {}
+    .main-block .wallet div {
+        width: 150px;
+        height: auto;
+        overflow: hidden;
+        border: 1px solid grey;
+    }
+    .main-block .wallet div span.fonds {
+        line-height: 100px;
+        display: block;
+        font-size: 60px;
+        width: 80px;
+        float: left;
+        color: #80807b;
+        text-align: center;
+    }
+    .main-block .wallet div span.nominal {
+        line-height: 25px;
+        display: block;
+        font-size: 25px;
+        float: left;
+        color: #000000;
+        padding: 50px 0 25px 0;
+    }
+
+    .actions {
+        width: 12em;
+        float: left;
+        height: 140px;
+    }
+    .actions ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .actions ul li {
+        margin: 5px;
+        width: 100%;
+        height: 25px;
+        background: grey;
+        padding: 0 5px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: .5s;
+    }
+
+    .actions ul li span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        padding: 0 5px;
+        background: transparent;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .actions ul li.active {
+        height: 50px;
+        padding: 0;
+        transition: .5s;
+        background: white;
+    }
+
+    .actions ul li .action {
+        position: absolute;
+        top: 25px;
+        transition: .5s;
+    }
+
+    .actions ul li.active .action {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        transition: .5s;
+    }
+
+    .actions ul li.active span {
+        display: block;
+        width: 33px;
+        height: 32px;
+        z-index: 9999;
+        position: absolute;
+        background: #ff4949;
+        color: #ff4949;
+        overflow: hidden;
+        transition: .5s;
+        top: 7px;
+        left: 160px;
+    }
+
+    .actions ul li.active span::after {
+        content: 'X';
+        position: absolute;
+        top: 0;
+        left: 9px;
+        color: white;
+        font-weight: bold;
+        font-family: cursive;
+        font-size: 21px;
+        transition: .5s;
+    }
+
+    .actions ul li .action button {
+        background: #3b3b3b;
+        border: none;
+        color: white;
+        padding: 6px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .actions ul li .action button:hover {
+        transition: .5s;
+        background: #2b64e3;
+    }
+
+    .actions ul li .action input {
+        width: 60px;
+        margin: 7px;
+    }
+
+    .actions ul li .action p {
+        display: inline-block;
+        width: 40px;
+        color: black;
+    }
+
+    .actions ul li span:hover {
+        transition: .5s;
+        background: #ff4949;
+    }
+
+    .actions ul li.active span:hover {
+
+    }
+
+    .actions ul li .action p.blocked {
+        width: 170px;
+        font-size: 12px;
+        padding: 15px 10px;
+    }
+
+    .card-info {
+        /*width: 31.5vw;*/
+    }
+    .card-info p.title {}
+    .card-info ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .card-info ul li {
+        background: #acacac;
+        margin: 5px 0;
+        padding: 4px 5px;
+        width: 212px;
+    }
+    .card-info ul li span {
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        font-size: 10px;
+    }
+    .card-info ul li span:nth-child(1) {
+        width: 25%;
+    }
+    .card-info ul li span:nth-child(2) {
+        width: 20%;
+    }
+    .card-info ul li span:nth-child(3) {
+        width: 80px;
+    }
+    .card-info ul li span:nth-child(4) {
+        width: 10%;
+    }
+
+
+    div.loading {
+        position: relative;
+        width: 15em;
+        height: 10em;
+    }
+
+    .history-wrapper ul.title {
+        font-size: 8px;
+        font-weight: bold;
+        border-bottom: 1px solid red;
+    }
+    .history-wrapper ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 58vw;
+    }
+
+    .history-wrapper ul li {
+        position: relative;
+        display: inline-block;
+        width: 13vw;
+        text-align: center;
+        font-size: 8px;
+    }
+    .history-wrapper ul li:nth-child(1) {
+        width: 8vw;
+    }
+    .history-wrapper ul li:nth-child(2) {
+        width: 17vw;
+    }
+    .history-wrapper ul li:nth-child(3) {
+        width: 10vw;
+    }
+    .history-wrapper ul li:nth-child(4) {
+        width: 10vw;
+    }
+    .history-wrapper ul li:nth-child(5) {
+        width: 10vw;
+    }
+
+    .history-block div.loading {
+        width: 55vw;
+    }
+}

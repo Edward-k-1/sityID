@@ -29,6 +29,7 @@
     "ngx-modal-dialog": "^3.0.0",
     "ngx-qrcode2": "0.0.9",
     "ngx-qrcode3": "^0.3.0",
+    "ngx-responsive": "^6.0.0",
     "ngx-smart-modal": "^7.1.1",
     "qrcode-generator-ts": "0.0.4",
     "rxjs": "^6.0.0",
