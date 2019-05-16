@@ -32,7 +32,7 @@ import { ModalModule } from 'ngb-modal';
 import { NgxQRCodeModule} from 'ngx-qrcode3';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ResponsiveModule } from 'ngx-responsive';
-
+import {DataTableModule} from 'angular-6-datatable';
 
 @NgModule({
     imports: [
@@ -47,7 +47,8 @@ import { ResponsiveModule } from 'ngx-responsive';
         FormsModule,
         ModalModule,
         NgxQRCodeModule,
-        ResponsiveModule.forRoot()
+        ResponsiveModule.forRoot(),
+        DataTableModule
     ],
     declarations: [
         AppComponent,

@@ -493,7 +493,6 @@ ul.rows:nth-child(1) li{
 div.group {
     left: 20%;
 }
-
 @media screen and (max-width: 960px){
     .add-qr .button {
         position: relative;
@@ -644,5 +643,4 @@ div.group {
     .input:focus ~ .bar:after {
         width: 50%;
     }
-
 }

@@ -110,7 +110,7 @@ export class QRComponent implements OnInit {
     }
 
     addQR() {
-        if (this.addData.poizdka.length > 20) {
+        if (this.addData.poizdka.length === 0) {
             this.alertService.error('Некоректне число поїздок');
             return;
         }

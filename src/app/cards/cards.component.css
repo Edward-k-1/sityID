@@ -351,6 +351,7 @@ div.loading {
     color: darkred;
     font-size: 150%;
 }
+
 @media screen and (max-width: 960px){
     .add-card .button {
         position: relative;

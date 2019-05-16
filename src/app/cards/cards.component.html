@@ -2,7 +2,8 @@
   <span class="button" (click)="addInit()">Додати картку</span>
   <div class="card-add-form">
 
-    <p class="card-name"><input [(ngModel)]="addData.name" type="text"><span>Назва</span></p>
+    <p class="card-name">
+      <input [(ngModel)]="addData.name" type="text"><span>Назва</span></p>
     <p class="card-data"><input [(ngModel)]="addData.card_uid" class="card-uid" type="text"><span>Номер</span><input [(ngModel)]="addData.pin" class="card-pin" type="text"><span>pin</span></p>
 
 
