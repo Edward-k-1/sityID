@@ -34,6 +34,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { ResponsiveModule } from 'ngx-responsive';
 import {DataTableModule} from 'angular-6-datatable';
 
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -48,7 +49,7 @@ import {DataTableModule} from 'angular-6-datatable';
         ModalModule,
         NgxQRCodeModule,
         ResponsiveModule.forRoot(),
-        DataTableModule
+        DataTableModule,
     ],
     declarations: [
         AppComponent,

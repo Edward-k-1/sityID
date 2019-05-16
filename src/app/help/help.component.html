@@ -1,56 +1,57 @@
 
- <div class="hellps">
-   <h4>Найчастіше запитують:</h4>
+<div>
+   <h4 class="red">Найчастіше запитують:</h4>
    <ol>
      <li>На скільки поїздок вистачає QR коду?</li>
      <li>Які саме картки можна використовувати<br> для оплати?</li>
      <li>Де можна поповнити баланс?</li>
    </ol>
+   <form novalidate
+         [formGroup]="myform"
+         (ngSubmit)="onSubmit()">
+
+     <div class="form-group"
+          [ngClass]="{
+        'has-danger': email.invalid && (email.dirty || email.touched),
+        'has-success': email.valid && (email.dirty || email.touched)
+   }">
+       <label class="red">Введіть ваш Email</label>
+       <input [(ngModel)]="addData.email" type="email"
+              class="form-control"
+              formControlName="email"
+              required>
+       <div class="form-control-feedback"
+            *ngIf="email.errors && (email.dirty || email.touched)">
+         <p *ngIf="email.errors.required" class="bl">Потрібно ввести Email</p>
+         <p *ngIf="email.errors.pattern" class="bl">
+           Адреса електронної пошти повинна містити принаймні символ @</p>
+       </div>
+
+
+     </div>
+
+     <div class="form-group"
+          [ngClass]="{
+        'has-danger': password.invalid && (password.dirty || password.touched),
+        'has-success': password.valid && (password.dirty || password.touched)
+   }">
+       <label class="red">Введіть ваше запитання:</label>
+       <textarea [(ngModel)]="addData.text" type="text"
+              class="form-control"
+              formControlName="password"
+                 required></textarea>
+       <div class="form-control-feedback"
+            *ngIf="password.errors && (password.dirty || password.touched)">
+         <p *ngIf="password.errors.required" class="bl">Потрібно вести питання</p>
+       </div>
+     </div>
+
+
+
+     <button type="submit"
+             class="btn btn-primary" (click)="addHelp()">Надіслати
+     </button>
+
+
+   </form>
  </div>
-
-  <p><b>Введіть ваш Email:</b><input [(ngModel)]="addData.email" id="email" type="email" name="email" ></p>
-    <div><b>Введіть ваше запитання:</b><br>
-      <div>
-        <div class="text" >
-          <textarea [(ngModel)]="addData.text" class="tex"></textarea>
-        </div>
-      </div>
-      <br>
-
-      <div class="send">
-        <span class="button" type="button"  (click)="addHelp()">Надіслати</span>
-      </div>
-    </div>
-
-
-<!--<div class="cards">
-  <div class="cards-wrapper" *ngIf="!isHelpLoading">
-    <p class="title">Прив'язані картки</p>
-    <ul class="title">
-      <li>Назва</li>
-      <li>Номер</li>
-      <li>Обмеження</li>
-      <li>Пін</li>
-      <li>Статус</li>
-    </ul>
-    <ul class="rows" *ngFor="let item of userHelp">
-      <li>{{item.email}}</li>
-      <li>{{item.text}}</li>
-      <li>необмежено</li>
-      <li>****</li>
-      <li> активна </li>
-    </ul>
-  </div>
-
-  <div class="loading" *ngIf="isHelpLoading">
-    <div class="cube-wrapper">
-      <div class="cube-folding">
-        <span class="leaf1"></span>
-        <span class="leaf2"></span>
-        <span class="leaf3"></span>
-        <span class="leaf4"></span>
-      </div>
-      <span class="loading" data-name="Loading"></span>
-    </div>
-  </div>
-</div>-->

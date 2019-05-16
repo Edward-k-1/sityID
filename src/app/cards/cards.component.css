@@ -72,7 +72,12 @@
 }
 .add-card .card-add-form p.card-name input {}
 .add-card .card-add-form p.card-name span {}
-.add-card .card-add-form input.card-uid {}
+.add-card .card-add-form input.card-uid {
+    -moz-appearance: textfield;
+}
+.card-uid::-webkit-inner-spin-button {
+    display: none;
+}
 .add-card .card-add-form input.card-pin {}
 .add-card .card-add-form span.add-btn {
     display: block;

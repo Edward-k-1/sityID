@@ -3,6 +3,7 @@ import {HelpService} from '../_services/help.service';
 import {AlertService} from '../_services';
 import * as $ from 'jquery';
 import {first} from 'rxjs/operators';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 
@@ -17,13 +18,17 @@ export class HelpComponent implements OnInit {
   currentUser;
   isHelpLoading = true;
   addData = {email: '', text: ''};
-
+    myform: FormGroup;
+    email: FormControl;
+    password: FormControl;
   constructor(private helpService: HelpService, private alertService: AlertService) {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
     this.loadHelp();
+      this.createFormControls();
+      this.createForm();
   }
 
   /*addInit() {
@@ -67,4 +72,30 @@ export class HelpComponent implements OnInit {
             });
 
   }
+    createFormControls() {
+        this.email = new FormControl('', [
+            Validators.required,
+            Validators.pattern('[^ @]*@[^ @]*')
+        ]);
+        this.password = new FormControl('', [
+            Validators.required,
+            Validators.minLength(8)
+        ]);
+    }
+
+    createForm() {
+        this.myform = new FormGroup({
+            email: this.email,
+            password: this.password
+        });
+    }
+
+    onSubmit() {
+        if (this.myform.valid) {
+            console.log('Form Submitted!');
+            this.myform.reset();
+        }
+    }
+
+
 }
