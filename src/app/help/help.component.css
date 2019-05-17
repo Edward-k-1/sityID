@@ -105,17 +105,15 @@ button:active {
     50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
 }
 .form-group{
-    width: 30%;
+    width: 50%;
 }
 .red {
     color: darkred;
     font-size: 150%;
-    text-shadow: 3px 3px 5px red;
 }
 .bl{
     color: blue;
     font-size: 110%;
-    text-shadow: 3px 3px 5px #1911aa;
 }
 @media screen and (max-width: 767px){
     .text, .tex {

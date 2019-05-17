@@ -39,7 +39,7 @@ class TransactionsController extends ActiveController
     }
 
 
-    public function actions()
+   /* public function actions()
     {
         $actions = parent::actions();
         unset($actions['index']);
@@ -72,6 +72,26 @@ class TransactionsController extends ActiveController
         }
         return $data;
 
-    }
+    }*/
 
+    public function actionTransctions() {
+        $userId = \Yii::$app->user->identity->id;
+        $data = (new \yii\db\Query())->select('ci_transactions_in.*')->from('ci_transactions_in')
+            ->where(['user_id' => $userId])->orderBy('ci_transactions_in.id DESC')->all();
+
+
+
+        return ['status' => true, 'data'=> $data];
+
+    }
+    public function actionTransctionss() {
+        $userId = \Yii::$app->user->identity->id;
+        $data = (new \yii\db\Query())->select('ci_transactios.*')->from('ci_transactios')
+            ->where(['user_id' => $userId])->orderBy('ci_transactios.id DESC')->all();
+
+
+
+        return ['status' => true, 'data'=> $data];
+
+    }
 }

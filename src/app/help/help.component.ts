@@ -92,7 +92,6 @@ export class HelpComponent implements OnInit {
 
     onSubmit() {
         if (this.myform.valid) {
-            console.log('Form Submitted!');
             this.myform.reset();
         }
     }

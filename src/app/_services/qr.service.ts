@@ -85,5 +85,30 @@ export class QRService {
                 return data;
             }));
     }
+    getTransctions() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        return this.http.get<any>(`${environment.apiUrl}/v1/transactions/transctions`, httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
+
+    getTr() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        return this.http.get<any>(`${environment.apiUrl}/v1/transactions/transctionss`, httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
 }
 

@@ -33,6 +33,7 @@ import { NgxQRCodeModule} from 'ngx-qrcode3';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ResponsiveModule } from 'ngx-responsive';
 import {DataTableModule} from 'angular-6-datatable';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import {DataTableModule} from 'angular-6-datatable';
         QRComponent,
         HelpComponent,
         KoshikComponent,
+        TransactionsComponent
              ],
     providers: [
         AuthGuard,
