@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
         {id: 3, name: 'transactions', displayName: 'Транзакції', icon: 'transactions.png', component: 'transactions'},
         {id: 4, name: 'QR', displayName: 'Придбати QR', icon: 'qr2.png', component: 'QR'},
         /*{id: 5, name: 'koshik', displayName: 'Кошик', icon: 'koshik.png', component: 'koshik'},*/
-        {id: 5, name: 'help', displayName: 'Допомога', icon: 'help.png', component: 'help'}
+        {id: 5, name: 'help', displayName: 'Допомога', icon: 'help.png', component: 'help'},
     ];
     currentPage = this.menuItems[0];
 

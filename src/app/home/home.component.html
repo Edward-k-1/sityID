@@ -49,6 +49,12 @@
                     <!--<li class="item-QR"><span>Придбати QR</span><img src="../../assets/icons/qr5.png" alt=""><span  class="back" ></span></li>-->
                     <!--<li class="item-koshik"><span>Кошик<img src="../../assets/icons/help.png" alt=""></span></li>-->
                     <!--<li class="item-help"><span>Допомога<img src="../../assets/icons/koshik.png" alt=""></span></li>-->
+                    <li class="item-exit"
+                        (mouseenter)="menuAnimEffect($event)"
+                        (mouseleave)="menuAnimEffect($event)"><span>Вихід</span>
+                        <img src="../../assets/icons/exit.jpg" alt="">
+                        <span class="back"></span>
+                    </li>
                 </ul>
             </div>
             <!--<div class="main-controls main-menu">-->
@@ -86,7 +92,7 @@
                     <app-help></app-help>
                 </section>
             </div>
+            <!--<section *ngIf="currentPage.name === 'exit'" class="exit"></section>-->
         </div>
-
     </ng-sidebar-container>
 </div>
