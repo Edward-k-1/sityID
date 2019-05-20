@@ -1,0 +1,89 @@
+
+<h4 class="red">Зовнішні транзакції</h4>
+<table class="table table-striped" [mfData]="userTransactions" #m="mfDataTable" [mfRowsOnPage]="6">
+  <thead style="color: red">
+  <tr>
+    <th style="width: 15%">
+      <mfDefaultSorter by="name">Назва</mfDefaultSorter>
+    </th>
+    <th style="width: 20%">
+      <mfDefaultSorter by="obmez">Сума поповнення</mfDefaultSorter>
+    </th>
+    <th style="width: 20%">
+      <mfDefaultSorter by="status">Підтвердження транзакції</mfDefaultSorter>
+    </th>
+    <th style="width: 20%">
+      <mfDefaultSorter by="data">Дата транзакції</mfDefaultSorter>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of m.data">
+    <td>Поповнення рахунку</td>
+    <td>{{item.amount}} грн</td>
+    <td>{{item.is_confirmed}} раз</td>
+    <td>{{item.date }}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
+</table>
+<div class="loading" *ngIf="isQRLoading">
+  <div class="cube-wrapper">
+    <div class="cube-folding">
+      <span class="leaf1"></span>
+      <span class="leaf2"></span>
+      <span class="leaf3"></span>
+      <span class="leaf4"></span>
+    </div>
+    <span class="loading" data-name="Loading">Завантаження</span>
+  </div>
+</div>
+<br>
+<h4 class="red">Внутрішні тразакції</h4>
+<table class="table table-striped" [mfData]="userTr" #mf="mfDataTable" [mfRowsOnPage]="6">
+  <thead style="color: red">
+  <tr>
+    <th style="width: 15%">
+      <mfDefaultSorter by="name">Назва</mfDefaultSorter>
+    </th>
+    <th style="width: 20%">
+      <mfDefaultSorter by="obmez">Витраченна сума</mfDefaultSorter>
+    </th>
+    <th style="width: 20%">
+      <mfDefaultSorter by="status">Дата транзакції</mfDefaultSorter>
+    </th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of mf.data">
+    <td>{{item.type}} код</td>
+    <td>{{item.amount}} грн</td>
+    <td>{{item.date }}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="3">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
+</table>
+<div class="loading" *ngIf="isQRLoading">
+  <div class="cube-wrapper">
+    <div class="cube-folding">
+      <span class="leaf1"></span>
+      <span class="leaf2"></span>
+      <span class="leaf3"></span>
+      <span class="leaf4"></span>
+    </div>
+    <span class="loading" data-name="Loading">Завантаження</span>
+  </div>
+</div>
