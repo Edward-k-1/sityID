@@ -27,13 +27,13 @@
 }
 
 .add-card.active {
-    height: 100px;
+    height: 80px;
     border-bottom: 1px solid red;
     transition: .5s;
 }
 .add-card.active .button {
     width: 7%;
-    height: 50%;
+    height: 63%;
     right: 10px;
     background: #ff3041;
     color: #ff3041;
@@ -63,7 +63,7 @@
 }
 .add-card .card-add-form p {
     margin-bottom: 10px;
-    width: 80%;
+    width: 90%;
     float: left;
     text-align: center;
 }

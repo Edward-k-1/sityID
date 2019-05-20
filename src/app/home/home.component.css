@@ -25,14 +25,14 @@
 }
 
 .demo-header__toggle::after {
-     background: white;
-     content: '';
-     height: 0.15rem;
-     left: 0;
-     margin-top: -0.075rem;
-     position: absolute;
-     top: 50%;
-     width: 100%;
+    background: white;
+    content: '';
+    height: 0.15rem;
+    left: 0;
+    margin-top: -0.075rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
 }
 
 
@@ -43,7 +43,7 @@
 }
 
 .demo-sidebar.ng-sidebar--opened.ng-sidebar--over {
-     box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
 }
 
 .demo-contents {
@@ -59,8 +59,8 @@
     transition: background-color 0.15s;
 }
 .demo-control:hover {
-     background-color: darkgrey;
-     color: white;
+    background-color: darkgrey;
+    color: white;
 }
 
 .sidebar-header {
@@ -114,6 +114,7 @@
     float: right;
     margin: 5px;
 }
+
 .main-menu ul li.menu-current {
     background: #ff00009c;
     transition: .5s;
@@ -198,13 +199,6 @@ h3.title {
 #simply-burger span:nth-child(3) {
     top: 24px;
 }
-#simply-burger span:nth-child(4) {
-    top: 34px;
-}
-#simply-burger span:nth-child(5) {
-    top: 44px;
-}
-
 
 #simply-burger.open {
     margin-right: 110px;
@@ -230,20 +224,7 @@ h3.title {
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
 }
-#simply-burger.open span:nth-child(4) {
-    top: 15px;
-    width: 75%;
-    left: 4px;
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-}
-#simply-burger.open span:nth-child(5) {
-    top: 15px;
-    width: 75%;
-    left: 4px;
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-}
+
 
 .main-menu ul li {
     color: #a0b8cb;
@@ -292,15 +273,6 @@ h3.title {
     -webkit-transform: scale(0.6, 0.6);
 }
 
-.item-koshik img{
-    width: 10px;
-    height: auto;
-    margin-bottom: 10%;
-    display: block;
-    transform: scale(0.8, 0.8);
-    -ms-transform: scale(0.8, 0.8);
-    -webkit-transform: scale(0.8, 0.8);
-}
 .item-exit img{
     width: 10px;
     height: auto;
@@ -314,293 +286,4 @@ h3.title {
     top: 235px;
     color: #a0b8cb;
     overflow: hidden;
-}
-@media screen and( max-width: 960px) {
-}
-@media screen and (max-width: 767px){
-    .main-app {
-        height: 100vh;
-    }
-
-    .demo-header {
-        align-items: center;
-        background: #33333dab;
-        box-shadow: 0 0.1em 1.5em rgba(20, 20, 20, 0.5);
-        color: white;
-        display: flex;
-        padding: 1em;
-    }
-
-    .demo-header__toggle {
-        background: transparent;
-        border: 0.15rem solid white;
-        border-left: 0;
-        border-right: 0;
-        cursor: pointer;
-        font-size: 0;
-        height: 1.5rem;
-        margin-right: 1rem;
-        position: relative;
-        width: 1rem;
-    }
-
-    .demo-header__toggle::after {
-        background: white;
-        content: '';
-        height: 0.15rem;
-        left: 0;
-        margin-top: -0.075rem;
-        position: absolute;
-        top: 50%;
-        width: 80%;
-    }
-
-
-    /deep/ .side-menu {
-        background: #000000c4;
-        width: 250px;
-        z-index: 9999;
-    }
-
-    .demo-sidebar.ng-sidebar--opened.ng-sidebar--over {
-        box-shadow: 0 0 2.5em rgba(75, 75, 75, 0.5);
-    }
-
-    .demo-contents {
-        padding: 0 2em;
-    }
-
-    .demo-control {
-        background-color: lightgrey;
-        border: 1px solid darkgrey;
-        cursor: pointer;
-        margin-bottom: 0.5em;
-        padding: 0.5em 2em;
-        transition: background-color 0.15s;
-    }
-    .demo-control:hover {
-        background-color: darkgrey;
-        color: white;
-    }
-
-    .sidebar-header {
-        height: 56px;
-        background: white;
-        border-bottom: 1px solid red;
-    }
-
-    .sidebar-header img {
-        float: right;
-        width: 40px;
-        margin: 10px 5px;
-    }
-
-    .sidebar-header span {
-        width: 200px;
-        display: block;
-        float: left;
-        height: 56px;
-        background: #d7222200;
-        color: black;
-        line-height: 50px;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .main-menu {
-        margin-top: 25px;
-    }
-    .main-menu ul {
-        margin: 0;
-        padding: 0;
-    }
-    .main-menu ul li {
-        height: 50px;
-        margin: 10px 0;
-        padding-left: 10px;
-        cursor: pointer;
-    }
-    .main-menu ul li span {
-        color: #e3e3e3;
-        height: 50px;
-        display: block;
-        width: 170px;
-        float: left;
-        text-align: right;
-        line-height: 50px;
-    }
-    .main-menu ul li img {
-        width: 40px;
-        float: right;
-        margin: 5px;
-    }
-
-    .main-menu ul li.menu-current {
-        background: #ff00009c;
-        transition: .5s;
-        font-weight: bold;
-    }
-    .main-menu ul li.menu-current span {
-        color: white;
-    }
-    .main-menu ul li.menu-current img {}
-
-    section {
-        padding: 3vh;
-        margin: 3vh 7vh;
-        height: auto;
-        overflow: hidden;
-        min-width: 300px;
-        /*background: #76767c73;*/
-    }
-
-    h3.title {
-        margin: 5vh 0 0 10vh;
-        border-bottom: 1px solid grey;
-        width: 30%;
-        padding-bottom: 5px;
-        color: #ff0000bd;
-        font-size: 110%;
-    }
-
-    .main-logo {
-        position: absolute;
-        height: 45px;
-        right: 5vh;
-        top: 5px;
-    }
-
-    /deep/ .ng-sidebar__content {
-        /*!*background: url('../../assets/background.jpg');*!*/
-        /*background-size: 100% 100%;*/
-        min-width: 400px;
-
-    }
-
-    .menu-toggle {
-        width: 100%;
-        height: 40px;
-        margin-top: 5px;
-    }
-
-    #simply-burger {
-        margin: 5px;
-        width: 25px;
-        height: 25px;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
-        float: right;
-        margin-right: 8px;
-    }
-
-    #simply-burger span {
-        display: block;
-        position: absolute;
-        height: 3px;
-        width: 80%;
-        background: #F2F2F2;
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        transition: 0.25s ease-in-out;
-    }
-
-    #simply-burger span:nth-child(1) {
-        top: 0px;
-    }
-
-    #simply-burger span:nth-child(2) {
-        top: 12px;
-    }
-
-    #simply-burger span:nth-child(3) {
-        top: 24px;
-    }
-
-    #simply-burger.open {
-        margin-right: 110px;
-    }
-
-    #simply-burger.open span:nth-child(1) {
-        top: 15px;
-        width: 75%;
-        left: 4px;
-        -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
-    }
-
-    #simply-burger.open span:nth-child(2) {
-        opacity: 0;
-        left: -60px;
-    }
-
-    #simply-burger.open span:nth-child(3) {
-        top: 15px;
-        width: 75%;
-        left: 4px;
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-
-
-    .main-menu ul li {
-        color: #a0b8cb;
-        overflow: hidden;
-        position: relative;
-    }
-    .main-menu ul li span.back {
-        position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: #dc3545;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: width 1s, height 1s;
-        z-index: -1;
-    }
-    .main-menu ul li:hover {
-        color: #e9eef3;
-    }
-    .main-menu ul li:hover span.back {
-        width: 462.5px;
-        height: 462.5px;
-    }
-    .main-menu ul li:active {
-        background: #8fabc2;
-    }
-
-    .item-QR img{
-        width: 10px;
-        height: auto;
-        display: block;
-        transform: scale(0.7, 0.7);
-        -ms-transform: scale(0.7, 0.7);
-        -webkit-transform: scale(0.7, 0.7);
-    }
-
-    .item-help img{
-        width: 10px;
-        height: auto;
-        margin-bottom: 10%;
-        display: block;
-        transform: scale(0.6, 0.6);
-        -ms-transform: scale(0.6, 0.6);
-        -webkit-transform: scale(0.6, 0.6);
-    }
-
-    .item-koshik img{
-        width: 10px;
-        height: auto;
-        margin-bottom: 10%;
-        display: block;
-        transform: scale(0.8, 0.8);
-        -ms-transform: scale(0.8, 0.8);
-        -webkit-transform: scale(0.8, 0.8);
-    }
 }
