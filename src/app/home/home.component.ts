@@ -3,6 +3,7 @@ import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { UserService } from '../_services';
 import * as $ from 'jquery';
+import {AuthenticationService} from '../_services';
 
 @Component({templateUrl: 'home.component.html',
     styleUrls: ['home.component.css']})
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     ];
     currentPage = this.menuItems[0];
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private authenticationService: AuthenticationService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         $('.item-' + this.currentPage.name).addClass('menu-current');
     }
@@ -51,4 +52,10 @@ export class HomeComponent implements OnInit {
             relY = $event.pageY - parentOffset.top;
         e.find('span.back').css({top: relY, left: relX});
     }
+
+    logout1() {
+        this.authenticationService.logout();
+        location.reload(true);
+    }
 }
+

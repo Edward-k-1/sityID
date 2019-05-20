@@ -51,7 +51,9 @@
                     <!--<li class="item-help"><span>Допомога<img src="../../assets/icons/koshik.png" alt=""></span></li>-->
                     <li class="item-exit"
                         (mouseenter)="menuAnimEffect($event)"
-                        (mouseleave)="menuAnimEffect($event)"><span>Вихід</span>
+                        (mouseleave)="menuAnimEffect($event)"
+                        (click)="logout1()">
+                        <span>Вихід</span>
                         <img src="../../assets/icons/exit.jpg" alt="">
                         <span class="back"></span>
                     </li>
