@@ -1,6 +1,6 @@
 
 <h4 class="red">Зовнішні транзакції</h4>
-<table class="table table-striped" [mfData]="userTransactions" #m="mfDataTable" [mfRowsOnPage]="6">
+<table class="table table-striped" [mfData]="userTransactions" #m="mfDataTable" [mfRowsOnPage]="6" class="fo">
   <thead style="color: red">
   <tr>
     <th style="width: 15%">
@@ -8,9 +8,6 @@
     </th>
     <th style="width: 20%">
       <mfDefaultSorter by="obmez">Сума поповнення</mfDefaultSorter>
-    </th>
-    <th style="width: 20%">
-      <mfDefaultSorter by="status">Підтвердження транзакції</mfDefaultSorter>
     </th>
     <th style="width: 20%">
       <mfDefaultSorter by="data">Дата транзакції</mfDefaultSorter>
@@ -21,7 +18,6 @@
   <tr *ngFor="let item of m.data">
     <td>Поповнення рахунку</td>
     <td>{{item.amount}} грн</td>
-    <td>{{item.is_confirmed}} раз</td>
     <td>{{item.date }}</td>
   </tr>
   </tbody>
@@ -46,7 +42,7 @@
 </div>
 <br>
 <h4 class="red">Внутрішні тразакції</h4>
-<table class="table table-striped" [mfData]="userTr" #mf="mfDataTable" [mfRowsOnPage]="6">
+<table class="table table-striped" [mfData]="userTr" #mf="mfDataTable" [mfRowsOnPage]="6" class="fo">
   <thead style="color: red">
   <tr>
     <th style="width: 15%">

@@ -1,5 +1,5 @@
 <div class="add-card">
-  <span class="button" (click)="addInit()">Додати картку</span>
+  <span class="button" (click)="addInit()">Додати транспортну картку</span>
   <div class="card-add-form">
 
     <p class="card-name">
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="cards">
+<!--<div class="cards">
   <div class="cards-wrapper" *ngIf="!isCardsLoading">
     <p class="title1">Прив'язані картки</p>
     <ul class="title">
@@ -30,8 +30,46 @@
       <li>****</li>
       <li> активна </li>
     </ul>
-  </div>
-
+  </div>-->
+<!-- Editable table -->
+<br>
+ <!--<div class="card">
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <tr>
+          <th class="text-center">Назва</th>
+          <th class="text-center">Номер</th>
+          <th class="text-center">Обмеження</th>
+          <th class="text-center">Пін</th>
+          <th class="text-center">Статус</th>
+          <th class="text-center"></th>
+        </tr>
+        <tr *ngFor="let item of userCards">
+          <td>
+            <span contenteditable="true">{{item.name}}</span>
+          </td>
+          <td>
+            <span contenteditable="true">{{item.card_uid}}</span>
+          </td>
+          <td>
+            <span >необмежено</span>
+          </td>
+          <td>
+            <span contenteditable="true">****</span>
+          </td>
+          <td>
+            <span>активна</span>
+          </td>
+          <td>
+            <span class="table-remove">
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Зберегти</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+ </div>-->
+<!-- Editable table -->
+<ng2-smart-table [settings]="settings" [source]="userCards" class="fon"></ng2-smart-table>
+<!--<pre>{{userCards | json}}</pre>-->
   <div class="loading" *ngIf="isCardsLoading">
     <div class="cube-wrapper">
       <div class="cube-folding">
@@ -43,4 +81,4 @@
       <span class="loading" data-name="Loading">Завантаження</span>
     </div>
   </div>
-</div>
+

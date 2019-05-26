@@ -34,7 +34,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { ResponsiveModule } from 'ngx-responsive';
 import {DataTableModule} from 'angular-6-datatable';
 import { TransactionsComponent } from './transactions/transactions.component';
-
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
     imports: [
@@ -50,7 +50,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
         ModalModule,
         NgxQRCodeModule,
         ResponsiveModule.forRoot(),
-        DataTableModule,
+        Ng2SmartTableModule,
+        DataTableModule
     ],
     declarations: [
         AppComponent,

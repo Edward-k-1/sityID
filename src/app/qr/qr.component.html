@@ -31,7 +31,7 @@
         <p class="radio1" *ngFor="let tr of result"><span *ngFor="let t of tax "><input (change)="ReCalculate(t.value)"  type="radio" name="type-{{tr.id}}" value={{t.value}} checked >{{t.name}}</span></p>
 
        <div  class="suma"> <label>Сума до сплати:</label>
-          <span [(ngModel)]="addData.tsina_qr.wallet" > <label class="amount">{{amount}}</label> грн</span>
+          <span [(ngModel)]="addData.tsina_qr" > <label class="amount">{{amount}}</label> грн</span>
        </div>
      </div>
         <br>
@@ -66,7 +66,7 @@
            </ul>
         </div>
     </div>-->
-      <table class="table table-striped" [mfData]="userQR" #mf="mfDataTable" [mfRowsOnPage]="6">
+      <table class="table table-striped" [mfData]="userQR" #mf="mfDataTable" [mfRowsOnPage]="6" class="fony">
           <thead style="color: red">
           <tr>
               <th style="width: 5%">
@@ -123,7 +123,7 @@
     <div>
        <a href="#" id="zatemnenie">
           <div id="okno">
-             <qrcode [qrdata]= "qrdata"  [size]="300" [level]="'M'"></qrcode>
+             <qrcode [qrdata]= "qrdata"  [size]="210" [level]="'M'"></qrcode>
           </div>
        </a>
     </div>

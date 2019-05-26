@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import {User} from '../_models';
 import {NgxSmartModalService} from 'ngx-smart-modal';
+import set = Reflect.set;
 
 @Injectable()
 export class WalletService {
@@ -81,6 +82,55 @@ export class WalletService {
             })
         };
         return this.http.get<any>(`${environment.apiUrl}/v1/wallet/cards`, httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
+    addWallet(c) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        const body = new HttpParams()
+            .set('card_uid', c.card_uid)
+            /*.set('name', c.name)
+            .set('obmez', c.obmez)
+            .set('pine', c.pine)
+            .set('status', c.status)*/;
+        return this.http.post<any>(`${environment.apiUrl}/v1/wallet/wallet`, body.toString(), httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
+
+    getWallets() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        return this.http.get<any>(`${environment.apiUrl}/v1/wallet/wallets`, httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
+    addWallet1() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        const body = new HttpParams()
+              /*  .set('card_uid', c.card_uid)
+            .set('name', c.name)
+            .set('obmez', c.obmez)
+            .set('pine', c.pine)
+            .set('status', c.status)*/;
+        return this.http.post<any>(`${environment.apiUrl}/v1/wallet/wallet1`, body.toString(), httpOptions)
             .pipe(map(data => {
                 console.log(data);
                 return data;

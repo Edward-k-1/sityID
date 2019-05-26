@@ -217,3 +217,16 @@ div.loading {
         width: 100px;
     }
 }
+.fo{
+    font-size: 100%;
+}
+@media screen and (max-width: 960px) {
+    .fo{
+        font-size: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .fo{
+        font-size: 50%;
+    }
+}

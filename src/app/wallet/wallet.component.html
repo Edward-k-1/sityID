@@ -8,9 +8,9 @@
   </div>
   <div class="actions" *ngIf="!isWalletLoading">
     <ul>
-      <li class="add"><span (click)="payInit()">Поповнити</span><div class="action"><input [(ngModel)]="paymentAmount" type="number"><p>грн.</p><button (click)="pay()">Поповнити</button></div></li>
-      <li class="transaction"><span (click)="transactionInit()">Передати</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>
-      <li class="restriction"><span (click)="restrictionSetup()">Обмеження</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>
+      <li id="ass" class="add"><span (click)="payInit()">Поповнити</span><div class="action"><input [(ngModel)]="paymentAmount" type="number"><p>грн.</p><button (click)="pay()">Поповнити</button></div></li>
+      <!--<li class="transaction"><span (click)="transactionInit()">Передати</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>
+      <li class="restriction"><span (click)="restrictionSetup()">Обмеження</span><div class="action"><p class="blocked">Дія тимчасово недоступна</p></div></li>-->
     </ul>
   </div>
   <div class="loading" *ngIf="isWalletLoading">
@@ -29,7 +29,7 @@
 
 
 
-<div class="main-block">
+<!--<div class="main-block">
   <div class="card-info">
     <p class="title">Статистика</p>
     <ul>
@@ -38,7 +38,7 @@
       <li><span class="name">QR</span> <span>0</span> <span>-</span> <span>-</span></li>
     </ul>
   </div>
-</div>
+</div>-->
 
 <div class="history-block main-block">
   <div class="history-wrapper" *ngIf="!isHistoryLoading">

@@ -23,7 +23,7 @@ class WalletController extends ActiveController
                 // restrict access to
                 'Origin' => ['http://localhost:4200'],
                 // Allow only POST and PUT methods
-                'Access-Control-Request-Method' => ['POST', 'PUT', 'GET', 'OPTIONS'],
+                'Access-Control-Request-Method' => ['POST', 'PUT', 'GET', 'OPTIONS','DELETE'],
                 // Allow only headers 'X-Wsse'
                 'Access-Control-Request-Headers' => ['X-Wsse', 'Authorization'],
                 // Allow credentials (cookies, authorization headers, etc.) to be exposed to the browser
@@ -113,6 +113,9 @@ class WalletController extends ActiveController
     public function actionCadd() {
         $userId = \Yii::$app->user->identity->id;
         $request = \Yii::$app->getRequest()->post();
+        $obmez = 'необмежено';
+        $pine = '****';
+        $status = 'активна';
 
         $data = (new \yii\db\Query())->select('*')->from('ci_user_cards')
             ->where(['card_uid' => $request['card_uid']])->all();
@@ -121,8 +124,8 @@ class WalletController extends ActiveController
             return ['status' => false, 'reason' => 'Дана картка вже існує в системі'];
         }
 
-        $sql = "insert into ci_user_cards (user_id, card_uid, pin, name, rstr, rstr_period) values
-                  ($userId, '".$request['card_uid']."', '".$request['pin']."', '".$request['name']."', 0 ,0)";
+        $sql = "insert into ci_user_cards (user_id, card_uid, pin, name, rstr, rstr_period, obmez, pine,status) values
+                  ($userId, '".$request['card_uid']."', '".$request['pin']."', '".$request['name']."', 0 ,0, '$obmez', '$pine', '$status')";
         $c = \Yii::$app->db->createCommand($sql)->execute();
 
         if($c) {
@@ -136,6 +139,39 @@ class WalletController extends ActiveController
         $userId = \Yii::$app->user->identity->id;
 
         $data = (new \yii\db\Query())->select('ci_user_cards.*')->from('ci_user_cards')
+            ->where(['user_id' => $userId])->orderBy('ci_user_cards.id DESC')->all();
+
+        return ['status' => true, 'data'=> $data];
+
+    }
+    public function actionWallet() {
+        $userId = \Yii::$app->user->identity->id;
+        /*$qrKey = \Yii::$app->security->generateRandomString(20);*/
+        /*$userAgent = \Yii::$app->request->userAgent;*/
+        $request = \Yii::$app->getRequest()->post();
+        $obmez = 'необмежено';
+        $pine = '****';
+        $status = 'активна';
+
+        /*$data = (new \yii\db\Query())->select('*')->from('ci_user_qr')
+            ->where(['poizdka' => $request['poizdka']])->all();
+
+        if(count($data) > 0) {
+            return ['status' => false, 'reason' => 'Дане питання вже було задане'];
+        }*/
+
+        $sql1 = "UPDATE ci_user_cards SET card_uid = " .$request['card_uid']." WHERE id=$userId";
+        $c = \Yii::$app->db->createCommand($sql1)->execute();
+
+        if($c) {
+            return ['status' => true];
+        } else {
+            return ['status' => false, 'reason' => 'Сталася внутрішня помилка'];
+        }
+    }
+    public function actionWallets() {
+        $userId = \Yii::$app->user->identity->id;
+        $data = (new \yii\db\Query())->select('ci_user_cards.*')->from('ci_users')
             ->where(['user_id' => $userId])->orderBy('ci_user_cards.id DESC')->all();
 
         return ['status' => true, 'data'=> $data];

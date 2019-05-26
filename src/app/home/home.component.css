@@ -283,7 +283,8 @@ h3.title {
     -webkit-transform: scale(0.8, 0.8);
 }
 .item-exit{
-    top: 235px;
+    display: block;
+    position: relative;
     color: #a0b8cb;
-    overflow: hidden;
+    vertical-align: bottom;
 }

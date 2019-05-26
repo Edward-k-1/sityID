@@ -63,5 +63,4 @@ class CardsController extends ActiveController
         $query = (new \yii\db\Query())->select('*')->from('mac_cards')->all();
         return $query;
     }
-
 }

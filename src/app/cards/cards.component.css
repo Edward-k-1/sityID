@@ -334,7 +334,7 @@ div.loading {
 .cards-wrapper ul li {
     position: relative;
     display: inline-block;
-    width: 13vw;
+    width: 12vw;
     text-align: center;
 }
 .cards-wrapper ul li:nth-child(1) {
@@ -356,7 +356,9 @@ div.loading {
     color: darkred;
     font-size: 150%;
 }
-
+.fon{
+    font-size: 100%;
+}
 @media screen and (max-width: 960px){
     .add-card .button {
         position: relative;
@@ -429,6 +431,9 @@ div.loading {
         text-align: center;
         color: white;
         cursor: pointer;
+    }
+    .fon {
+        font-size: 100%;
     }
 
 }
@@ -580,5 +585,8 @@ div.loading {
     }
     .rows{
         font-size: 10px;
+    }
+    .fon {
+        font-size: 50%;
     }
 }

@@ -35,7 +35,7 @@
             </div>
             <div class="main-menu">
                 <ul>
-                    <li *ngFor="let item of menuItems" class="item-{{item.name}}"
+                    <li *ngFor="let item of menuItems" class="item-{{item.name}} "
                         (click)="changeLocation(item)"
                         (mouseenter)="menuAnimEffect($event)"
                         (mouseleave)="menuAnimEffect($event)">
@@ -49,7 +49,7 @@
                     <!--<li class="item-QR"><span>Придбати QR</span><img src="../../assets/icons/qr5.png" alt=""><span></span></li>-->
                     <!--<li class="item-koshik"><span>Кошик<img src="../../assets/icons/help.png" alt=""></span></li>-->
                     <!--<li class="item-help"><span>Допомога<img src="../../assets/icons/koshik.png" alt=""></span></li>-->
-                    <li class="item-exit"
+                    <li class="item-exit" align="bottom"
                         (mouseenter)="menuAnimEffect($event)"
                         (mouseleave)="menuAnimEffect($event)"
                         (click)="logout1()">
