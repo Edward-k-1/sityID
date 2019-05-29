@@ -75,6 +75,7 @@
                                         <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.username.errors }" />
                                         <div *ngIf="submitted && fr.username.errors" class="invalid-feedback">
                                             <div *ngIf="fr.username.errors.required">Це обов'язкове поле</div>
+                                            <div *ngIf="fr.username.errors.pattern">Тільки англійські літери</div>
                                         </div>
                                     </div>
                                     <div class="form-group">

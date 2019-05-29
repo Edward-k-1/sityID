@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import {User} from '../_models';
 import {NgxSmartModalService} from 'ngx-smart-modal';
-import set = Reflect.set;
+import {Observable} from 'rxjs';
+import {identifierModuleUrl} from '@angular/compiler';
 
 @Injectable()
 export class WalletService {
-    constructor(private http: HttpClient, public ngxSmartModalService: NgxSmartModalService) { }
+    constructor(private http: HttpClient, public ngxSmartModalService: NgxSmartModalService) {
+    }
 
     load() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         // return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password }, httpOptions)
@@ -32,7 +34,7 @@ export class WalletService {
     pay(a: number) {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         const body = new HttpParams()
@@ -48,7 +50,7 @@ export class WalletService {
     loadHistory() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         return this.http.get<any>(`${environment.apiUrl}/v1/wallet/history`, httpOptions)
@@ -61,7 +63,7 @@ export class WalletService {
     addCard(c) {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         const body = new HttpParams()
@@ -78,7 +80,7 @@ export class WalletService {
     getCards() {
         const httpOptions = {
             headers: new HttpHeaders({
-                'Content-Type':  'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         return this.http.get<any>(`${environment.apiUrl}/v1/wallet/cards`, httpOptions)
@@ -87,19 +89,14 @@ export class WalletService {
                 return data;
             }));
     }
-    addWallet(c) {
+
+    addWallet() {
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
-        const body = new HttpParams()
-            .set('card_uid', c.card_uid)
-            /*.set('name', c.name)
-            .set('obmez', c.obmez)
-            .set('pine', c.pine)
-            .set('status', c.status)*/;
-        return this.http.post<any>(`${environment.apiUrl}/v1/wallet/wallet`, body.toString(), httpOptions)
+        return this.http.delete<void>(`${environment.apiUrl}/v1/wallet/wallet`, httpOptions)
             .pipe(map(data => {
                 console.log(data);
                 return data;
@@ -118,23 +115,35 @@ export class WalletService {
                 return data;
             }));
     }
-    addWallet1() {
+    addUbdate(c) {
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
         const body = new HttpParams()
-              /*  .set('card_uid', c.card_uid)
             .set('name', c.name)
+            .set('card_uid', c.card_uid)
             .set('obmez', c.obmez)
-            .set('pine', c.pine)
-            .set('status', c.status)*/;
-        return this.http.post<any>(`${environment.apiUrl}/v1/wallet/wallet1`, body.toString(), httpOptions)
+            .set('status', c.status)
+            .set('pine', c.pine);
+        return this.http.post<any>(`${environment.apiUrl}/v1/wallet/ubdate`, body.toString(), httpOptions)
+            .pipe(map(data => {
+                console.log(data);
+                return data;
+            }));
+    }
+
+    getUbdates() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            })
+        };
+        return this.http.get<any>(`${environment.apiUrl}/v1/wallet/ubdates`, httpOptions)
             .pipe(map(data => {
                 console.log(data);
                 return data;
             }));
     }
 }
-

@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import {WalletService} from '../_services/wallet.service';
 import {AlertService} from '../_services';
 import {first} from 'rxjs/operators';
+
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -29,7 +30,7 @@ export class CardsComponent implements OnInit {
             pine: {
                 title: 'Пін',
                 filter: false,
-                type: 'password'
+                type: 'password',
             },
             status: {
                 title: 'Статус',
@@ -41,12 +42,12 @@ export class CardsComponent implements OnInit {
             position: 'right'
         },
         edit: {
-            editButtonContent:  '<button type="submit"><img src="../../assets/icons/edit.png"> Редагувати </button><br>',
-            saveButtonContent: '<button type="submit" >  Зберегти <img src="../../assets/icons/save.png"></button><br>',
-            cancelButtonContent: '<button type="submit">Скасувати <img src="../../assets/icons/cancle.png"></button>'
+            editButtonContent: '<img src="../../assets/icons/edit.png"> Редагувати<br>',
+            saveButtonContent: 'Зберегти <img src="../../assets/icons/save.png"><br>',
+            cancelButtonContent: 'Скасувати <img src="../../assets/icons/cancle.png">',
         },
         delete: {
-            deleteButtonContent: '<button type="submit"> Видалити <img src="../../assets/icons/delete.png"></button>',
+            deleteButtonContent: ' Видалити <img src="../../assets/icons/delete.png">',
         },
     };
   constructor(private walletService: WalletService, private alertService: AlertService) { }
@@ -115,6 +116,41 @@ export class CardsComponent implements OnInit {
     onSaveConfirm(event) {
         console.log('Edit Event In Console')
         console.log(event);
+    }*/
+   /* addWallet() {
+        this.walletService.addWallet();
+        console.log('you work');
+        this.walletService.getWallets()
+            .pipe(first())
+            .subscribe(
+                data => {
+                    if (data.status) {
+                        this.userCards = data.data;
+                        this.isCardsLoading = false;
+                    }
+                },
+                error => {
+                    this.alertService.error(error);
+                });
+    }*/
+    bet() {
+        console.log('you work');
+    }
+    /*addUb() {
+        this.walletService.addUbdate(this.addtabl);
+        console.log('working');
+        this.walletService.getUbdates()
+            .pipe(first())
+            .subscribe(
+                data => {
+                    if (data.status) {
+                        this.userCards = data.data;
+                        this.isCardsLoading = false;
+                    }
+                },
+                error => {
+                    this.alertService.error(error);
+                });
     }*/
 }
 

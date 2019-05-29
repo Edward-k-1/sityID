@@ -144,14 +144,31 @@ class WalletController extends ActiveController
         return ['status' => true, 'data'=> $data];
 
     }
-    public function actionWallet() {
+
+     public function actionWallet() {
+        $userId = \Yii::$app->user->identity->id;
+
+        $sql1 = "DELETE FROM ci_user_cards WHERE id=id";
+
+        if(mysqli_query( $sql1)) {
+            return ['status' => true];
+        } else {
+            return ['status' => false, 'reason' => 'Сталася внутрішня помилка'];
+        }
+    }
+    public function actionWallets() {
+        $userId = \Yii::$app->user->identity->id;
+        $data = (new \yii\db\Query())->select('ci_user_cards.*')->from('ci_user_cards')
+            ->where(['user_id' => $userId])->orderBy('ci_user_cards.id DESC')->all();
+
+        return ['status' => true, 'data'=> $data];
+
+    }
+    public function actionUbdate() {
         $userId = \Yii::$app->user->identity->id;
         /*$qrKey = \Yii::$app->security->generateRandomString(20);*/
         /*$userAgent = \Yii::$app->request->userAgent;*/
         $request = \Yii::$app->getRequest()->post();
-        $obmez = 'необмежено';
-        $pine = '****';
-        $status = 'активна';
 
         /*$data = (new \yii\db\Query())->select('*')->from('ci_user_qr')
             ->where(['poizdka' => $request['poizdka']])->all();
@@ -160,7 +177,7 @@ class WalletController extends ActiveController
             return ['status' => false, 'reason' => 'Дане питання вже було задане'];
         }*/
 
-        $sql1 = "UPDATE ci_user_cards SET card_uid = " .$request['card_uid']." WHERE id=$userId";
+        $sql1 = "UPDATE ci_user_cards SET name = " .$request['name'].", card_uid = " .$request['card_uid'].", obmez = ".$request['obmez'].", pine = ".$request['pine'].", status = ".$request['status']."  WHERE id=$userId";
         $c = \Yii::$app->db->createCommand($sql1)->execute();
 
         if($c) {
@@ -169,9 +186,9 @@ class WalletController extends ActiveController
             return ['status' => false, 'reason' => 'Сталася внутрішня помилка'];
         }
     }
-    public function actionWallets() {
+    public function actionUbdates() {
         $userId = \Yii::$app->user->identity->id;
-        $data = (new \yii\db\Query())->select('ci_user_cards.*')->from('ci_users')
+        $data = (new \yii\db\Query())->select('ci_user_cards.*')->from('ci_user_cards')
             ->where(['user_id' => $userId])->orderBy('ci_user_cards.id DESC')->all();
 
         return ['status' => true, 'data'=> $data];

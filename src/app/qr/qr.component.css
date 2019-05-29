@@ -498,7 +498,7 @@ div.group {
     overflow: auto;
 }
 .fony{
-    font-size: 100%;
+    font-size: 120%;
 }
 
 @media screen and (max-width: 960px) {
