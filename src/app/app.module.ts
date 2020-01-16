@@ -20,8 +20,7 @@ import { RegisterComponent } from './register';
 import { SidebarModule } from 'ng-sidebar';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletService } from './_services/wallet.service';
-import { NgxSmartModalModule } from 'ngx-smart-modal';
-import { NgxSmartModalService } from 'ngx-smart-modal';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 import { CardsComponent } from './cards/cards.component';
 import { QRComponent } from './qr/qr.component';
 import {QRService} from './_services/qr.service';
@@ -34,25 +33,25 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { ResponsiveModule } from 'ngx-responsive';
 import {DataTableModule} from 'angular-6-datatable';
 import { TransactionsComponent } from './transactions/transactions.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import {Ng2SmartTableModule} from "ngx-smart-table";
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        routing,
-        SidebarModule.forRoot(),
-        NgxSmartModalModule.forRoot(),
-        FormsModule,
-        QRCodeModule,
-        FormsModule,
-        ModalModule,
-        NgxQRCodeModule,
-        ResponsiveModule.forRoot(),
-        Ng2SmartTableModule,
-        DataTableModule
-    ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    routing,
+    SidebarModule.forRoot(),
+    NgxSmartModalModule.forRoot(),
+    FormsModule,
+    QRCodeModule,
+    FormsModule,
+    ModalModule,
+    NgxQRCodeModule,
+    ResponsiveModule.forRoot(),
+    DataTableModule,
+    Ng2SmartTableModule
+  ],
     declarations: [
         AppComponent,
         AlertComponent,

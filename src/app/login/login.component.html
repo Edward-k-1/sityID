@@ -48,9 +48,39 @@
                                 <div class="form-group">
                                     <button [disabled]="loading" class="btn btn-primary login-button">Увійти</button>
                                     <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                                    <button [disabled]="loading" class="btn btn-primary forgot-button">Забули пароль?</button>
+
                                 </div>
                             </form>
+                          <button (click)="ngxSmartModalService.open('myForm')" class="btn btn-primary forgot-button">Забули пароль?</button>
+                          <ngx-smart-modal #myForm identifier="myForm">
+                            <h3>Відновлення пароля</h3>
+                            <br><br>
+                            <div class="container">
+                              <div class="row">
+                                <!--<div class="col-md-11">
+                                  <span class="help-block text-muted small-font" >Номер телефону</span>
+                                  <input  maxlength="10" class="form-control"  placeholder="Введіть номер телефону" type="text">
+                                </div>-->
+                                <div class="input-group flex-nowrap ">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping-sm">+38</span>
+                                  </div>
+                                  <input type="text" class="form-control" placeholder="Введіть номер телефону" aria-label="Номер телефону" aria-describedby="addon-wrapping-sm">
+                                </div>
+                              </div>
+                              <br>
+                              <div class="but-group" role="group">
+                                <div>
+                                  <button type="button" class="btn btn-outline-danger btn-sm forgot-button" (click)="ngxSmartModalService.close('myForm')">Скасувати</button>
+                                </div>
+                                <div>
+                                  <button type="button" class="btn btn-success btn-sm login-button" (click)="ngxSmartModalService.close('myForm')">Відновити</button>
+                                </div>
+                              </div>
+                              <br>
+                            </div>
+                            <br>
+                          </ngx-smart-modal>
                         </div>
                         <div class="sub-cont">
                             <div class="img">

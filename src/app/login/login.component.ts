@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import * as $ from 'jquery';
 
 import { AlertService, AuthenticationService } from '../_services';
+import {NgxSmartModalService} from "ngx-smart-modal";
 
 @Component({templateUrl: 'login.component.html',
             styleUrls: ['login.component.css']})
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
+        public ngxSmartModalService: NgxSmartModalService,
         private alertService: AlertService) {}
 
     ngOnInit() {
@@ -147,4 +149,8 @@ export class LoginComponent implements OnInit {
     // document.querySelector('.img__btn').addEventListener('click', function() {
     //     document.querySelector('.cont').classList.toggle('s--signup');
     // });
+
+  resetPassword() {
+
+  }
 }

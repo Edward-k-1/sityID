@@ -124,8 +124,8 @@ class WalletController extends ActiveController
             return ['status' => false, 'reason' => 'Дана картка вже існує в системі'];
         }
 
-        $sql = "insert into ci_user_cards (user_id, card_uid, pin, name, rstr, rstr_period, obmez, pine,status) values
-                  ($userId, '".$request['card_uid']."', '".$request['pin']."', '".$request['name']."', 0 ,0, '$obmez', '$pine', '$status')";
+        $sql = "insert into ci_user_cards (user_id, card_uid, name, rstr, rstr_period, obmez, pine,status) values
+                  ($userId, '".$request['card_uid']."', '".$request['name']."', 0 ,0, '$obmez', '$pine', '$status')";
         $c = \Yii::$app->db->createCommand($sql)->execute();
 
         if($c) {

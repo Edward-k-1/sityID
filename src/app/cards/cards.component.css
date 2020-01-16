@@ -1,16 +1,456 @@
 .add-card, .cards {
-    width: 670px;
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-    transition: .5s;
+  width: 670px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: .5s;
 }
 .add-card .button {
-    position: absolute;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #c3c3ca;
+  cursor: pointer;
+  transition: .5s;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.add-card .button:hover {
+  background: #ff3041;
+  transition: .5s;
+}
+
+.add-card.active {
+  height: 80px;
+  border-bottom: 1px solid red;
+  transition: .5s;
+}
+.add-card.active .button {
+  width: 7%;
+  height: 63%;
+  right: 10px;
+  background: #ff3041;
+  color: #ff3041;
+  top: 15px;
+}
+.add-card.active .button::after {
+  content: 'X';
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  font-size: 25px;
+}
+
+.add-card .card-add-form {
+  width: 90%;
+  height: 100px;
+  top: 50px;
+  position: absolute;
+  padding: 5px 0;
+  transition: 1s;
+}
+
+.add-card.active .card-add-form {
+  top: 0;
+  transition: 1s;
+}
+.add-card .card-add-form p {
+  margin-bottom: 10px;
+  width: 90%;
+  float: left;
+  text-align: center;
+}
+.add-card .card-add-form input {
+  margin: 0 5px;
+}
+.add-card .card-add-form p.card-name input {}
+.add-card .card-add-form p.card-name span {}
+.add-card .card-add-form input.card-uid {
+  -moz-appearance: textfield;
+}
+.card-uid::-webkit-inner-spin-button {
+  display: none;
+}
+.add-card .card-add-form input.card-pin {}
+.add-card .card-add-form span.add-btn {
+  display: block;
+  background: #545b62;
+  position: absolute;
+  width: 15%;
+  height: 50%;
+  right: 0px;
+  top: 15px;
+  line-height: 100%;
+  font-size: 17px;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.cards {
+  margin-top: 20px;
+  height: auto;
+  width: 65vw;
+}
+
+div.loading {
+  position: relative;
+  width: 65vw;
+  height: 10em;
+}
+
+.cube-folding {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  font-size: 0;
+}
+.cube-folding span {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  display: inline-block;
+}
+.cube-folding span::before {
+  content: '';
+  /*background-color: white;*/
+  background-color: #fa5b5b;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -moz-animation: folding 2.5s infinite linear both;
+  -webkit-animation: folding 2.5s infinite linear both;
+  animation: folding 2.5s infinite linear both;
+}
+.cube-folding .leaf2 {
+  -moz-transform: rotateZ(90deg) scale(1.1);
+  -ms-transform: rotateZ(90deg) scale(1.1);
+  -webkit-transform: rotateZ(90deg) scale(1.1);
+  transform: rotateZ(90deg) scale(1.1);
+}
+.cube-folding .leaf2::before {
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  background-color: #ff8080;
+  /*background-color: #f2f2f2;*/
+}
+.cube-folding .leaf3 {
+  -moz-transform: rotateZ(270deg) scale(1.1);
+  -ms-transform: rotateZ(270deg) scale(1.1);
+  -webkit-transform: rotateZ(270deg) scale(1.1);
+  transform: rotateZ(270deg) scale(1.1);
+}
+.cube-folding .leaf3::before {
+  -moz-animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+  background-color: #f6b3b3;
+  /*background-color: #f2f2f2;*/
+}
+.cube-folding .leaf4 {
+  -moz-transform: rotateZ(180deg) scale(1.1);
+  -ms-transform: rotateZ(180deg) scale(1.1);
+  -webkit-transform: rotateZ(180deg) scale(1.1);
+  transform: rotateZ(180deg) scale(1.1);
+}
+.cube-folding .leaf4::before {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  /*background-color: #e6e6e6;*/
+  background-color: #f69c9c;
+}
+
+@-moz-keyframes folding {
+  0%, 10% {
+    -moz-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    -moz-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    -moz-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes folding {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@keyframes folding {
+  0%, 10% {
+    -moz-transform: perspective(140px) rotateX(-180deg);
+    -ms-transform: perspective(140px) rotateX(-180deg);
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    -moz-transform: perspective(140px) rotateX(0deg);
+    -ms-transform: perspective(140px) rotateX(0deg);
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    -moz-transform: perspective(140px) rotateY(180deg);
+    -ms-transform: perspective(140px) rotateY(180deg);
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+.cube-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+.cube-wrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  margin: auto;
+  width: 90px;
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+  -moz-animation: shadow 0.5s ease infinite alternate;
+  -webkit-animation: shadow 0.5s ease infinite alternate;
+  animation: shadow 0.5s ease infinite alternate;
+}
+.cube-wrapper .loading {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  display: block;
+  color: red;
+  position: relative;
+  top: 25px;
+  z-index: 2;
+  -moz-animation: text 0.5s ease infinite alternate;
+  -webkit-animation: text 0.5s ease infinite alternate;
+  animation: text 0.5s ease infinite alternate;
+}
+
+@-moz-keyframes text {
+  100% {
+    top: 35px;
+  }
+}
+@-webkit-keyframes text {
+  100% {
+    top: 35px;
+  }
+}
+@keyframes text {
+  100% {
+    top: 35px;
+  }
+}
+@-moz-keyframes shadow {
+  100% {
+    bottom: -18px;
+    width: 100px;
+  }
+}
+@-webkit-keyframes shadow {
+  100% {
+    bottom: -18px;
+    width: 100px;
+  }
+}
+@keyframes shadow {
+  100% {
+    bottom: -18px;
+    width: 100px;
+  }
+}
+
+.cards-wrapper ul.title {
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom: 1px solid red;
+}
+.cards-wrapper ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 65vw;
+}
+
+.cards-wrapper ul li {
+  position: relative;
+  display: inline-block;
+  width: 12vw;
+  text-align: center;
+}
+.cards-wrapper ul li:nth-child(1) {
+  width: 8vw;
+}
+.cards-wrapper ul li:nth-child(2) {
+  width: 17vw;
+}
+.cards-wrapper ul li:nth-child(3) {
+  width: 10vw;
+}
+.cards-wrapper ul li:nth-child(4) {
+  width: 10vw;
+}
+.cards-wrapper ul li:nth-child(5) {
+  width: 17vw;
+}
+.title1{
+  color: darkred;
+  font-size: 150%;
+}
+.fon{
+  font-size: 100%;
+}
+.button1 {
+  text-decoration: none;
+  outline: none;
+  color: #0e25d1;
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  width: 40%;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;   font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+  text-align: center;
+  cursor: pointer;
+}
+.button1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: #a40000;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+}
+.button1:hover {background: rgba(255,255,255,0);}
+.button1:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+#zatemnenie {
+  background: rgb(57, 57, 57);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+  z-index: 999;
+}
+#okno {
+  width: 150px;
+  max-width: 100%;
+  height: 50px;
+  max-height: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 20%;
+  left: 0;
+  margin: auto;
+  /*z-index: 999;*/
+}
+#zatemnenie:target {display: block;}
+h3{
+  color: darkred;
+  text-align: center;
+}
+.table .table-striped {
+  overflow: auto;
+}
+.fony{
+  font-size: 120%;
+}
+#div1{
+  display: none;
+}
+#div2{
+  display: none;
+}
+#div3{
+  display: none;
+}
+
+@media screen and (max-width: 960px){
+  .add-card .button {
+    position: relative;
     top: 0;
     right: 0;
     display: block;
-    width: 100%;
+    width: 70%;
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -19,574 +459,226 @@
     transition: .5s;
     overflow: hidden;
     z-index: 999;
-}
-
-.add-card .button:hover {
-    background: #ff3041;
-    transition: .5s;
-}
-
-.add-card.active {
-    height: 80px;
-    border-bottom: 1px solid red;
-    transition: .5s;
-}
-.add-card.active .button {
-    width: 7%;
-    height: 63%;
-    right: 10px;
-    background: #ff3041;
-    color: #ff3041;
-    top: 15px;
-}
-.add-card.active .button::after {
+  }
+  .add-card.active .button::after {
     content: 'X';
     color: white;
     position: absolute;
     top: 0;
-    left: 15px;
-    font-size: 25px;
-}
+    left: 10px;
+    font-size: 20px;
+  }
 
-.add-card .card-add-form {
-    width: 90%;
+  .add-card .card-add-form {
+    width: 80%;
     height: 100px;
     top: 50px;
     position: absolute;
     padding: 5px 0;
     transition: 1s;
-}
+  }
 
-.add-card.active .card-add-form {
+  .add-card.active .card-add-form {
     top: 0;
     transition: 1s;
-}
-.add-card .card-add-form p {
+  }
+  .add-card .card-add-form p {
     margin-bottom: 10px;
-    width: 90%;
+    width: 70%;
     float: left;
     text-align: center;
-}
-.add-card .card-add-form input {
+
+  }
+  .add-card .card-add-form input {
     margin: 0 5px;
-}
-.add-card .card-add-form p.card-name input {}
-.add-card .card-add-form p.card-name span {}
-.add-card .card-add-form input.card-uid {
-    -moz-appearance: textfield;
-}
-.card-uid::-webkit-inner-spin-button {
-    display: none;
-}
-.add-card .card-add-form input.card-pin {}
-.add-card .card-add-form span.add-btn {
+  }
+  .add-card .card-add-form p.card-name input {
+    width: 30%;
+  }
+  .add-card .card-add-form p.card-name span {}
+  .add-card .card-add-form input.card-uid {
+    width: 30%;
+  }
+  .add-card .card-add-form input.card-pin {
+    width: 30%;
+  }
+  .add-card .card-add-form span.add-btn {
     display: block;
     background: #545b62;
     position: absolute;
     width: 15%;
     height: 50%;
     right: 0px;
-    top: 15px;
+    top: 5px;
     line-height: 100%;
     font-size: 17px;
     padding: 15px 10px;
     text-align: center;
     color: white;
     cursor: pointer;
-}
-
-.cards {
-    margin-top: 20px;
-    height: auto;
-    width: 65vw;
-}
-
-div.loading {
-    position: relative;
-    width: 65vw;
-    height: 10em;
-}
-
-.cube-folding {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    font-size: 0;
-}
-.cube-folding span {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    display: inline-block;
-}
-.cube-folding span::before {
-    content: '';
-    /*background-color: white;*/
-    background-color: #fa5b5b;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 25px;
-    height: 25px;
-    -moz-transform-origin: 100% 100%;
-    -ms-transform-origin: 100% 100%;
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    -moz-animation: folding 2.5s infinite linear both;
-    -webkit-animation: folding 2.5s infinite linear both;
-    animation: folding 2.5s infinite linear both;
-}
-.cube-folding .leaf2 {
-    -moz-transform: rotateZ(90deg) scale(1.1);
-    -ms-transform: rotateZ(90deg) scale(1.1);
-    -webkit-transform: rotateZ(90deg) scale(1.1);
-    transform: rotateZ(90deg) scale(1.1);
-}
-.cube-folding .leaf2::before {
-    -moz-animation-delay: 0.3s;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-    background-color: #ff8080;
-    /*background-color: #f2f2f2;*/
-}
-.cube-folding .leaf3 {
-    -moz-transform: rotateZ(270deg) scale(1.1);
-    -ms-transform: rotateZ(270deg) scale(1.1);
-    -webkit-transform: rotateZ(270deg) scale(1.1);
-    transform: rotateZ(270deg) scale(1.1);
-}
-.cube-folding .leaf3::before {
-    -moz-animation-delay: 0.9s;
-    -webkit-animation-delay: 0.9s;
-    animation-delay: 0.9s;
-    background-color: #f6b3b3;
-    /*background-color: #f2f2f2;*/
-}
-.cube-folding .leaf4 {
-    -moz-transform: rotateZ(180deg) scale(1.1);
-    -ms-transform: rotateZ(180deg) scale(1.1);
-    -webkit-transform: rotateZ(180deg) scale(1.1);
-    transform: rotateZ(180deg) scale(1.1);
-}
-.cube-folding .leaf4::before {
-    -moz-animation-delay: 0.6s;
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-    /*background-color: #e6e6e6;*/
-    background-color: #f69c9c;
-}
-
-@-moz-keyframes folding {
-    0%, 10% {
-        -moz-transform: perspective(140px) rotateX(-180deg);
-        transform: perspective(140px) rotateX(-180deg);
-        opacity: 0;
-    }
-    25%, 75% {
-        -moz-transform: perspective(140px) rotateX(0deg);
-        transform: perspective(140px) rotateX(0deg);
-        opacity: 1;
-    }
-    90%, 100% {
-        -moz-transform: perspective(140px) rotateY(180deg);
-        transform: perspective(140px) rotateY(180deg);
-        opacity: 0;
-    }
-}
-@-webkit-keyframes folding {
-    0%, 10% {
-        -webkit-transform: perspective(140px) rotateX(-180deg);
-        transform: perspective(140px) rotateX(-180deg);
-        opacity: 0;
-    }
-    25%, 75% {
-        -webkit-transform: perspective(140px) rotateX(0deg);
-        transform: perspective(140px) rotateX(0deg);
-        opacity: 1;
-    }
-    90%, 100% {
-        -webkit-transform: perspective(140px) rotateY(180deg);
-        transform: perspective(140px) rotateY(180deg);
-        opacity: 0;
-    }
-}
-@keyframes folding {
-    0%, 10% {
-        -moz-transform: perspective(140px) rotateX(-180deg);
-        -ms-transform: perspective(140px) rotateX(-180deg);
-        -webkit-transform: perspective(140px) rotateX(-180deg);
-        transform: perspective(140px) rotateX(-180deg);
-        opacity: 0;
-    }
-    25%, 75% {
-        -moz-transform: perspective(140px) rotateX(0deg);
-        -ms-transform: perspective(140px) rotateX(0deg);
-        -webkit-transform: perspective(140px) rotateX(0deg);
-        transform: perspective(140px) rotateX(0deg);
-        opacity: 1;
-    }
-    90%, 100% {
-        -moz-transform: perspective(140px) rotateY(180deg);
-        -ms-transform: perspective(140px) rotateY(180deg);
-        -webkit-transform: perspective(140px) rotateY(180deg);
-        transform: perspective(140px) rotateY(180deg);
-        opacity: 0;
-    }
-}
-.cube-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-}
-.cube-wrapper:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    margin: auto;
-    width: 90px;
-    height: 6px;
-    background-color: rgba(0, 0, 0, 0.1);
-    -webkit-filter: blur(2px);
-    filter: blur(2px);
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
-    z-index: 1;
-    -moz-animation: shadow 0.5s ease infinite alternate;
-    -webkit-animation: shadow 0.5s ease infinite alternate;
-    animation: shadow 0.5s ease infinite alternate;
-}
-.cube-wrapper .loading {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    display: block;
-    color: red;
-    position: relative;
-    top: 25px;
-    z-index: 2;
-    -moz-animation: text 0.5s ease infinite alternate;
-    -webkit-animation: text 0.5s ease infinite alternate;
-    animation: text 0.5s ease infinite alternate;
-}
-
-@-moz-keyframes text {
-    100% {
-        top: 35px;
-    }
-}
-@-webkit-keyframes text {
-    100% {
-        top: 35px;
-    }
-}
-@keyframes text {
-    100% {
-        top: 35px;
-    }
-}
-@-moz-keyframes shadow {
-    100% {
-        bottom: -18px;
-        width: 100px;
-    }
-}
-@-webkit-keyframes shadow {
-    100% {
-        bottom: -18px;
-        width: 100px;
-    }
-}
-@keyframes shadow {
-    100% {
-        bottom: -18px;
-        width: 100px;
-    }
-}
-
-.cards-wrapper ul.title {
-    font-size: 15px;
-    font-weight: bold;
-    border-bottom: 1px solid red;
-}
-.cards-wrapper ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 65vw;
-}
-
-.cards-wrapper ul li {
-    position: relative;
-    display: inline-block;
-    width: 12vw;
-    text-align: center;
-}
-.cards-wrapper ul li:nth-child(1) {
-    width: 8vw;
-}
-.cards-wrapper ul li:nth-child(2) {
-    width: 17vw;
-}
-.cards-wrapper ul li:nth-child(3) {
-    width: 10vw;
-}
-.cards-wrapper ul li:nth-child(4) {
-    width: 10vw;
-}
-.cards-wrapper ul li:nth-child(5) {
-    width: 17vw;
-}
-.title1{
-    color: darkred;
-    font-size: 150%;
-}
-.fon{
+  }
+  .fon {
     font-size: 100%;
-}
-@media screen and (max-width: 960px){
-    .add-card .button {
-        position: relative;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 70%;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        background: #c3c3ca;
-        cursor: pointer;
-        transition: .5s;
-        overflow: hidden;
-        z-index: 999;
-    }
-    .add-card.active .button::after {
-        content: 'X';
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 10px;
-        font-size: 20px;
-    }
-
-    .add-card .card-add-form {
-        width: 80%;
-        height: 100px;
-        top: 50px;
-        position: absolute;
-        padding: 5px 0;
-        transition: 1s;
-    }
-
-    .add-card.active .card-add-form {
-        top: 0;
-        transition: 1s;
-    }
-    .add-card .card-add-form p {
-        margin-bottom: 10px;
-        width: 70%;
-        float: left;
-        text-align: center;
-
-    }
-    .add-card .card-add-form input {
-        margin: 0 5px;
-    }
-    .add-card .card-add-form p.card-name input {
-        width: 30%;
-    }
-    .add-card .card-add-form p.card-name span {}
-    .add-card .card-add-form input.card-uid {
-        width: 30%;
-    }
-    .add-card .card-add-form input.card-pin {
-        width: 30%;
-    }
-    .add-card .card-add-form span.add-btn {
-        display: block;
-        background: #545b62;
-        position: absolute;
-        width: 15%;
-        height: 50%;
-        right: 0px;
-        top: 5px;
-        line-height: 100%;
-        font-size: 17px;
-        padding: 15px 10px;
-        text-align: center;
-        color: white;
-        cursor: pointer;
-    }
-    .fon {
-        font-size: 100%;
-    }
+  }
 
 }
 @media screen and (max-width: 766px) {
-    .add-card, .cards {
-        width: 570px;
-        height: 40px;
-        overflow: hidden;
-        position: relative;
-        transition: .5s;
-    }
-    .add-card .button {
-        position: center;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 30%;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        background: #c3c3ca;
-        cursor: pointer;
-        transition: .5s;
-        overflow: hidden;
-        z-index: 999;
-    }
+  .add-card, .cards {
+    width: 570px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    transition: .5s;
+  }
+  .add-card .button {
+    position: center;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 30%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #c3c3ca;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    z-index: 999;
+  }
 
-    .add-card .button:hover {
-        background: #ff3041;
-        transition: .5s;
-    }
+  .add-card .button:hover {
+    background: #ff3041;
+    transition: .5s;
+  }
 
-    .add-card.active {
-        height: 300px;
-        border-bottom: 1px solid #a40000;
-        transition: .5s;
-    }
-    .add-card.active .button {
-        width: 7%;
-        height: 15%;
-        right: 10px;
-        background: #ff3041;
-        color: #ff3041;
-        top: 15px;
-    }
-    .add-card.active .button::after {
-        content: 'X';
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 15px;
-        font-size: 25px;
-    }
+  .add-card.active {
+    height: 300px;
+    border-bottom: 1px solid #a40000;
+    transition: .5s;
+  }
+  .add-card.active .button {
+    width: 7%;
+    height: 15%;
+    right: 10px;
+    background: #ff3041;
+    color: #ff3041;
+    top: 15px;
+  }
+  .add-card.active .button::after {
+    content: 'X';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: 25px;
+  }
 
-    .add-card .card-add-form {
-        width: 30%;
-        height: 100px;
-        top: 50px;
-        position: relative;
-        padding: 5px 0;
-        transition: 1s;
-    }
+  .add-card .card-add-form {
+    width: 30%;
+    height: 100px;
+    top: 50px;
+    position: relative;
+    padding: 5px 0;
+    transition: 1s;
+  }
 
-    .add-card.active .card-add-form {
-        top: 0;
-        transition: 1s;
-    }
-    .add-card .card-add-form p {
-        margin-bottom: 10px;
-        width: 80%;
-        float: left;
-        text-align: center;
-    }
-    .add-card .card-add-form input {
-        margin: 0 15px;
-    }
-    .add-card .card-add-form p.card-name input {
-        width: 200px;
-    }
-    .add-card .card-add-form p.card-name span {}
-    .add-card .card-add-form input.card-uid {
-        width: 200px;
-    }
-    .add-card .card-add-form input.card-pin {
-        width: 200px;
-    }
-    .add-card .card-add-form span.add-btn {
-        display: inline-block;
-        background: #545b62;
-        position: relative;
-        width: 50%;
-        height: 50%;
-        right: -35px;
-        top: -2px;
-        line-height: 10%;
-        font-size: 15px;
-        padding: 20px 10px;
-        text-align: center;
-        color: white;
-        cursor: pointer;
-    }
+  .add-card.active .card-add-form {
+    top: 0;
+    transition: 1s;
+  }
+  .add-card .card-add-form p {
+    margin-bottom: 10px;
+    width: 80%;
+    float: left;
+    text-align: center;
+  }
+  .add-card .card-add-form input {
+    margin: 0 15px;
+  }
+  .add-card .card-add-form p.card-name input {
+    width: 200px;
+  }
+  .add-card .card-add-form p.card-name span {}
+  .add-card .card-add-form input.card-uid {
+    width: 200px;
+  }
+  .add-card .card-add-form input.card-pin {
+    width: 200px;
+  }
+  .add-card .card-add-form span.add-btn {
+    display: inline-block;
+    background: #545b62;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    right: -35px;
+    top: -2px;
+    line-height: 10%;
+    font-size: 15px;
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
 
-    .cards {
-        margin-top: 20px;
-        height: auto;
-        width: 65vw;
-    }
+  .cards {
+    margin-top: 20px;
+    height: auto;
+    width: 65vw;
+  }
 
 
-    .cards-wrapper ul.title {
-        font-size: 10px;
-        font-weight: bold;
-        border-bottom: 1px solid red;
-    }
-    .cards-wrapper ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        width: 75vw;
-    }
+  .cards-wrapper ul.title {
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid red;
+  }
+  .cards-wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 75vw;
+  }
 
-    .cards-wrapper ul li {
-        position: relative;
-        display: inline-block;
-        width: 10vw;
-        text-align: center;
-    }
-    .cards-wrapper ul li:nth-child(1) {
-        width: 10vw;
-    }
-    .cards-wrapper ul li:nth-child(2) {
-        width: 20vw;
-    }
-    .cards-wrapper ul li:nth-child(3) {
-        width: 17vw;
-    }
-    .cards-wrapper ul li:nth-child(4) {
-        width: 7vw;
-    }
-    .cards-wrapper ul li:nth-child(5) {
-        width: 12vw;
-    }
-    .title1{
-        color: darkred;
-        font-size: 80%;
-    }
-    .title{
-        font-size: 5%;
-    }
-    .rows{
-        font-size: 10px;
-    }
-    .fon {
-        font-size: 50%;
-    }
+  .cards-wrapper ul li {
+    position: relative;
+    display: inline-block;
+    width: 10vw;
+    text-align: center;
+  }
+  .cards-wrapper ul li:nth-child(1) {
+    width: 10vw;
+  }
+  .cards-wrapper ul li:nth-child(2) {
+    width: 20vw;
+  }
+  .cards-wrapper ul li:nth-child(3) {
+    width: 17vw;
+  }
+  .cards-wrapper ul li:nth-child(4) {
+    width: 7vw;
+  }
+  .cards-wrapper ul li:nth-child(5) {
+    width: 12vw;
+  }
+  .title1{
+    color: darkred;
+    font-size: 80%;
+  }
+  .title{
+    font-size: 5%;
+  }
+  .rows{
+    font-size: 10px;
+  }
+  .fon {
+    font-size: 50%;
+  }
+  .table .table-striped {
+    overflow: auto;
+  }
+
+  .fony {
+    font-size: 52%;
+  }
 }

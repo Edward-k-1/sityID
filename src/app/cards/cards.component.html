@@ -1,18 +1,82 @@
-<div class="add-card">
-  <span class="button" (click)="addInit()">Додати транспортну картку</span>
-  <div class="card-add-form">
-
+<div class="button-container">
+  <span class="button1" (click)="ngxSmartModalService.getModal('myForm').open()">Додати картку</span>
+  <!--<div class="card-add-form">
     <p class="card-name">
       <input [(ngModel)]="addData.name" type="text"><span>Назва</span></p>
     <p class="card-data"><input [(ngModel)]="addData.card_uid" class="card-uid" type="number" ><span>Номер</span><input [(ngModel)]="addData.pin" class="card-pin" type="password"><span>pin</span></p>
-
-
-
-
     <span class="add-btn" (click)="addCard()">Додати</span>
-  </div>
-</div>
+  </div>-->
+  <ngx-smart-modal #myForm identifier="myForm">
+    <h3></h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-11">
+          <span class="help-block text-muted small-font" >Номер картки</span>
+          <input [(ngModel)]="addData.card_uid" maxlength="16" class="form-control"  placeholder="Введіть номер карти" id="cc-number" type="text" autocomplete="cc-number">
+        </div>
+      </div>
+      <br>
 
+      <div class="row ">
+        <div class="col-md-11 pad-adjust">
+          <span class="help-block text-muted small-font" >Вид картки</span>
+          <select  [(ngModel)]="addData.name" type="text" class="form-control form-control-lg" required>
+            <option value="" hidden>Виберіть картку
+            <option >Звичайна</option>
+            <option >Пільгова</option>
+            <optgroup label="Соціальні">
+              <option>Пенсійна</option>
+              <option>Учнівська</option>
+              <option>Службова</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="col-md-6 col-sm-7 col-xs-8 pad-adjust">
+          <input type="submit" class="btn btn-danger" value="Скасувати" (click)="ngxSmartModalService.close('myForm')">
+        </div>
+        <div class="col-md-5 col-sm-7 col-xs-7 pad-adjust">
+          <input type="submit" class="btn btn-warning btn-block" value="Додати" (click)="addCard()" (click)="ngxSmartModalService.close('myForm')">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-11 col-sm-11 col-xs-11 pad-adjust">
+          <input id="but" type="button" class="btn btn-outline-info btn-block border border-info" value="Дізнатися більше" (click)="viewDiv()">
+          <div id="div1">
+            <br>
+            <div class="border border-info text-center">
+              <p class="h3">Ви можете додати не тільки транспортну картку</p>
+              <p>Додати можна також і банківську картку, якщо ви знаєте її NFC номер.</p>
+              <input type="submit" class="btn btn-outline-info" (click)="div2()" value="Що таке NFC?">
+              <div id="div2">
+                <p>NFC -- технологія бездротового високочастотного зв'язку малого радіусу дії «в один дотик».
+                  Ця технологія дає можливість обміну даними між пристроями, насамперед смартфонами та безконтактними
+                  платіжними терміналами, що перебувають на відстані близько 10 см.
+                </p>
+              </div>
+              <br>
+              <input type="submit" class="btn btn-outline-info" (click)="div3()" value="Як дізнатись NFC номер банківської карти?">
+              <div id="div3">
+                <p>NFC номер банківської картки можна дізнатися за допомогою мобільного додатку.
+                  Завантажуєм мобільний додаток на Android або IOS для скануваання NFC номера наприклад "NFC Tools".
+                  І скануєм карточку за допомогою телефону і в дододатку бачимо NFC номер.</p>
+              </div>
+              <br>
+              <p>Для реєстрації банківської карти введіть NFC номер картки в форму і зареєструється як транспортна.</p>
+              <!--<p>Або ж ви можете просто користуватися нашим додатком з якого можна оплатити проїзд через телефон і простіше привязати банківську карту.</p>-->
+            </div>
+            <br>
+            <input type="button" class="btn btn-outline-primary btn-sm border border-primary" value="Закрити" (click)="div()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </ngx-smart-modal>
+
+</div>
 <!--<div class="cards">
   <div class="cards-wrapper" *ngIf="!isCardsLoading">
     <p class="title1">Прив'язані картки</p>
