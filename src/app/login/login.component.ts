@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         });
 
         this.registerForm = this.formBuilder.group({
-            username: ['',  [Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/), Validators.required, Validators.minLength(3)]],
+            username: ['',  [/*Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/),*/ Validators.required, Validators.minLength(3)]],
             phone: ['', [Validators.required, Validators.minLength(10)]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });

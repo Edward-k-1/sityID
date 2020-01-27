@@ -360,7 +360,7 @@ div.loading {
 .index {
     position: relative;
     z-index: 999;
-    
+
 }
 .group {
     position: relative;
@@ -498,7 +498,7 @@ div.group {
     overflow: auto;
 }
 .fony{
-    font-size: 120%;
+    font-size: 150%;
 }
 
 @media screen and (max-width: 960px) {
@@ -521,6 +521,7 @@ div.group {
 
     .fony {
         font-size: 100%;
+
     }
 
     @media screen and (max-width: 767px) {
@@ -539,52 +540,6 @@ div.group {
             transition: .5s;
             overflow: hidden;
             z-index: auto;
-        }
-
-        ul.title {
-            font-size: 10px;
-            font-weight: bold;
-            border-bottom: 1px solid red;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            width: 62vw;
-            font-size: 70%;
-        }
-
-        ul li {
-            /*position: relative;*/
-            display: inline-block;
-            width: 13vw;
-            text-align: center;
-            font-size: 70%;
-        }
-
-        ul li:nth-child(1) {
-            width: 7vw;
-        }
-
-        ul li:nth-child(2) {
-            width: 10vw;
-        }
-
-        ul li:nth-child(3) {
-            width: 10vw;
-        }
-
-        ul li:nth-child(4) {
-            width: 10vw;
-        }
-
-        ul li:nth-child(5) {
-            width: 10vw;
-        }
-
-        ul li:nth-child(6) {
-            width: 12vw;
         }
 
         .balans {

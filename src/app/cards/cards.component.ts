@@ -28,11 +28,6 @@ export class CardsComponent implements OnInit {
                 title: 'Обмеження',
                 filter: false
             },
-            pine: {
-                title: 'Пін',
-                filter: false,
-                type: 'password',
-            },
             status: {
                 title: 'Статус',
                 filter: false
