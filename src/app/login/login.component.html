@@ -130,7 +130,7 @@
                                         <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
                                     </div>
                                 </form>
-
+                              <pre>{{codeSent | json}}</pre>
                                 <form *ngIf="codeSent && !confirmed" [formGroup]="confirmForm" (ngSubmit)="finishRegister()">
                                     <p>На номер телефону, який ви вказали, відправлено код підтвердження. Введіть його у поле нижче.</p>
                                     <div class="form-group">

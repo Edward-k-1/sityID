@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "nategood/httpful": "*",
         "xj/yii2-qrcode-widget": "dev-master",
-        "yii2lab/yii2-qr": "dev-master"
+        "yii2lab/yii2-qr": "dev-master",
+        "twilio/sdk": "dev-master"
 
     },
     "require-dev": {

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         });
 
         this.registerForm = this.formBuilder.group({
-            username: ['',  [Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/), Validators.required, Validators.minLength(3)]],
+            username: ['',  [/*Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/),*/ Validators.required, Validators.minLength(3)]],
             phone: ['', [Validators.required, Validators.minLength(10)]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
 
     doRegister() {
         this.submitted = true;
-
+      console.log("Ya kaban vnatyre");
         // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
@@ -97,9 +97,11 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    if (data.code === 1 && data.data.success) {
+                    if (data.code === 1 ){//&& data.data === true) {
                         this.codeSent = true;
+                        console.log("Ну ти внатуре индеец");
                     } else {
+                      console.log("Ну ти внатуре кабан");
                         if (data.code === 101) {
                             this.alertService.error('Даний номер уже зареєстровано.');
                         }
@@ -107,7 +109,7 @@ export class LoginComponent implements OnInit {
                     this.submitted = false;
                     this.loading = false;
                     // this.alertService.success('Registration successful', true);
-                    // this.router.navigate(['/login']);
+                    //this.router.navigate(['/login']);
                 },
                 error => {
                     this.alertService.error(error);

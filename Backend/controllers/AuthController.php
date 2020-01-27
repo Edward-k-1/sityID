@@ -1,10 +1,12 @@
 <?php
 
 namespace app\controllers;
+use Twilio\Exceptions\ConfigurationException;
 use yii\rest\ActiveController;
 use app\models\User;
 
-
+require_once ("C:/sityID/Backend/controllers/twilio/src/Twilio/autoload.php");
+use Twilio\Rest\Client;
 class AuthController extends ActiveController
 {
     public $modelClass = 'app\models\User';
@@ -61,71 +63,103 @@ class AuthController extends ActiveController
         return ["success"=>false];
     }
 
-    public function actionRegister() {
-        $request = \Yii::$app->getRequest()->post();
-
-        $query = (new \yii\db\Query())->select('*')->from('ci_users')
-            ->where(['phone' => $request['phone']])->all();
-        if(count($query) > 0) {
-            return ['status' => 'restricted', 'code' => 101];
-        }
+  public function actionRegister() {
+    $request = \Yii::$app->getRequest()->post();
+    $query = (new \yii\db\Query())->select('*')->from('ci_users')
+      ->where(['phone' => $request['phone']])->all();
+    if(count($query) > 0) {
+      return ['status' => 'restricted', 'code' => 101];
+    }
 
 //        $code = rand(1000, 999999);
 //        $sql = "insert into ci_phone_confirm (phone, code) values (".$request['phone'].", $code)";
 //        \Yii::$app->db->createCommand($sql)->execute();
-        $phone = substr($request['phone'], 1);
-        $options = array(
-            'http' => array(
-                'method'  => 'POST',
-//                'content' => '?api_key=02037de97bbc330134e0cd57d4c6f362&via=sms&phone_number=38'.$phone.'&country_code=38', //production
-                'content' => 'api_key=SBadtoOSC6QthvkvuBynWJX8u80A8jma&via=sms&phone_number='.$phone.'&country_code=380',   //testing
-                'header'=> "Content-type: application/x-www-form-urlencoded\r\n"
-            )
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents('https://api.authy.com/protected/json/phones/verification/start', false, $context);
-        $response = json_decode($result, true);
-        return ['status' => 'code_sent', 'code' => 1, 'data' => $response];
-    }
 
-    public function actionConfirm() {
-        $request = \Yii::$app->getRequest()->post();
-        $phone = substr($request['phone'], 1);
-        $code = $request['code'];
-        try {
-            $result = file_get_contents('https://api.authy.com/protected/json/phones/verification/check?api_key=SBadtoOSC6QthvkvuBynWJX8u80A8jma&verification_code='.$code.'&phone_number='.$phone.'&country_code=380',
-                false);
-            $response = json_decode($result, true);
-        } catch (\Exception $e) {
-            $response = ['success'=>false];
-        }
 
+    $phone = substr($request['phone'], 1);
+   /* $options = array(
+        'http' => array(
+            'method'  => 'POST',
+      //          'content' => '?api_key=02037de97bbc330134e0cd57d4c6f362&via=sms&phone_number=38'.$phone.'&country_code=38', //production
+    //https://demo.twilio.com/welcome/sms/reply/
+          //'content' => 'api_key=SBadtoOSC6QthvkvuBynWJX8u80A8jma&via=sms&phone_number='.$phone.'&country_code=380',   //testing
+          'content' => 'api_key=ACf9b25e454ef3e87db44966bb67e3f28f&via=sms&phone_number='.$phone.'&country_code=380',
+            'header'=> "Content-type: application/x-www-form-urlencoded\r\n"
+        )
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents('https://api.authy.com/protected/json/phones/verification/start', false, $context);
+    $response = json_decode($result, true);
+*/
+    // A Twilio number you own with SMS capabilities
+    $twilio_number = "+16789741015";
+    $account_sid = 'ACf9b25e454ef3e87db44966bb67e3f28f';
+    $auth_token = '6e3123256301ed9ed6c2014beacae910';
+    $sid = "ACb80e00a687e0d5769b8cd26e7add7815";
+    $token = "06b28e7008dadc204ed8ac25a60ac7bd";
+
+      $twilio = new  Client($sid, $token);
+
+
+    $verification = $twilio->verify->v2->services("VAe0edea1b3b430d8ce1ace9e86f08bfaf")
+      ->verifications
+      ->create("+380".$phone, "sms");
+    $response = true; //["message"=>"User created successfully.","success" => true];
+   // print($verification->status);
+    return ['status' => 'code_sent', 'code' => 1, 'data' => $response]; //$response];
+  }
+
+  public function actionConfirm() {
+    $request = \Yii::$app->getRequest()->post();
+    $phone = substr($request['phone'], 1);
+    $code = $request['code'];
+    //try {
+    //    $result = file_get_contents('https://api.authy.com/protected/json/phones/verification/check?api_key=SBadtoOSC6QthvkvuBynWJX8u80A8jma&verification_code='.$code.'&phone_number='.$phone.'&country_code=380',
+    //       false);
+    //   $response = json_decode($result, true);
+    //} catch (\Exception $e) {
+    //    $response = ['success'=>false];
+    //}
+    $sid    = "ACb80e00a687e0d5769b8cd26e7add7815";
+    $token  = "06b28e7008dadc204ed8ac25a60ac7bd";
+    $twilio = new Client($sid, $token);
+
+    $verification_check = $twilio->verify->v2->services("VAe0edea1b3b430d8ce1ace9e86f08bfaf")
+      ->verificationChecks
+      ->create($code, // code
+        array("to" => "+380".$phone)
+      );
+
+    /*  print($verification_check->status);
         if(!$response['success']) {
             return ['success'=>false];
-        }
-
-        $user = new User;
-        $user->username = $request['username'];
-        $user->email = '';
-        $user->phone = $request['phone'];
-        $user->created_at = time();
-        $user->author_id = 0;
-        $user->auth_key = $this->generateRandomString();
-        $user->password_reset_token = $this->generateRandomString();
-        $user->password_hash = \Yii::$app->getSecurity()->generatePasswordHash($request['password']);
-        $user->type = 0;
-        $user->wallet = 0;
-        $user->token = $this->generateRandomString();
+        }*/
+    if($verification_check->status == "pending")
+    {
+      return ['success'=>false];
+    }
+    $user = new User;
+    $user->username = $request['username'];
+    $user->email = '';
+    $user->phone = $request['phone'];
+    $user->created_at = time();
+    $user->author_id = 0;
+    $user->auth_key = $this->generateRandomString();
+    $user->password_reset_token = $this->generateRandomString();
+    $user->password_hash = \Yii::$app->getSecurity()->generatePasswordHash($request['password']);
+    $user->type = 0;
+    $user->wallet = 0;
+    $user->token = $this->generateRandomString();
 //        $user->save();
-        try {
-            $user->save();
-        } catch (\Exception $e) {
-            return ['status' => false, 'code' => 2, 'error' => $e, 'message' => $e->getMessage()];
-        }
-        return ['status' => true, 'code' => 0, 'message' => 'User successfully created.'];
+    try {
+      $user->save();
+    } catch (\Exception $e) {
+      return ['status' => false, 'code' => 2, 'error' => $e, 'message' => $e->getMessage()];
+    }
+    return ['status' => true, 'code' => 0, 'message' => 'User successfully created.'];
 //        return $response;
 //        if($response['success'])
-    }
+  }
 
     private function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
