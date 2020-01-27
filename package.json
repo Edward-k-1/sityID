@@ -24,6 +24,7 @@
     "angular-credit-cards": "^3.1.8",
     "angularx-qrcode": "^1.5.3",
     "bootstrap": "^4.0.0",
+    "composer": "^4.1.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",

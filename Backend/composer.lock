@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fe6965bfdc1d1d9325bdbfc68bfd979",
+    "content-hash": "c1888f960737cf70cc23886c46ddd30a",
     "packages": [
         {
             "name": "2amigos/yii2-qrcode-helper",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/qrcode-library.git",
-                "reference": "a63885a2366eb8f96268264e755b461a06326236"
+                "reference": "c81835ccb455df4e1dca1ca97b4dba9b9ab364f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/qrcode-library/zipball/a63885a2366eb8f96268264e755b461a06326236",
-                "reference": "a63885a2366eb8f96268264e755b461a06326236",
+                "url": "https://api.github.com/repos/2amigos/qrcode-library/zipball/c81835ccb455df4e1dca1ca97b4dba9b9ab364f0",
+                "reference": "c81835ccb455df4e1dca1ca97b4dba9b9ab364f0",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "yii2"
             ],
             "abandoned": "2amigos/qrcode-library",
-            "time": "2018-02-26T09:57:34+00:00"
+            "time": "2019-05-23T18:26:50+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -564,6 +564,56 @@
                 "mailer"
             ],
             "time": "2016-07-08T11:51:25+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "aa93c45dda3ac28f0fd01aa775313017af7aa8c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/aa93c45dda3ac28f0fd01aa775313017af7aa8c2",
+                "reference": "aa93c45dda3ac28f0fd01aa775313017af7aa8c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "guzzlehttp/guzzle": "^6.3",
+                "phpunit/phpunit": ">=4.5"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "src/Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2020-01-22T21:27:31+00:00"
         },
         {
             "name": "xj/yii2-qrcode-widget",
@@ -1238,7 +1288,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "xj/yii2-qrcode-widget": 20,
-        "yii2lab/yii2-qr": 20
+        "yii2lab/yii2-qr": 20,
+        "twilio/sdk": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
