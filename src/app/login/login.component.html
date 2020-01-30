@@ -1,160 +1,223 @@
 ﻿<!--<h2>Login</h2>-->
 <!--<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">-->
-    <!--<div class="form-group">-->
-        <!--<label for="username">Username</label>-->
-        <!--<input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />-->
-        <!--<div *ngIf="submitted && f.username.errors" class="invalid-feedback">-->
-            <!--<div *ngIf="f.username.errors.required">Username is required</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-        <!--<label for="password">Password</label>-->
-        <!--<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />-->
-        <!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
-            <!--<div *ngIf="f.password.errors.required">Password is required</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-        <!--<button [disabled]="loading" class="btn btn-primary">Login</button>-->
-        <!--<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
-        <!--<a [routerLink]="['/register']" class="btn btn-link">Register</a>-->
-    <!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="username">Username</label>-->
+<!--<input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />-->
+<!--<div *ngIf="submitted && f.username.errors" class="invalid-feedback">-->
+<!--<div *ngIf="f.username.errors.required">Username is required</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="password">Password</label>-->
+<!--<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />-->
+<!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
+<!--<div *ngIf="f.password.errors.required">Password is required</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<button [disabled]="loading" class="btn btn-primary">Login</button>-->
+<!--<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+<!--<a [routerLink]="['/register']" class="btn btn-link">Register</a>-->
+<!--</div>-->
 <!--</form>-->
 <!--<div class="jumbotron">-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-sm-10 offset-sm-1">-->
-                <div id="login-page">
-                    <img class="main-logo" src="../../assets/logo-new.png" alt="lutsk-id">
-                    <!--<p class="tip">City ID - Луцьк</p>-->
-                    <div class="cont">
-                        <div class="form sign-in">
-                            <h2>Ви повернулися,</h2>
-                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                                <div class="form-group">
-                                    <label for="username">Ім'я користувача</label>
-                                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                                        <div *ngIf="f.username.errors.required">Це поле не може бути пустим</div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Пароль</label>
-                                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                        <div *ngIf="f.password.errors.required">Введіть свій пароль</div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button [disabled]="loading" class="btn btn-primary login-button">Увійти</button>
-                                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-10 offset-sm-1">-->
+<div id="login-page">
+  <img class="main-logo" src="../../assets/logo-new.png" alt="lutsk-id">
+  <!--<p class="tip">City ID - Луцьк</p>-->
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Ви повернулися,</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Ім'я користувача</label>
+          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Це поле не може бути пустим</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Введіть свій пароль</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary login-button">Увійти</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 
-                                </div>
-                            </form>
-                          <button (click)="ngxSmartModalService.open('myForm')" class="btn btn-primary forgot-button">Забули пароль?</button>
-                          <ngx-smart-modal #myForm identifier="myForm">
-                            <h3>Відновлення пароля</h3>
-                            <br><br>
-                            <div class="container">
-                              <div class="row">
-                                <!--<div class="col-md-11">
-                                  <span class="help-block text-muted small-font" >Номер телефону</span>
-                                  <input  maxlength="10" class="form-control"  placeholder="Введіть номер телефону" type="text">
-                                </div>-->
-                                <div class="input-group flex-nowrap ">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text" id="addon-wrapping-sm">+38</span>
-                                  </div>
-                                  <input type="text" class="form-control" placeholder="Введіть номер телефону" aria-label="Номер телефону" aria-describedby="addon-wrapping-sm">
-                                </div>
-                              </div>
-                              <br>
-                              <div class="but-group" role="group">
-                                <div>
-                                  <button type="button" class="btn btn-outline-danger btn-sm forgot-button" (click)="ngxSmartModalService.close('myForm')">Скасувати</button>
-                                </div>
-                                <div>
-                                  <button type="button" class="btn btn-success btn-sm login-button" (click)="ngxSmartModalService.close('myForm')">Відновити</button>
-                                </div>
-                              </div>
-                              <br>
-                            </div>
-                            <br>
-                          </ngx-smart-modal>
-                        </div>
-                        <div class="sub-cont">
-                            <div class="img">
-                                <div class="img__text m--up">
-                                    <h2>Новенький?</h2>
-                                    <p>Створіть акаунт та відчуйте всі переваги електронних сервісів!</p>
-                                </div>
-                                <div class="img__text m--in">
-                                    <h2>Один з нас?</h2>
-                                    <p>Якщо ви уже зареестровані - просто увійдіть. Ми сумували за вами!</p>
-                                </div>
-                                <div class="img__btn" (click)="registerToggle()">
-                                    <span class="m--up">Реєстрація</span>
-                                    <span class="m--in">Увійти</span>
-                                </div>
-                            </div>
-                            <div class="form sign-up">
-                                <h2>Час відчути себе удома,</h2>
-                                <form *ngIf="!codeSent" [formGroup]="registerForm" (ngSubmit)="doRegister()">
-                                    <div class="form-group">
-                                        <label for="username">Ім'я користувача</label>
-                                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.username.errors }" />
-                                        <div *ngIf="submitted && fr.username.errors" class="invalid-feedback">
-                                            <div *ngIf="fr.username.errors.required">Це обов'язкове поле</div>
-                                            <!--<div *ngIf="fr.username.errors.pattern">Тільки англійські літери</div>-->
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Мобільний номер</label>
-                                        <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.phone.errors }" />
-                                        <div *ngIf="submitted && fr.phone.errors" class="invalid-feedback">
-                                            <div *ngIf="fr.phone.errors.required">Це обов'язкове поле</div>
-                                            <div *ngIf="fr.phone.errors.minlength">10 символів, починаючи з 0</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Пароль</label>
-                                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.password.errors }" />
-                                        <div *ngIf="submitted && fr.password.errors" class="invalid-feedback">
-                                            <div *ngIf="fr.password.errors.required">Обов'язкове поле</div>
-                                            <div *ngIf="fr.password.errors.minlength">Пароль повинен містити щонайменше 6 символів</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button [disabled]="loading" class="btn btn-primary login-button">Зареєструватись</button>
-                                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                                        <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
-                                    </div>
-                                </form>
-                              <pre>{{codeSent | json}}</pre>
-                                <form *ngIf="codeSent && !confirmed" [formGroup]="confirmForm" (ngSubmit)="finishRegister()">
-                                    <p>На номер телефону, який ви вказали, відправлено код підтвердження. Введіть його у поле нижче.</p>
-                                    <div class="form-group">
-                                        <label for="confirm">Код підтвердження</label>
-                                        <input type="text" formControlName="confirm" class="form-control" [ngClass]="{ 'is-invalid': submitted && fc.confirm.errors }" />
-                                        <div *ngIf="submitted && fc.confirm.errors" class="invalid-feedback">
-                                            <div *ngIf="fc.confirm.errors.required">Це обов'язкове поле</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button [disabled]="loading" class="btn btn-primary login-button">Завершити реєстрацію</button>
-                                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                                        <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
-                                    </div>
-                                </form>
-                                <div *ngIf="confirmed" class="register-finish">
-                                    <h6>Ураа! Акаунт створено! Тепер ви можете <span (click)="registerToggle()">увійти</span></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+      </form>
+      <div class="reset">
+        <button (click)="ngxSmartModalService.open('myForm')" class="btn btn-primary forgot-button">Забули пароль?</button>
+        <ngx-smart-modal #myForm identifier="myForm">
+          <alert>Ти лох</alert>
+          <form *ngIf="reciverNumber" [formGroup]="numberForm" (ngSubmit)="resetPassword()">
+            <h3>Відновлення пароля</h3>
+            <br><br>
+            <div class="container">
+              <div class="row">
+                <!--<div class="col-md-11">
+                  <span class="help-block text-muted small-font" >Номер телефону</span>
+                  <input  maxlength="10" class="form-control"  placeholder="Введіть номер телефону" type="text">
+                </div>-->
+                <div class="input-group flex-nowrap ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping-sm">+38</span>
+                  </div>
+                  <input for="phone2" name="phone2" formControlName="phone2" type="text" class="form-control" placeholder="Введіть номер телефону" aria-label="Номер телефону" aria-describedby="addon-wrapping-sm">
                 </div>
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+              </div>
+              <br>
+              <div class="but-group" role="group">
+                <div>
+                  <button type="button" class="btn btn-outline-danger btn-sm forgot-button" (click)="ngxSmartModalService.close('myForm')">Скасувати</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-success btn-sm login-button" (click)="resetPassword()">Відновити</button>
+                </div>
+              </div>
+              <br>
+            </div>
+            <br>
+          </form>
+          <form *ngIf="codeSent2" [formGroup]="codeForm">
+            <div>
+              <h3>Введіть код</h3>
+              <h6>Надісланий вам в sms</h6>
+              <input type="text" formControlName="code2" name="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <button type="button" class="btn btn-success btn-sm login-button" (click)="codeSentt()">Продовжити</button>
+            </div>
+          </form>
+          <form *ngIf="!codeSent2 && newPass" novalidate
+                [formGroup]="newPassword"
+                (ngSubmit)="newPasss()">
+            <h3>Введіть новий пароль</h3>
+            <br>
+            <div class="form-group"
+                 [ngClass]="{
+                                        'has-danger': newPassw.invalid && (newPassw.dirty || newPassw.touched),
+                                        'has-success': newPassw.valid && (newPassw.dirty || newPassw.touched)
+                                   }">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Новий пароль</span>
+                </div>
+                <input [(ngModel)]="addData.newPassw" type="password"
+                       class="form-control"
+                       formControlName="newPassw"
+                       required  class="form-control" placeholder="Новий пароль" aria-label="Новий пароль" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-control-feedback"
+                   *ngIf="newPassw.errors && (newPassw.dirty || newPassw.touched)">
+                <p *ngIf="newPassw.errors.required" class="bl">Потрібно ввести Пароль</p>
+                <p *ngIf="newPassw.errors.pattern" class="bl">
+                  Тільки англійські літери і числа</p>
+                <p *ngIf="newPassw.errors.minLength" class="bl">Пароль закороткий </p>
+              </div>
+            </div>
+            <br>
+            <div class="form-group"
+                 [ngClass]="{
+                                        'has-danger': confirmPass.invalid && (confirmPass.dirty || confirmPass.touched),
+                                        'has-success': confirmPass.valid && (confirmPass.dirty || confirmPass.touched)
+                                   }">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2">Підтвердіть пароль</span>
+                </div>
+                <input [(ngModel)]="addData.confirmPass" type="password"
+                       class="form-control"
+                       formControlName="confirmPass"
+                       required class="form-control" placeholder="Підтвердіть пароль" aria-label="Підтвердіть пароль" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-control-feedback"
+                   *ngIf="confirmPass.errors && (confirmPass.dirty || confirmPass.touched)">
+                <p *ngIf="confirmPass.errors.required" class="bl">Потрібно ввести Пароль</p>
+                <p *ngIf="confirmPass.errors.pattern" class="bl">
+                  Тільки англійські літери і числа</p>
+                <p *ngIf="confirmPass.errors.minLength" class="bl">Пароль закороткий </p>
+              </div>
+            </div>
+            <button type="button" class="btn btn-success btn-sm login-button" (click)="newPasss()" (click)="ngxSmartModalService.close('myForm')">Змінити пароль</button>
+          </form>
+        </ngx-smart-modal>
+      </div>
+    </div>
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img__text m--up">
+          <h2>Новенький?</h2>
+          <p>Створіть акаунт та відчуйте всі переваги електронних сервісів!</p>
+        </div>
+        <div class="img__text m--in">
+          <h2>Один з нас?</h2>
+          <p>Якщо ви уже зареестровані - просто увійдіть. Ми сумували за вами!</p>
+        </div>
+        <div class="img__btn" (click)="registerToggle()">
+          <span class="m--up">Реєстрація</span>
+          <span class="m--in">Увійти</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Час відчути себе удома,</h2>
+        <form *ngIf="!codeSent" [formGroup]="registerForm" (ngSubmit)="doRegister()">
+          <div class="form-group">
+            <label for="username">Ім'я користувача</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.username.errors }" />
+            <div *ngIf="submitted && fr.username.errors" class="invalid-feedback">
+              <div *ngIf="fr.username.errors.required">Це обов'язкове поле</div>
+              <div *ngIf="fr.username.errors.pattern">Тільки англійські літери</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Мобільний номер</label>
+            <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.phone.errors }" />
+            <div *ngIf="submitted && fr.phone.errors" class="invalid-feedback">
+              <div *ngIf="fr.phone.errors.required">Це обов'язкове поле</div>
+              <div *ngIf="fr.phone.errors.minlength">10 символів, починаючи з 0</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fr.password.errors }" />
+            <div *ngIf="submitted && fr.password.errors" class="invalid-feedback">
+              <div *ngIf="fr.password.errors.required">Обов'язкове поле</div>
+              <div *ngIf="fr.password.errors.minlength">Пароль повинен містити щонайменше 6 символів</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary login-button">Зареєструватись</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
+          </div>
+        </form>
+        <form *ngIf="codeSent && !confirmed" [formGroup]="confirmForm" (ngSubmit)="finishRegister()">
+          <p>На номер телефону, який ви вказали, відправлено код підтвердження. Введіть його у поле нижче.</p>
+          <div class="form-group">
+            <label for="confirm">Код підтвердження</label>
+            <input type="text" formControlName="confirm" class="form-control" [ngClass]="{ 'is-invalid': submitted && fc.confirm.errors }" />
+            <div *ngIf="submitted && fc.confirm.errors" class="invalid-feedback">
+              <div *ngIf="fc.confirm.errors.required">Це обов'язкове поле</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary login-button">Завершити реєстрацію</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <!--<a [routerLink]="['/login']" class="btn btn-link">Cancel</a>-->
+          </div>
+        </form>
+        <div *ngIf="confirmed" class="register-finish">
+          <h6>Ураа! Акаунт створено! Тепер ви можете <span (click)="registerToggle()">увійти</span></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!--</div>-->
-
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

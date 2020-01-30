@@ -287,5 +287,16 @@ input {
 h3{
   text-align: center;
 }
+.bl{
+  color: red;
+  font-size: 80%;
+  text-align: center;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+}
 
 
