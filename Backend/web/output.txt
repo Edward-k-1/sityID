@@ -1,0 +1,4 @@
+password: 12345
+ telephone: 0689087575
+ hash: $2y$13$/DMqIaGVWVtujik07CS4T.3s6TJCmjknBvJdYBTTxpsGpzXpHRsQa
+ 

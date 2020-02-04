@@ -54,7 +54,7 @@
       <div class="reset">
         <button (click)="ngxSmartModalService.open('myForm')" class="btn btn-primary forgot-button">Забули пароль?</button>
         <ngx-smart-modal #myForm identifier="myForm">
-          <alert>Ти лох</alert>
+          <alert></alert>
           <form *ngIf="reciverNumber" [formGroup]="numberForm" (ngSubmit)="resetPassword()">
             <h3>Відновлення пароля</h3>
             <br><br>
@@ -92,6 +92,8 @@
               <button type="button" class="btn btn-success btn-sm login-button" (click)="codeSentt()">Продовжити</button>
             </div>
           </form>
+
+
           <form *ngIf="!codeSent2 && newPass" novalidate
                 [formGroup]="newPassword"
                 (ngSubmit)="newPasss()">
@@ -142,8 +144,12 @@
                 <p *ngIf="confirmPass.errors.minLength" class="bl">Пароль закороткий </p>
               </div>
             </div>
-            <button type="button" class="btn btn-success btn-sm login-button" (click)="newPasss()" (click)="ngxSmartModalService.close('myForm')">Змінити пароль</button>
+            <button type="button" class="btn btn-success btn-sm login-button" (click)="newPasss()">Змінити пароль</button>
           </form>
+
+
+
+
         </ngx-smart-modal>
       </div>
     </div>

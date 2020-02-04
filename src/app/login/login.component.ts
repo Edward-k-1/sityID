@@ -18,7 +18,6 @@ import {NgxSmartModalService} from "ngx-smart-modal";
   newPassword: FormGroup;
 
   addData = {newPassw: '', confirmPass: ''};
-
   newPassw: FormControl;
   confirmPass: FormControl;
 
@@ -68,6 +67,9 @@ import {NgxSmartModalService} from "ngx-smart-modal";
     this.codeForm = this.formBuilder.group({
       code2: ['', [Validators.required, Validators.minLength(6)]]
     });
+    this.newPassword = this.formBuilder.group({
+      newPassw: ['', [Validators.required, Validators.minLength(6)]]
+    });
 
     // reset login status
     this.authenticationService.logout();
@@ -85,6 +87,7 @@ import {NgxSmartModalService} from "ngx-smart-modal";
   get fc() { return this.confirmForm.controls; }
   get frs() {return this.numberForm.controls;}
   get frc() {return this.codeForm.controls;}
+  get fnp() {return this.newPassword.controls;}
   //get fp() {return this.newPassw.controls;}
 
   onSubmit() {
@@ -191,7 +194,6 @@ import {NgxSmartModalService} from "ngx-smart-modal";
             this.reciverNumber = false;
             this.codeSent2 = true;
             this.alertService.success('Код підтвердження відправлено на вказаний номер.');
-
           } else {
             if (data.code === 101) {
               this.alertService.error('Номер телефону не зареєстрований в системі.');
@@ -238,15 +240,20 @@ import {NgxSmartModalService} from "ngx-smart-modal";
   newPasss(){
     this.submitted = true;
     this.loading = true;
-    this.authenticationService.newPass(this.pass, this.frs.phone2.value)
+    this.authenticationService.newPass(this.fnp.newPassw.value, this.frs.phone2.value)
       .pipe(first())
       .subscribe(
         data => {
           if (data.status) {
             this.newPass = true;
-            this.alertService.success('Пароль змінено');
+            this.alertService.success('Пароль користувача змінено');
+            this.ngxSmartModalService.close('myForm');
+            this.ngxSmartModalService.resetModalData('myForm');
+            this.reciverNumber = true;
+            this.codeSent2 = false;
+            this.newPass = false;
           } else {
-            this.alertService.error('Неправильний пароль');
+            this.alertService.error('Сталася помилка при зміні паролю');
           }
           this.loading = false;
           this.submitted = false;

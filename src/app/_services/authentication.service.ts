@@ -129,7 +129,7 @@ export class AuthenticationService {
       })
     };
     const body = new HttpParams()
-      .set('phone', number)
+      .set('phone2', number)
       .set('pass', pass);
     return this.http.post<any>(`${environment.apiUrl}/auth/newpass`, body.toString(), httpOptions)
       .pipe(map(data =>{

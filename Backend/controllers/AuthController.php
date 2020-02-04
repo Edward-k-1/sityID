@@ -224,21 +224,18 @@ class AuthController extends ActiveController
    }*/
     return ['success' => true];
   }
-  public function actionNewpassword(){
+  public function actionNewpass(){
     $request = \Yii::$app->getRequest()->post();
     $password = $request['pass'];
-    $query = (new \yii\db\Query())->select('*')->from('ci_users')
-      ->where(['phone' => $request['phone']])->all();
+    $phone =  $request['phone2'];
+    $fp = fopen('output.txt', 'w');
+    $test = fwrite($fp, 'password: '.$password."\r\n ");
+    $test = fwrite($fp, 'telephone: '.$phone."\r\n ");
 
-    $result = (new \yii\db\Command())->update('ci_users', array(
-      'name'=>'Tester',
-    ), 'id=:id', array(':id'=>1));
-
-    $sql2 = "update into ci_transactios (user_id, amount, type) value
-        ($userId, '".$request['tsina_qr']."', '$Type')";
-    $c1 = \Yii::$app->db->createCommand($sql2)->execute();
-
-    \Yii::$app->getSecurity()->generatePasswordHash($request['password']);
-    return true;
+    $hesh = \Yii::$app->getSecurity()->generatePasswordHash($password);
+    $test = fwrite($fp, 'hash: '.$hesh."\r\n ");
+    $sql1 = "UPDATE ci_users SET password_hash = '" .$hesh."' WHERE phone=$phone";
+    if(!\Yii::$app->db->createCommand($sql1)->execute()) return ['status' => false];
+    return ['status' => true];
   }
 }
