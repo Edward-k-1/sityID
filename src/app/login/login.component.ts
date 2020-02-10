@@ -6,6 +6,7 @@ import * as $ from 'jquery';
 
 import { AlertService, AuthenticationService } from '../_services';
 import {NgxSmartModalService} from "ngx-smart-modal";
+import {passBoolean} from "protractor/built/util";
 
 @Component({templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']})
@@ -61,14 +62,16 @@ import {NgxSmartModalService} from "ngx-smart-modal";
     this.confirmForm = this.formBuilder.group({
       confirm: ['', [Validators.required, Validators.minLength(4)]]
     });
+    //!(frs.phone2.errors.pattern) && !
     this.numberForm = this.formBuilder.group({
-    phone2: ['', [Validators.required, Validators.minLength(9)]]
+    phone2: ['', [Validators.pattern(/^[0][0-9]{9}/), Validators.required, Validators.maxLength(10)]]
     });
     this.codeForm = this.formBuilder.group({
-      code2: ['', [Validators.required, Validators.minLength(6)]]
+      code2: ['', [Validators.pattern(/^[0-9]{6}/), Validators.required, Validators.maxLength(6)]]
     });
     this.newPassword = this.formBuilder.group({
-      newPassw: ['', [Validators.required, Validators.minLength(6)]]
+      newPassw: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPass: ['', [Validators.required, Validators.minLength(6)]]
     });
 
     // reset login status
@@ -252,6 +255,7 @@ import {NgxSmartModalService} from "ngx-smart-modal";
             this.reciverNumber = true;
             this.codeSent2 = false;
             this.newPass = false;
+            this.ngOnInit();
           } else {
             this.alertService.error('Сталася помилка при зміні паролю');
           }
@@ -279,7 +283,11 @@ import {NgxSmartModalService} from "ngx-smart-modal";
       Validators.pattern(/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/)
     ]);
   }
+  isControlInvalid(formname: FormGroup, controlName: string, par: boolean): boolean {
+    const control = formname.controls[controlName];
+    if(par) return control.invalid&&control.touched; else return control.invalid;
 
+  }
   createForm() {
     this.newPassword = new FormGroup({
       newPassw: this.newPassw,

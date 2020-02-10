@@ -69,6 +69,10 @@
                     <span class="input-group-text" id="addon-wrapping-sm">+38</span>
                   </div>
                   <input for="phone2" name="phone2" formControlName="phone2" type="text" class="form-control" placeholder="Введіть номер телефону" aria-label="Номер телефону" aria-describedby="addon-wrapping-sm">
+
+                </div>
+                <div class="bl" *ngIf="isControlInvalid(numberForm, 'phone2', true)">
+                  Неправильний формат номеру!
                 </div>
               </div>
               <br>
@@ -77,7 +81,8 @@
                   <button type="button" class="btn btn-outline-danger btn-sm forgot-button" (click)="ngxSmartModalService.close('myForm')">Скасувати</button>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-success btn-sm login-button" (click)="resetPassword()">Відновити</button>
+
+                  <button type="button" class="btn btn-success btn-sm login-button" [disabled]="isControlInvalid(numberForm, 'phone2',false)" (click)="resetPassword()">Відновити</button>
                 </div>
               </div>
               <br>
@@ -89,7 +94,8 @@
               <h3>Введіть код</h3>
               <h6>Надісланий вам в sms</h6>
               <input type="text" formControlName="code2" name="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-              <button type="button" class="btn btn-success btn-sm login-button" (click)="codeSentt()">Продовжити</button>
+              <div *ngIf="isControlInvalid(codeForm, 'code2',true)" class = "bl">Введіть код з шести цифр</div>
+              <button type="button" class="btn btn-success btn-sm login-button" [disabled]="isControlInvalid(codeForm, 'code2',false)" (click)="codeSentt()">Продовжити</button>
             </div>
           </form>
 
@@ -142,9 +148,10 @@
                 <p *ngIf="confirmPass.errors.pattern" class="bl">
                   Тільки англійські літери і числа</p>
                 <p *ngIf="confirmPass.errors.minLength" class="bl">Пароль закороткий </p>
+                <p *ngIf="newPassw.value.toString()!==confirmPass.value.toString()" class="bl">Паролі не співпадають</p>
               </div>
             </div>
-            <button type="button" class="btn btn-success btn-sm login-button" (click)="newPasss()">Змінити пароль</button>
+            <button [disabled]="true" type="button" class="btn btn-success btn-sm login-button" (click)="newPasss()">Змінити пароль</button>
           </form>
 
 
